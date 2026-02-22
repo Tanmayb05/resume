@@ -92,32 +92,32 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| JD-01 | — | Pending |
-| JD-02 | — | Pending |
-| JD-03 | — | Pending |
-| JD-04 | — | Pending |
-| RES-01 | — | Pending |
-| RES-02 | — | Pending |
-| RES-03 | — | Pending |
-| RES-04 | — | Pending |
-| RES-05 | — | Pending |
-| RES-06 | — | Pending |
-| COV-01 | — | Pending |
-| COV-02 | — | Pending |
-| COV-03 | — | Pending |
-| COV-04 | — | Pending |
-| COV-05 | — | Pending |
-| UI-01 | — | Pending |
-| UI-02 | — | Pending |
-| UI-03 | — | Pending |
-| TRK-01 | — | Pending |
+| JD-01 | Phase 5 | Pending |
+| JD-02 | Phase 5 | Pending |
+| JD-03 | Phase 5 | Pending |
+| JD-04 | Phase 5 | Pending |
+| RES-01 | Phase 4 | Pending |
+| RES-02 | Phase 3 | Pending |
+| RES-03 | Phase 3 | Pending |
+| RES-04 | Phase 4 | Pending |
+| RES-05 | Phase 3 | Pending |
+| RES-06 | Phase 4 | Pending |
+| COV-01 | Phase 5 | Pending |
+| COV-02 | Phase 5 | Pending |
+| COV-03 | Phase 5 | Pending |
+| COV-04 | Phase 5 | Pending |
+| COV-05 | Phase 5 | Pending |
+| UI-01 | Phase 6 | Pending |
+| UI-02 | Phase 6 | Pending |
+| UI-03 | Phase 6 | Pending |
+| TRK-01 | Phase 7 | Pending |
 
 **Coverage:**
 - v1 requirements: 19 total
-- Mapped to phases: 0
-- Unmapped: 19 ⚠️ (will be filled by roadmapper)
+- Mapped to phases: 19
+- Unmapped: 0 ✓
 
 ---
 
 *Requirements defined: 2026-02-21*
-*Last updated: 2026-02-21 after initial definition*
+*Last updated: 2026-02-21 after roadmap creation — traceability table fully populated*
