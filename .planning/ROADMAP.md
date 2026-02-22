@@ -118,7 +118,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Storage and Configuration | 2/2 | Complete   | 2026-02-22 |
-| 2. LLM Client and Prompt Registry | 1/3 | In progress | - |
+| 2. LLM Client and Prompt Registry | 2/3 | In Progress|  |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
 | 4. Resume Generation Pipeline | 0/TBD | Not started | - |
 | 5. JD Intake, F1 Flag, and Cover Letter | 0/TBD | Not started | - |

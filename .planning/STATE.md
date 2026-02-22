@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 2 of 7 (LLM Client and Prompt Registry)
-Plan: 1 of TBD in current phase
+Plan: 2 of TBD in current phase
 Status: In progress
-Last activity: 2026-02-22 — Completed Plan 01 (LLMClient with Ollama and Tenacity retry)
+Last activity: 2026-02-22 — Completed Plan 02 (extract_json with TDD — fence stripping and json-repair)
 
 Progress: [███░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 2 min
 - Total execution time: 0.10 hours
 
@@ -28,7 +28,7 @@ Progress: [███░░░░░░░] 20%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-storage-and-configuration | 2 | 4 min | 2 min |
-| 02-llm-client-and-prompt-registry | 1 | 2 min | 2 min |
+| 02-llm-client-and-prompt-registry | 2 | 4 min | 2 min |
 
 **Recent Trend:**
 - Last 5 plans: 2 min
@@ -38,6 +38,7 @@ Progress: [███░░░░░░░] 20%
 | Phase 01-storage-and-configuration P01 | 2 | 2 tasks | 5 files |
 | Phase 01-storage-and-configuration P02 | 2 | 2 tasks | 6 files |
 | Phase 02-llm-client-and-prompt-registry P01 | 2 | 2 tasks | 6 files |
+| Phase 02-llm-client-and-prompt-registry P02 | 2 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,8 @@ Recent decisions affecting current work:
 - [02-01]: llm_timeout_seconds default lowered from 120s to 60s — local Ollama inference is faster than remote API
 - [02-01]: _is_transient() uses string matching on error repr — avoids brittle isinstance checks against Ollama internals
 - [02-01]: LLMError wraps RetryError from Tenacity — callers see one consistent exception type regardless of failure mode
+- [Phase 02-llm-client-and-prompt-registry]: json-repair used instead of fix-busted-json — fix-busted-json 0.0.19 crashes on Python 3.13 with IndexError; json-repair is maintained and compatible
+- [Phase 02-llm-client-and-prompt-registry]: ValueError raised with first 300 chars of input when repair returns empty/null — gives callers actionable debug info for LLM output parse failures
 
 ### Pending Todos
 
@@ -78,5 +81,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 02-01-PLAN.md (LLMClient with Ollama AsyncClient and Tenacity retry)
+Stopped at: Completed 02-02-PLAN.md (extract_json with TDD — fence stripping and json-repair)
 Resume file: None
