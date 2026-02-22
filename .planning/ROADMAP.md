@@ -13,7 +13,7 @@ Seven phases build the application in strict dependency order: infrastructure fi
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Storage and Configuration** - Pydantic job record model, JSON filesystem store, pydantic-settings config (completed 2026-02-22)
-- [ ] **Phase 2: LLM Client and Prompt Registry** - Async Claude API client, prompt-as-file pattern, JSON extraction utility
+- [ ] **Phase 2: LLM Client and Prompt Registry** - Async Ollama LLM client, prompt-as-file pattern, JSON extraction utility
 - [ ] **Phase 3: LaTeX Engine and PDF Analyzer** - Jinja2 LaTeX renderer, tectonic compiler, PyMuPDF page count detection
 - [ ] **Phase 4: Resume Generation Pipeline** - Full select → tweak → render → compile → TRIM loop with one-page enforcement
 - [ ] **Phase 5: JD Intake, F1 Flag, and Cover Letter** - JobService, F1 keyword detection, CoverLetterService producing plain .txt
@@ -34,19 +34,24 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — JobRecord Pydantic model + AppConfig via pydantic-settings
-- [ ] 01-02-PLAN.md — Path utilities (slug sanitization, collision detection) + JobStore filesystem CRUD + package wiring
+- [x] 01-01-PLAN.md — JobRecord Pydantic model + AppConfig via pydantic-settings
+- [x] 01-02-PLAN.md — Path utilities (slug sanitization, collision detection) + JobStore filesystem CRUD + package wiring
 
 ### Phase 2: LLM Client and Prompt Registry
 **Goal**: A single, reliable async LLM client and a file-based prompt registry exist so all pipeline stages share one integration point with consistent error handling
 **Depends on**: Phase 1
 **Requirements**: None directly (shared infrastructure enabling RES-01, RES-04, RES-06, COV-01, COV-02, JD-02, JD-03)
 **Success Criteria** (what must be TRUE):
-  1. `llm/client.py` can call the Claude API asynchronously and return a parsed JSON response without hanging — requests time out after a configurable limit
-  2. Markdown code fences are stripped from LLM responses before JSON parsing, regardless of fence variant (` ```json `, ` ```\n `, bare backticks)
+  1. `llm/client.py` can call Ollama asynchronously and return raw response text without hanging — requests time out after a configurable limit
+  2. Markdown code fences are stripped from LLM responses before JSON parsing, regardless of fence variant (` ```json `, ` ``` `, bare backticks)
   3. Each pipeline prompt lives as a named `.md` file in `llm/prompts/`; no prompt strings are hardcoded inside business logic files
-  4. The client retries on transient API errors (rate limit, 5xx) without surfacing exceptions to callers
-**Plans**: TBD
+  4. The client retries on transient API errors (connection, timeout, 5xx, 429) without surfacing exceptions to callers
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — AppConfig Ollama fields + LLMClient with Tenacity retry + LLMError exception
+- [ ] 02-02-PLAN.md — extract_json() TDD: fence stripping + fix-busted-json repair (RED-GREEN-REFACTOR)
+- [ ] 02-03-PLAN.md — load_prompt() Jinja2 registry + four seed prompt templates (select_resume, parse_job_description, generate_cover_letter, trim_resume)
 
 ### Phase 3: LaTeX Engine and PDF Analyzer
 **Goal**: The LaTeX render-compile-measure chain works correctly in isolation so the enforcement loop in Phase 4 is built on validated components
@@ -113,7 +118,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Storage and Configuration | 2/2 | Complete   | 2026-02-22 |
-| 2. LLM Client and Prompt Registry | 0/TBD | Not started | - |
+| 2. LLM Client and Prompt Registry | 0/3 | Not started | - |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
 | 4. Resume Generation Pipeline | 0/TBD | Not started | - |
 | 5. JD Intake, F1 Flag, and Cover Letter | 0/TBD | Not started | - |
