@@ -63,7 +63,11 @@ Plans:
   3. `latex/pdf_analyzer.py` returns `page_count` (integer) and `whitespace_ratio` (float) for a given PDF path; a missing or corrupt PDF returns a sentinel error value, not a crash
   4. Final `.tex` and `.pdf` artifacts are saved to `data/<company_slug>/` with `_iter_N` naming as specified in RES-05
   5. The generated PDF passes `pdftotext` extraction (non-empty output), confirming ATS parsability of the template
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Jinja2 LaTeX renderer (renderer.py) + resume_template.tex.j2 with custom delimiters and latex_escape (RES-02, RES-05)
+- [ ] 03-02-PLAN.md — tectonic compiler (compiler.py) + PyMuPDF PDF analyzer (pdf_analyzer.py) with structured error returns (RES-03, RES-05)
 
 ### Phase 4: Resume Generation Pipeline
 **Goal**: Users can trigger full resume generation from a job record and receive a one-page PDF that uses only content from master_resume.json
