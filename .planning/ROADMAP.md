@@ -31,7 +31,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. `job_store.py` can write a job record to `data/<company_slug>/job.json`, read it back, and list all existing records
   3. App config (API key, data directory, max iterations) loads from `.env` via pydantic-settings and raises a clear startup error if required fields are missing
   4. All file paths in the codebase resolve to absolute paths — no relative path bugs on different working directories
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — JobRecord Pydantic model + AppConfig via pydantic-settings
+- [ ] 01-02-PLAN.md — Path utilities (slug sanitization, collision detection) + JobStore filesystem CRUD + package wiring
 
 ### Phase 2: LLM Client and Prompt Registry
 **Goal**: A single, reliable async LLM client and a file-based prompt registry exist so all pipeline stages share one integration point with consistent error handling
@@ -108,7 +112,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Storage and Configuration | 0/TBD | Not started | - |
+| 1. Storage and Configuration | 0/2 | Not started | - |
 | 2. LLM Client and Prompt Registry | 0/TBD | Not started | - |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
 | 4. Resume Generation Pipeline | 0/TBD | Not started | - |
