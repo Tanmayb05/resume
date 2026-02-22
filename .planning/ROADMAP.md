@@ -49,7 +49,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — AppConfig Ollama fields + LLMClient with Tenacity retry + LLMError exception
+- [x] 02-01-PLAN.md — AppConfig Ollama fields + LLMClient with Tenacity retry + LLMError exception
 - [ ] 02-02-PLAN.md — extract_json() TDD: fence stripping + fix-busted-json repair (RED-GREEN-REFACTOR)
 - [ ] 02-03-PLAN.md — load_prompt() Jinja2 registry + four seed prompt templates (select_resume, parse_job_description, generate_cover_letter, trim_resume)
 
@@ -118,7 +118,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Storage and Configuration | 2/2 | Complete   | 2026-02-22 |
-| 2. LLM Client and Prompt Registry | 0/3 | Not started | - |
+| 2. LLM Client and Prompt Registry | 1/3 | In progress | - |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
 | 4. Resume Generation Pipeline | 0/TBD | Not started | - |
 | 5. JD Intake, F1 Flag, and Cover Letter | 0/TBD | Not started | - |

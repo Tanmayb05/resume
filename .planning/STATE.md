@@ -5,37 +5,39 @@
 See: .planning/PROJECT.md (updated 2026-02-21)
 
 **Core value:** From job description to application-ready resume + cover letter in under 15 minutes, with zero manual formatting work.
-**Current focus:** Phase 1 — Storage and Configuration
+**Current focus:** Phase 2 — LLM Client and Prompt Registry
 
 ## Current Position
 
-Phase: 1 of 7 (Storage and Configuration)
-Plan: 2 of TBD in current phase
+Phase: 2 of 7 (LLM Client and Prompt Registry)
+Plan: 1 of TBD in current phase
 Status: In progress
-Last activity: 2026-02-22 — Completed Plan 02 (JobStore filesystem layer)
+Last activity: 2026-02-22 — Completed Plan 01 (LLMClient with Ollama and Tenacity retry)
 
-Progress: [██░░░░░░░░] 10%
+Progress: [███░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
+- Total plans completed: 3
 - Average duration: 2 min
-- Total execution time: 0.07 hours
+- Total execution time: 0.10 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-storage-and-configuration | 2 | 4 min | 2 min |
+| 02-llm-client-and-prompt-registry | 1 | 2 min | 2 min |
 
 **Recent Trend:**
 - Last 5 plans: 2 min
-- Trend: —
+- Trend: Stable
 
 *Updated after each plan completion*
 | Phase 01-storage-and-configuration P01 | 2 | 2 tasks | 5 files |
 | Phase 01-storage-and-configuration P02 | 2 | 2 tasks | 6 files |
+| Phase 02-llm-client-and-prompt-registry P01 | 2 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -51,15 +53,17 @@ Recent decisions affecting current work:
 - [01-01]: use_enum_values=True in JobRecord.model_config so JSON output contains plain strings, not enum objects
 - [01-01]: APP_ env prefix on AppConfig prevents collisions with system env vars
 - [01-01]: data_dir resolved to absolute path via field_validator at config load time
-- [01-01]: anthropic_api_key has no default — raises ValidationError immediately if missing
 - [01-01]: No custom to_json/from_json wrappers on JobRecord; call sites use model_dump_json() directly
-- [Phase 01-01]: use_enum_values=True in JobRecord.model_config so JSON output contains plain strings not enum objects
-- [Phase 01-01]: APP_ env prefix on AppConfig prevents collisions with system env vars; anthropic_api_key required with no default for fail-fast startup validation
 - [01-02]: No python-slugify dependency — slug sanitization uses stdlib re with full control and zero extra dependency
 - [01-02]: Path traversal pre-check before character stripping — catches '../../../etc' before re.sub makes it appear safe
 - [01-02]: Atomic write via tempfile+fsync+os.replace — job.json never left in partially-written state
 - [01-02]: write() enforces absolute job_dir with ValueError — prevents silent relative-path bugs when cwd differs
 - [01-02]: list_all() silently skips directories without valid job.json (DEBUG log) — robust to manually created dirs
+- [02-01]: anthropic_api_key made optional (default=None) — Ollama replaces Anthropic; old .env files still load without error
+- [02-01]: llm_model renamed to llm_default_model — aligns with Ollama multi-model usage pattern
+- [02-01]: llm_timeout_seconds default lowered from 120s to 60s — local Ollama inference is faster than remote API
+- [02-01]: _is_transient() uses string matching on error repr — avoids brittle isinstance checks against Ollama internals
+- [02-01]: LLMError wraps RetryError from Tenacity — callers see one consistent exception type regardless of failure mode
 
 ### Pending Todos
 
@@ -74,5 +78,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 01-02-PLAN.md (JobStore filesystem layer) — Phase 1 data layer complete
+Stopped at: Completed 02-01-PLAN.md (LLMClient with Ollama AsyncClient and Tenacity retry)
 Resume file: None

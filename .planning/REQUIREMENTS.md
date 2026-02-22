@@ -10,23 +10,23 @@
 ### JD Intake
 
 - [ ] **JD-01**: User can paste a job description as text and submit it for parsing
-- [ ] **JD-02**: System parses JD text into structured JSON matching job_description_schema.json (company, role, location, skills, responsibilities, requirements, visa fields)
-- [ ] **JD-03**: System detects F1 visa / sponsorship signal from JD text (keyword detection: "sponsorship", "H-1B", "OPT", "authorize to work", "citizen only", etc.) and stores result in job record
+- [x] **JD-02**: System parses JD text into structured JSON matching job_description_schema.json (company, role, location, skills, responsibilities, requirements, visa fields)
+- [x] **JD-03**: System detects F1 visa / sponsorship signal from JD text (keyword detection: "sponsorship", "H-1B", "OPT", "authorize to work", "citizen only", etc.) and stores result in job record
 - [ ] **JD-04**: System persists parsed job record as a JSON file under data/<company_slug>/
 
 ### Resume Generation
 
-- [ ] **RES-01**: System selects relevant experiences, projects, and skills from master_resume.json based on the JD
+- [x] **RES-01**: System selects relevant experiences, projects, and skills from master_resume.json based on the JD
 - [ ] **RES-02**: System renders a LaTeX .tex file from the selected content using resume_template.tex.j2
 - [ ] **RES-03**: System compiles the .tex file to PDF via tectonic
-- [ ] **RES-04**: System detects PDF page overflow (page_count > 1) and re-prompts AI to shorten the longest bullet points, then recompiles (TRIM mode — up to max_iterations)
+- [x] **RES-04**: System detects PDF page overflow (page_count > 1) and re-prompts AI to shorten the longest bullet points, then recompiles (TRIM mode — up to max_iterations)
 - [ ] **RES-05**: System saves final .tex and .pdf artifacts to data/<company_slug>/ with iteration tracking (_iter_N naming)
-- [ ] **RES-06**: Generated resume content may only use material from master_resume.json — no fabricated experience, skills, tools, or metrics (enforced via post-generation entity validation)
+- [x] **RES-06**: Generated resume content may only use material from master_resume.json — no fabricated experience, skills, tools, or metrics (enforced via post-generation entity validation)
 
 ### Cover Letter Generation
 
-- [ ] **COV-01**: System generates a cover letter from JD context + selected resume content, following the structure and rules in cover_letter_prompt.md
-- [ ] **COV-02**: Generated cover letter is 300-400 words; system validates word count and regenerates if outside range
+- [x] **COV-01**: System generates a cover letter from JD context + selected resume content, following the structure and rules in cover_letter_prompt.md
+- [x] **COV-02**: Generated cover letter is 300-400 words; system validates word count and regenerates if outside range
 - [ ] **COV-03**: System saves cover letter as plain .txt file to data/<company_slug>/ (no PDF/docx — eliminates LibreOffice dependency)
 - [ ] **COV-04**: Cover letter uses correct graduation date: "May 2026" for full-time applications, "Dec 2026" for internships
 - [ ] **COV-05**: Cover letter contains no em-dashes
@@ -93,17 +93,17 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | JD-01 | Phase 5 | Pending |
-| JD-02 | Phase 5 | Pending |
-| JD-03 | Phase 5 | Pending |
+| JD-02 | Phase 5 | Complete |
+| JD-03 | Phase 5 | Complete |
 | JD-04 | Phase 5 | Pending |
-| RES-01 | Phase 4 | Pending |
+| RES-01 | Phase 4 | Complete |
 | RES-02 | Phase 3 | Pending |
 | RES-03 | Phase 3 | Pending |
-| RES-04 | Phase 4 | Pending |
+| RES-04 | Phase 4 | Complete |
 | RES-05 | Phase 3 | Pending |
-| RES-06 | Phase 4 | Pending |
-| COV-01 | Phase 5 | Pending |
-| COV-02 | Phase 5 | Pending |
+| RES-06 | Phase 4 | Complete |
+| COV-01 | Phase 5 | Complete |
+| COV-02 | Phase 5 | Complete |
 | COV-03 | Phase 5 | Pending |
 | COV-04 | Phase 5 | Pending |
 | COV-05 | Phase 5 | Pending |
