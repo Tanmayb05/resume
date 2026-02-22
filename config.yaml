@@ -1,0 +1,12 @@
+
+llm:
+  ollama_url: "http://localhost:11434/api/generate"
+  model_id: "llama3.1:8b"
+
+resume:
+  whitespace_threshold: 40.0
+  max_optimization_iterations: 3
+
+paths:
+  templates: "templates"
+  data: "data"

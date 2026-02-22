@@ -1,0 +1,220 @@
+{
+  "name": "Tanmay Bhuskute",
+  "contact": {
+    "linkedin": "linkedin.com/in/tanmay-bhuskute",
+    "github": "github.com/Tanmayb05",
+    "email": "tanmay.v.bhuskute@gmail.com"
+  },
+  "education": [
+    {
+      "degree": "Master of Science in Computer Science",
+      "institution": "University of Cincinnati",
+      "start_date": "Aug 2024",
+      "end_date": "May 2026",
+      "coursework": [
+        "Advanced Algorithms",
+        "Deep Learning",
+        "Intelligent Data Analysis",
+        "Database Theory"
+      ]
+    },
+    {
+      "degree": "Bachelor of Engineering in Computer Engineering",
+      "institution": "AISSMS College of Engineering",
+      "start_date": "Aug 2018",
+      "end_date": "Jul 2022",
+      "coursework": [
+        "Data Mining",
+        "Data Analytics",
+        "Machine Learning",
+        "Object-Oriented Programming"
+      ]
+    }
+  ],
+  "technical_skills": {
+    "programming": [
+      "Java",
+      "Python",
+      "C/C++",
+      "SQL (Postgres)",
+      "JavaScript",
+      "HTML/CSS",
+      "Go",
+      "Rust"
+    ],
+    "frameworks": [
+      "React",
+      "Node.js",
+      "JUnit",
+      "FastAPI",
+      "Streamlit",
+      "Django",
+      "Flask",
+      "BERT"
+    ],
+    "developer_tools": [
+      "VS Code",
+      "Git",
+      "Docker",
+      "AWS",
+      "Azure",
+      "Google Cloud Platform",
+      "SonarQube",
+      "Postman",
+      "JFrog",
+      "Polarion",
+      "Jenkins",
+      "ArgoCD",
+      "Kubernetes",
+      "REST APIs",
+      "Linux",
+      "Unix",
+      "Bash",
+      "TensorFlow"
+    ],
+    "libraries": [
+      "PyTorch",
+      "scikit-learn",
+      "pandas",
+      "NumPy",
+      "matplotlib",
+      "HuggingFace",
+      "OpenAI",
+      "LangChain",
+      "Pydantic",
+      "spaCy"
+    ]
+  },
+  "work_experience": [
+    {
+      "title": "Software Developer Engineer",
+      "company": "Siemens Industry Software",
+      "start_date": "Jul 2022",
+      "end_date": "Jun 2024",
+      "tech_stack": [
+        "AWS",
+        "Python",
+        "Boto3",
+        "REST APIs",
+        "Hashicorp Vault",
+        "Ansible",
+        "GitLab CI/CD",
+        "Shell",
+        "Kubernetes",
+        "ArgoCD"
+      ],
+      "achievements": [
+        "Automated AWS workflows with Python (Boto3), replacing Ruby scripts",
+        "Developed reusable Python packages for patching, boosting deployment effectiveness by 40%",
+        "Led Blue-Green deployments with Ansible, reducing upgrade downtime by 50%",
+        "Mentored 5 junior engineers with documentation and training",
+        "Enhanced code coverage by 200% as Quality Coach and SonarQube Specialist",
+        "Deployed 44 production upgrades in 4 months without service interruptions"
+      ]
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "Siemens Industry Software",
+      "start_date": "Mar 2022",
+      "end_date": "Jun 2022",
+      "tech_stack": [
+        "AWS",
+        "Terraform",
+        "Ansible",
+        "Terratest",
+        "Go"
+      ],
+      "achievements": [
+        "Automated provisioning of AWS resources with Terraform, reducing deployment time by 30%",
+        "Developed Go + Terratest framework, catching 95% of misconfigurations pre-production",
+        "Optimized DevOps workflows with Ansible, reducing environment setup time from hours to minutes",
+        "Enhanced infrastructure validation with Terragrunt ensuring 100% successful Terraform runs"
+      ]
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "Government of Maharashtra, Water Resource Department",
+      "start_date": "Sep 2021",
+      "end_date": "Dec 2021",
+      "tech_stack": [
+        "React.js",
+        "MySQL",
+        "Full-Stack Development",
+        "UI/UX Design",
+        "Process Automation"
+      ],
+      "achievements": [
+        "Developed a full-stack inward/outward register app with React and MySQL",
+        "Digitized record management, improving efficiency by 40%",
+        "Deployed system improving transparency and accuracy of records"
+      ]
+    }
+  ],
+  "projects_and_research": [
+    {
+      "title": "Spendora - Conversational AI for Expense Insights",
+      "date": "Jun 2025",
+      "tech_stack": [
+        "HuggingFace",
+        "LangChain",
+        "Mistral",
+        "Gemma"
+      ],
+      "details": [
+        "Developed LLM-powered finance assistant with LangChain",
+        "Implemented RAG with custom toolchains for financial data",
+        "Deployed conversational agents with memory and tool use for spending analysis"
+      ]
+    },
+    {
+      "title": "News Headline Classification",
+      "date": "Mar 2025",
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "spaCy"
+      ],
+      "details": [
+        "Built LSTM-based deep learning model on 400K+ headlines",
+        "Achieved 93.28% accuracy outperforming baseline models",
+        "Optimized preprocessing and training pipeline improving efficiency by 25%"
+      ]
+    },
+    {
+      "title": "Media Recommender (Published Paper ID - IJRASET42927)",
+      "date": "Mar 2022",
+      "tech_stack": [
+        "React",
+        "Flask",
+        "Python",
+        "Spotify API"
+      ],
+      "details": [
+        "Developed personalized recommendation system for media",
+        "Implemented multiple algorithms: content-based, collaborative, K-means, TF-IDF",
+        "Delivered relevant recommendations across movies, music, and books"
+      ]
+    },
+    {
+      "title": "SoundScape: Android Music App",
+      "date": "Dec 2021",
+      "tech_stack": [
+        "Android SDK",
+        "Java",
+        "REST APIs",
+        "MediaPlayer",
+        "Gradle",
+        "Git"
+      ],
+      "details": [
+        "Developed end-to-end Android music streaming app",
+        "Integrated Musixmatch API with Room caching, reducing API calls by 70%",
+        "Implemented microservices for playback, notifications, and file operations"
+      ]
+    }
+  ],
+  "extracurricular": [
+    "Finalist at RevolutionUC 2025 Hackathon, among 300 participants from 31 schools",
+    "Earned SAFe Practitioner 5.1 Certification (Mar 2023)"
+  ]
+}

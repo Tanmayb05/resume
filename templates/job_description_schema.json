@@ -1,0 +1,12 @@
+{
+    "job_title": "string",
+    "company": "string",
+    "location": "string",
+    "summary": "string",
+    "responsibilities": ["string"],
+    "qualifications": {
+        "required": ["string"],
+        "preferred": ["string"]
+    },
+    "skills": ["string"]
+}
