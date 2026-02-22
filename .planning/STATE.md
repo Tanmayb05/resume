@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 2 of 7 (LLM Client and Prompt Registry)
-Plan: 2 of TBD in current phase
+Plan: 3 of TBD in current phase
 Status: In progress
-Last activity: 2026-02-22 — Completed Plan 02 (extract_json with TDD — fence stripping and json-repair)
+Last activity: 2026-02-22 — Completed Plan 03 (Jinja2 prompt registry with four seed templates)
 
 Progress: [███░░░░░░░] 20%
 
@@ -39,6 +39,7 @@ Progress: [███░░░░░░░] 20%
 | Phase 01-storage-and-configuration P02 | 2 | 2 tasks | 6 files |
 | Phase 02-llm-client-and-prompt-registry P01 | 2 | 2 tasks | 6 files |
 | Phase 02-llm-client-and-prompt-registry P02 | 2 | 2 tasks | 4 files |
+| Phase 02-llm-client-and-prompt-registry P03 | 2 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -67,6 +68,9 @@ Recent decisions affecting current work:
 - [02-01]: LLMError wraps RetryError from Tenacity — callers see one consistent exception type regardless of failure mode
 - [Phase 02-llm-client-and-prompt-registry]: json-repair used instead of fix-busted-json — fix-busted-json 0.0.19 crashes on Python 3.13 with IndexError; json-repair is maintained and compatible
 - [Phase 02-llm-client-and-prompt-registry]: ValueError raised with first 300 chars of input when repair returns empty/null — gives callers actionable debug info for LLM output parse failures
+- [Phase 02-llm-client-and-prompt-registry]: Jinja2 FileSystemLoader with StrictUndefined — prompt variables must be explicitly supplied, catches mismatches at render time
+- [Phase 02-llm-client-and-prompt-registry]: Memory caching via module-level _JINJA_ENV — process restart required to pick up prompt file edits (acceptable for single-user CLI tool)
+- [Phase 02-llm-client-and-prompt-registry]: FileNotFoundError lists available prompts — callers get actionable debug info without inspecting filesystem
 
 ### Pending Todos
 
@@ -81,5 +85,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 02-02-PLAN.md (extract_json with TDD — fence stripping and json-repair)
+Stopped at: Completed 02-03-PLAN.md (Jinja2 prompt registry with four seed templates)
 Resume file: None
