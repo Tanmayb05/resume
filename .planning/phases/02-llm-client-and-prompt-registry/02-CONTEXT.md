@@ -6,12 +6,31 @@
 <domain>
 ## Phase Boundary
 
-A single async Claude API client (`llm/client.py`) and a file-based prompt registry (`llm/prompts/`) that all downstream pipeline stages share. Every phase that calls the LLM goes through this one integration point. Prompt content lives in `.md` files — nothing is hardcoded in business logic.
+A single async LLM client (`llm/client.py`) and a file-based prompt registry (`llm/prompts/`) that all downstream pipeline stages share. Every phase that calls the LLM goes through this one integration point. Prompt content lives in `.md` files — nothing is hardcoded in business logic.
+
+This phase also decides whether LangGraph is the right orchestration layer (researcher evaluates and recommends).
 
 </domain>
 
 <decisions>
 ## Implementation Decisions
+
+### LLM Provider
+- **Fully replace Claude API with open-source models** — no Anthropic dependency
+- Run models **locally via Ollama** — no API keys, no third-party hosted services
+- Target: **fast + good enough** quality — smaller models (e.g., Llama 3 8B, Mistral 7B) are acceptable
+- The client must be Ollama-compatible (OpenAI-compatible API or `ollama` Python library)
+
+### Model Selection for Writing Tasks
+- Writing tasks (resume points, cover letter generation) need models with strong prose quality
+- Researcher should recommend 1-2 specific open-source models optimized for writing that run well locally
+- "Fast + good enough" means: acceptable quality at 7B–14B parameter scale; no need for 70B models
+
+### LangGraph Evaluation
+- **Research it and recommend** — don't commit yet
+- Researcher should evaluate: does LangGraph add value over a simple sequential pipeline for this project?
+- If LangGraph fits, planner includes it; if not, planner keeps a simple client + orchestration layer
+- Decision to be made in planning, based on research findings
 
 ### Caller Interface
 - Class-based: `LLMClient(config)` — callers instantiate or inject for testability
@@ -28,7 +47,7 @@ A single async Claude API client (`llm/client.py`) and a file-based prompt regis
 ### Error and Retry Behavior
 - Exhausted retries raise a custom `LLMError` exception (includes original error + attempt count)
 - 3 retries with exponential backoff: 1s, 2s, 4s delays; max retries configurable via `AppConfig`
-- Transient-only retry policy: retry on 429, 5xx, timeouts; fail immediately on 4xx auth/validation errors
+- Transient-only retry policy: retry on connection errors and timeouts; fail immediately on auth/validation errors
 - `asyncio.TimeoutError` is retryable — wraps in `LLMError` after max retries
 
 ### Prompt Loading
@@ -41,13 +60,17 @@ A single async Claude API client (`llm/client.py`) and a file-based prompt regis
 - System prompt handling (separate param vs parsed from prompt file)
 - Internal module structure within `llm/`
 - Exact Jinja2 environment configuration
+- Specific Ollama Python library vs raw HTTP calls
+- LangGraph adoption (based on researcher recommendation)
 
 </decisions>
 
 <specifics>
 ## Specific Ideas
 
-No specific requirements — open to standard approaches for the implementation details.
+- "I want to use open-source LLMs to do this" — Ollama locally, no external API dependency
+- Writing tasks (resume points, cover letter) need a model with good prose — researcher should surface the best options at 7B–14B scale
+- LangGraph interest is exploratory — let the research drive the decision
 
 </specifics>
 
