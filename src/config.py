@@ -7,17 +7,21 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class AppConfig(BaseSettings):
     """Application configuration loaded from environment variables / .env file.
 
-    Required fields raise ValidationError at startup if missing — fail fast,
-    never silently use wrong credentials.
+    All fields with defaults are optional — only required fields raise ValidationError
+    at startup if missing.
 
     Environment variable names use the APP_ prefix (case-insensitive), e.g.:
-      APP_ANTHROPIC_API_KEY=sk-ant-...
       APP_DATA_DIR=data
-      APP_MAX_ITERATIONS=5
+      APP_LLM_HOST=http://localhost:11434
+      APP_LLM_DEFAULT_MODEL=zephyr
     """
 
-    # Required — no default, will raise ValidationError if missing
-    anthropic_api_key: str = Field(..., description="Anthropic Claude API key (required)")
+    # Deprecated — was Anthropic API key; Ollama used instead.
+    # Kept optional so existing .env files with this var don't break.
+    anthropic_api_key: str | None = Field(
+        default=None,
+        description="Deprecated: was Anthropic API key; Ollama used instead",
+    )
 
     # Optional with sensible defaults
     data_dir: Path = Field(
@@ -30,14 +34,27 @@ class AppConfig(BaseSettings):
         le=20,
         description="Maximum resume TRIM iterations before giving up",
     )
-    llm_model: str = Field(
-        default="claude-opus-4-5",
-        description="Anthropic model ID to use for generation",
+
+    # Ollama LLM configuration
+    llm_host: str = Field(
+        default="http://localhost:11434",
+        description="Ollama server host URL",
+    )
+    llm_default_model: str = Field(
+        default="zephyr",
+        description="Default Ollama model for generation tasks (zephyr recommended for writing quality)",
     )
     llm_timeout_seconds: int = Field(
-        default=120,
+        default=60,
         ge=10,
-        description="Seconds before an LLM request times out",
+        le=300,
+        description="Seconds before an LLM request times out (local Ollama inference takes 10-60s)",
+    )
+    llm_max_retries: int = Field(
+        default=3,
+        ge=1,
+        le=10,
+        description="Maximum retry attempts on transient LLM errors before raising LLMError",
     )
 
     model_config = SettingsConfigDict(
