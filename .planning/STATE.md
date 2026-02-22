@@ -10,24 +10,24 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 1 of 7 (Storage and Configuration)
-Plan: 1 of TBD in current phase
+Plan: 2 of TBD in current phase
 Status: In progress
-Last activity: 2026-02-22 — Completed Plan 01 (JobRecord model and AppConfig)
+Last activity: 2026-02-22 — Completed Plan 02 (JobStore filesystem layer)
 
-Progress: [█░░░░░░░░░] 5%
+Progress: [██░░░░░░░░] 10%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
+- Total plans completed: 2
 - Average duration: 2 min
-- Total execution time: 0.03 hours
+- Total execution time: 0.07 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-storage-and-configuration | 1 | 2 min | 2 min |
+| 01-storage-and-configuration | 2 | 4 min | 2 min |
 
 **Recent Trend:**
 - Last 5 plans: 2 min
@@ -35,6 +35,7 @@ Progress: [█░░░░░░░░░] 5%
 
 *Updated after each plan completion*
 | Phase 01-storage-and-configuration P01 | 2 | 2 tasks | 5 files |
+| Phase 01-storage-and-configuration P02 | 2 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -54,6 +55,11 @@ Recent decisions affecting current work:
 - [01-01]: No custom to_json/from_json wrappers on JobRecord; call sites use model_dump_json() directly
 - [Phase 01-01]: use_enum_values=True in JobRecord.model_config so JSON output contains plain strings not enum objects
 - [Phase 01-01]: APP_ env prefix on AppConfig prevents collisions with system env vars; anthropic_api_key required with no default for fail-fast startup validation
+- [01-02]: No python-slugify dependency — slug sanitization uses stdlib re with full control and zero extra dependency
+- [01-02]: Path traversal pre-check before character stripping — catches '../../../etc' before re.sub makes it appear safe
+- [01-02]: Atomic write via tempfile+fsync+os.replace — job.json never left in partially-written state
+- [01-02]: write() enforces absolute job_dir with ValueError — prevents silent relative-path bugs when cwd differs
+- [01-02]: list_all() silently skips directories without valid job.json (DEBUG log) — robust to manually created dirs
 
 ### Pending Todos
 
@@ -68,5 +74,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 01-01-PLAN.md (JobRecord model and AppConfig) — ready for Plan 02 (JobStore filesystem layer)
+Stopped at: Completed 01-02-PLAN.md (JobStore filesystem layer) — Phase 1 data layer complete
 Resume file: None

@@ -12,7 +12,7 @@ Seven phases build the application in strict dependency order: infrastructure fi
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Storage and Configuration** - Pydantic job record model, JSON filesystem store, pydantic-settings config
+- [x] **Phase 1: Storage and Configuration** - Pydantic job record model, JSON filesystem store, pydantic-settings config (completed 2026-02-22)
 - [ ] **Phase 2: LLM Client and Prompt Registry** - Async Claude API client, prompt-as-file pattern, JSON extraction utility
 - [ ] **Phase 3: LaTeX Engine and PDF Analyzer** - Jinja2 LaTeX renderer, tectonic compiler, PyMuPDF page count detection
 - [ ] **Phase 4: Resume Generation Pipeline** - Full select → tweak → render → compile → TRIM loop with one-page enforcement
@@ -112,7 +112,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Storage and Configuration | 1/2 | In Progress|  |
+| 1. Storage and Configuration | 2/2 | Complete   | 2026-02-22 |
 | 2. LLM Client and Prompt Registry | 0/TBD | Not started | - |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
 | 4. Resume Generation Pipeline | 0/TBD | Not started | - |
