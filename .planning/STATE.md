@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-21)
 
 **Core value:** From job description to application-ready resume + cover letter in under 15 minutes, with zero manual formatting work.
-**Current focus:** Phase 2 — LLM Client and Prompt Registry
+**Current focus:** Phase 3 — LaTeX Engine and PDF Analyzer
 
 ## Current Position
 
-Phase: 2 of 7 (LLM Client and Prompt Registry)
-Plan: 3 of TBD in current phase
+Phase: 3 of 7 (LaTeX Engine and PDF Analyzer)
+Plan: 2 of TBD in current phase
 Status: In progress
-Last activity: 2026-02-22 — Completed Plan 03 (Jinja2 prompt registry with four seed templates)
+Last activity: 2026-02-22 — Completed Plan 02 (tectonic compiler and PyMuPDF analyzer)
 
-Progress: [███░░░░░░░] 20%
+Progress: [████░░░░░░] 30%
 
 ## Performance Metrics
 
@@ -40,6 +40,7 @@ Progress: [███░░░░░░░] 20%
 | Phase 02-llm-client-and-prompt-registry P01 | 2 | 2 tasks | 6 files |
 | Phase 02-llm-client-and-prompt-registry P02 | 2 | 2 tasks | 4 files |
 | Phase 02-llm-client-and-prompt-registry P03 | 2 | 2 tasks | 6 files |
+| Phase 03-latex-engine-and-pdf-analyzer P02 | 1 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -71,6 +72,9 @@ Recent decisions affecting current work:
 - [Phase 02-llm-client-and-prompt-registry]: Jinja2 FileSystemLoader with StrictUndefined — prompt variables must be explicitly supplied, catches mismatches at render time
 - [Phase 02-llm-client-and-prompt-registry]: Memory caching via module-level _JINJA_ENV — process restart required to pick up prompt file edits (acceptable for single-user CLI tool)
 - [Phase 02-llm-client-and-prompt-registry]: FileNotFoundError lists available prompts — callers get actionable debug info without inspecting filesystem
+- [Phase 03-latex-engine-and-pdf-analyzer]: compile_tex does not handle iter_N naming — caller names .tex file, tectonic derives PDF name from stem (thin wrapper)
+- [Phase 03-latex-engine-and-pdf-analyzer]: analyze_pdf page_height_inches field enables Phase 4 single-tall-page overflow detection (> 11.5in, tectonic Pitfall 3)
+- [Phase 03-latex-engine-and-pdf-analyzer]: check_ats_parsability returns True when pdftotext not installed — non-blocking, assume OK
 
 ### Pending Todos
 
@@ -85,5 +89,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 02-03-PLAN.md (Jinja2 prompt registry with four seed templates)
+Stopped at: Completed 03-02-PLAN.md (tectonic compiler and PyMuPDF analyzer)
 Resume file: None

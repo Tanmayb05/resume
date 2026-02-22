@@ -18,9 +18,9 @@
 
 - [x] **RES-01**: System selects relevant experiences, projects, and skills from master_resume.json based on the JD
 - [ ] **RES-02**: System renders a LaTeX .tex file from the selected content using resume_template.tex.j2
-- [ ] **RES-03**: System compiles the .tex file to PDF via tectonic
+- [x] **RES-03**: System compiles the .tex file to PDF via tectonic
 - [x] **RES-04**: System detects PDF page overflow (page_count > 1) and re-prompts AI to shorten the longest bullet points, then recompiles (TRIM mode — up to max_iterations)
-- [ ] **RES-05**: System saves final .tex and .pdf artifacts to data/<company_slug>/ with iteration tracking (_iter_N naming)
+- [x] **RES-05**: System saves final .tex and .pdf artifacts to data/<company_slug>/ with iteration tracking (_iter_N naming)
 - [x] **RES-06**: Generated resume content may only use material from master_resume.json — no fabricated experience, skills, tools, or metrics (enforced via post-generation entity validation)
 
 ### Cover Letter Generation
@@ -98,9 +98,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | JD-04 | Phase 5 | Pending |
 | RES-01 | Phase 4 | Complete |
 | RES-02 | Phase 3 | Pending |
-| RES-03 | Phase 3 | Pending |
+| RES-03 | Phase 3 | Complete |
 | RES-04 | Phase 4 | Complete |
-| RES-05 | Phase 3 | Pending |
+| RES-05 | Phase 3 | Complete |
 | RES-06 | Phase 4 | Complete |
 | COV-01 | Phase 5 | Complete |
 | COV-02 | Phase 5 | Complete |
