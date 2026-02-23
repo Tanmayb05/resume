@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Storage and Configuration** - Pydantic job record model, JSON filesystem store, pydantic-settings config (completed 2026-02-22)
 - [x] **Phase 2: LLM Client and Prompt Registry** - Async Ollama LLM client, prompt-as-file pattern, JSON extraction utility (completed 2026-02-22)
 - [ ] **Phase 3: LaTeX Engine and PDF Analyzer** - Jinja2 LaTeX renderer, tectonic compiler, PyMuPDF page count detection
-- [ ] **Phase 4: Resume Generation Pipeline** - Full select → tweak → render → compile → TRIM loop with one-page enforcement
+- [x] **Phase 4: Resume Generation Pipeline** - Full select → tweak → render → compile → TRIM loop with one-page enforcement (completed 2026-02-23)
 - [ ] **Phase 5: JD Intake, F1 Flag, and Cover Letter** - JobService, F1 keyword detection, CoverLetterService producing plain .txt
 - [ ] **Phase 6: FastAPI Web Layer** - HTTP routes, BackgroundTasks, HTMX, PDF and cover letter download endpoints
 - [ ] **Phase 7: Job Tracker UI** - Application list view with status badges
@@ -129,7 +129,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 1. Storage and Configuration | 2/2 | Complete   | 2026-02-22 |
 | 2. LLM Client and Prompt Registry | 3/3 | Complete   | 2026-02-22 |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
-| 4. Resume Generation Pipeline | 1/3 | In Progress|  |
+| 4. Resume Generation Pipeline | 3/3 | Complete   | 2026-02-23 |
 | 5. JD Intake, F1 Flag, and Cover Letter | 0/TBD | Not started | - |
 | 6. FastAPI Web Layer | 0/TBD | Not started | - |
 | 7. Job Tracker UI | 0/TBD | Not started | - |

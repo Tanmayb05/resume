@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 ## Current Position
 
 Phase: 4 of 7 (Resume Generation Pipeline)
-Plan: 1 of TBD in current phase
+Plan: 3 of 3 in current phase (phase complete)
 Status: In progress
-Last activity: 2026-02-23 — Completed Plan 01 (resume content selection module)
+Last activity: 2026-02-23 — Completed Plan 03 (ResumeService orchestrator)
 
-Progress: [████░░░░░░] 30%
+Progress: [████████░░] 60%
 
 ## Performance Metrics
 
@@ -42,6 +42,8 @@ Progress: [████░░░░░░] 30%
 | Phase 02-llm-client-and-prompt-registry P03 | 2 | 2 tasks | 6 files |
 | Phase 03-latex-engine-and-pdf-analyzer P02 | 1 | 2 tasks | 3 files |
 | Phase 04-resume-generation-pipeline P01 | 2 | 1 tasks | 3 files |
+| Phase 04-resume-generation-pipeline P02 | 4 | 2 tasks | 4 files |
+| Phase 04-resume-generation-pipeline P03 | 4 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -79,6 +81,9 @@ Recent decisions affecting current work:
 - [Phase 04-01]: jd_payload intentionally sparse in Phase 4 (basic fields only) — Phase 5 enriches responsibilities/qualifications via LLM JD parsing
 - [Phase 04-01]: LLM ranks experiences/projects; skills filtered via keyword matching only — avoids skill hallucination
 - [Phase 04-01]: select_resume.md updated: jd_fields input (not raw job_description), ranked_experiences/ranked_projects output, ONLY-from-master constraint
+- [Phase 04-03]: LaTeX imports deferred inside generate() — src.resume.service importable without tectonic installed
+- [Phase 04-03]: Validation runs once on final output only (not per TRIM iteration) — avoids redundant checks
+- [Phase 04-03]: ResumeService is stateless — config+llm at construction; job_dir flows in per-call from job_record
 
 ### Pending Todos
 
@@ -93,5 +98,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-23
-Stopped at: Completed 04-01-PLAN.md (resume content selection module)
+Stopped at: Completed 04-03-PLAN.md (ResumeService orchestrator — Phase 4 complete)
 Resume file: None
