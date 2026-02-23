@@ -79,7 +79,12 @@ Plans:
   3. The loop terminates cleanly on: (a) page count == 1, (b) reaching max_iterations, (c) two consecutive compilation failures — it never hangs indefinitely
   4. Generated resume content contains no skills, tools, companies, or metrics that are absent from `master_resume.json` — post-generation entity validation catches violations (RES-06)
   5. The final PDF is exactly one page with minimal whitespace when the loop exits successfully
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Content selection module (selection.py + updated select_resume.md prompt) using LLM ranking + keyword skills filter
+- [ ] 04-02-PLAN.md — TRIM loop (trimmer.py + updated trim_resume.md) + entity validator (validator.py) with structured field diff
+- [ ] 04-03-PLAN.md — ResumeService orchestrator (service.py) wiring selection, trim loop, validation; end-to-end smoke test
 
 ### Phase 5: JD Intake, F1 Flag, and Cover Letter
 **Goal**: Users can submit a job description and receive a parsed job record with a visible F1 sponsorship signal, and the system can generate a validated cover letter
@@ -124,7 +129,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 1. Storage and Configuration | 2/2 | Complete   | 2026-02-22 |
 | 2. LLM Client and Prompt Registry | 3/3 | Complete   | 2026-02-22 |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
-| 4. Resume Generation Pipeline | 0/TBD | Not started | - |
+| 4. Resume Generation Pipeline | 0/3 | Not started | - |
 | 5. JD Intake, F1 Flag, and Cover Letter | 0/TBD | Not started | - |
 | 6. FastAPI Web Layer | 0/TBD | Not started | - |
 | 7. Job Tracker UI | 0/TBD | Not started | - |
