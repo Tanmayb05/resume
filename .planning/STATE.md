@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-21)
 
 **Core value:** From job description to application-ready resume + cover letter in under 15 minutes, with zero manual formatting work.
-**Current focus:** Phase 3 — LaTeX Engine and PDF Analyzer
+**Current focus:** Phase 4 — Resume Generation Pipeline
 
 ## Current Position
 
-Phase: 3 of 7 (LaTeX Engine and PDF Analyzer)
-Plan: 2 of TBD in current phase
+Phase: 4 of 7 (Resume Generation Pipeline)
+Plan: 1 of TBD in current phase
 Status: In progress
-Last activity: 2026-02-22 — Completed Plan 02 (tectonic compiler and PyMuPDF analyzer)
+Last activity: 2026-02-23 — Completed Plan 01 (resume content selection module)
 
 Progress: [████░░░░░░] 30%
 
@@ -41,6 +41,7 @@ Progress: [████░░░░░░] 30%
 | Phase 02-llm-client-and-prompt-registry P02 | 2 | 2 tasks | 4 files |
 | Phase 02-llm-client-and-prompt-registry P03 | 2 | 2 tasks | 6 files |
 | Phase 03-latex-engine-and-pdf-analyzer P02 | 1 | 2 tasks | 3 files |
+| Phase 04-resume-generation-pipeline P01 | 2 | 1 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,9 @@ Recent decisions affecting current work:
 - [Phase 03-latex-engine-and-pdf-analyzer]: compile_tex does not handle iter_N naming — caller names .tex file, tectonic derives PDF name from stem (thin wrapper)
 - [Phase 03-latex-engine-and-pdf-analyzer]: analyze_pdf page_height_inches field enables Phase 4 single-tall-page overflow detection (> 11.5in, tectonic Pitfall 3)
 - [Phase 03-latex-engine-and-pdf-analyzer]: check_ats_parsability returns True when pdftotext not installed — non-blocking, assume OK
+- [Phase 04-01]: jd_payload intentionally sparse in Phase 4 (basic fields only) — Phase 5 enriches responsibilities/qualifications via LLM JD parsing
+- [Phase 04-01]: LLM ranks experiences/projects; skills filtered via keyword matching only — avoids skill hallucination
+- [Phase 04-01]: select_resume.md updated: jd_fields input (not raw job_description), ranked_experiences/ranked_projects output, ONLY-from-master constraint
 
 ### Pending Todos
 
@@ -88,6 +92,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-22
-Stopped at: Completed 03-02-PLAN.md (tectonic compiler and PyMuPDF analyzer)
+Last session: 2026-02-23
+Stopped at: Completed 04-01-PLAN.md (resume content selection module)
 Resume file: None
