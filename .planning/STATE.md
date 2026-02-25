@@ -101,6 +101,7 @@ Recent decisions affecting current work:
 ### Pending Todos
 
 1. **Enforce cover letter word count 300-400 words** — Update cover letter prompt and generation pipeline to strictly target 300-400 words (currently says ≤450 words). Files: `templates/cover_letter_prompt.md`
+2. **Convert cover letter output to PDF** — Add PDF conversion step after cover letter generation; output PDF alongside resume PDF. Files: `src/jd/service.py`, `scripts/run.py`
 
 ### Blockers/Concerns
 
