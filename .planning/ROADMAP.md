@@ -135,6 +135,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 2. LLM Client and Prompt Registry | 3/3 | Complete   | 2026-02-22 |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
 | 4. Resume Generation Pipeline | 3/3 | Complete   | 2026-02-23 |
-| 5. JD Intake, F1 Flag, and Cover Letter | 0/3 | Not started | - |
+| 5. JD Intake, F1 Flag, and Cover Letter | 1/3 | In Progress|  |
 | 6. FastAPI Web Layer | 0/TBD | Not started | - |
 | 7. Job Tracker UI | 0/TBD | Not started | - |

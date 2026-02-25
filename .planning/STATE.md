@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-21)
 
 **Core value:** From job description to application-ready resume + cover letter in under 15 minutes, with zero manual formatting work.
-**Current focus:** Phase 4 — Resume Generation Pipeline
+**Current focus:** Phase 5 — JD Intake, F1 Flag, and Cover Letter
 
 ## Current Position
 
-Phase: 4 of 7 (Resume Generation Pipeline)
-Plan: 3 of 3 in current phase (phase complete)
+Phase: 5 of 7 (JD Intake, F1 Flag, and Cover Letter)
+Plan: 3 of 3 in current phase (plan 03 complete)
 Status: In progress
-Last activity: 2026-02-23 — Completed Plan 03 (ResumeService orchestrator)
+Last activity: 2026-02-25 — Completed Plan 03 (CoverLetterService orchestrator)
 
-Progress: [████████░░] 60%
+Progress: [█████████░] 70%
 
 ## Performance Metrics
 
@@ -44,6 +44,7 @@ Progress: [████████░░] 60%
 | Phase 04-resume-generation-pipeline P01 | 2 | 1 tasks | 3 files |
 | Phase 04-resume-generation-pipeline P02 | 4 | 2 tasks | 4 files |
 | Phase 04-resume-generation-pipeline P03 | 4 | 2 tasks | 3 files |
+| Phase 05-jd-intake-f1-flag-and-cover-letter P03 | 2 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -84,6 +85,10 @@ Recent decisions affecting current work:
 - [Phase 04-03]: LaTeX imports deferred inside generate() — src.resume.service importable without tectonic installed
 - [Phase 04-03]: Validation runs once on final output only (not per TRIM iteration) — avoids redundant checks
 - [Phase 04-03]: ResumeService is stateless — config+llm at construction; job_dir flows in per-call from job_record
+- [Phase 05-03]: getattr(job_record, 'employment_type', None) used as safe fallback since employment_type not yet on JobRecord (added in 05-01)
+- [Phase 05-03]: Word count retry loop accepts last result after MAX_WORD_COUNT_RETRIES with warning — never fails on word count; caller always gets a CoverLetterResult
+- [Phase 05-03]: Post-processing runs after retry loop on final output only — avoids word count drift from cleaning during retry
+- [Phase 05-03]: store.write() failure on cover_letter_path update is non-fatal (warning log only) — cover_letter.txt on disk is the source of truth
 
 ### Pending Todos
 
@@ -97,6 +102,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-23
-Stopped at: Completed 04-03-PLAN.md (ResumeService orchestrator — Phase 4 complete)
+Last session: 2026-02-25
+Stopped at: Completed 05-03-PLAN.md (CoverLetterService orchestrator)
 Resume file: None
