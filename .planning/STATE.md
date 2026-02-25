@@ -100,8 +100,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- Build end-to-end pipeline runner script (tooling)
-- Update resume generation prompt with ATS optimization system (general)
+None.
 
 ### Blockers/Concerns
 

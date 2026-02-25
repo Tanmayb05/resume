@@ -82,7 +82,23 @@ async def select_resume_content(
         )
         raise  # Caller (ResumeService in Plan 03) decides whether to retry
 
-    # Step 4: Extract top-N experiences and projects from ranking
+    # Step 4: Log ATS keyword mapping and reasoning if present
+    keyword_mapping = ranking.get("keyword_mapping", {})
+    if keyword_mapping:
+        logger.info(
+            "ATS keyword mapping — direct: %s | partial: %s | excluded: %s",
+            keyword_mapping.get("direct_match", []),
+            [
+                f"{p['jd_keyword']}→{p['resume_equivalent']}" if isinstance(p, dict) else p
+                for p in keyword_mapping.get("partial_match", [])
+            ],
+            keyword_mapping.get("excluded_keywords", []),
+        )
+    reasoning = ranking.get("reasoning_summary")
+    if reasoning:
+        logger.info("ATS reasoning: %s", reasoning)
+
+    # Step 5: Extract top-N experiences and projects from ranking
     selected_experiences = _select_top_experiences(
         ranking.get("ranked_experiences", []),
         master_resume.get("work_experience", []),
@@ -100,10 +116,10 @@ async def select_resume_content(
         len(selected_projects),
     )
 
-    # Step 5: Skills keyword filter
+    # Step 6: Skills keyword filter
     selected_skills = _filter_skills(master_resume, jd_payload.get("skills", []))
 
-    # Step 6: Assemble resume_json_template.json-compatible payload
+    # Step 7: Assemble resume_json_template.json-compatible payload
     selected_content = _assemble_payload(
         master_resume=master_resume,
         selected_experiences=selected_experiences,
@@ -111,13 +127,13 @@ async def select_resume_content(
         selected_skills=selected_skills,
     )
 
-    # Step 7: Save to selected_resume.json in the job directory
+    # Step 8: Save to selected_resume.json in the job directory
     job_dir = Path(job_record.job_dir)
     output_path = job_dir / "selected_resume.json"
     output_path.write_text(json.dumps(selected_content, indent=2))
     logger.info("select_resume_content: wrote selected_resume.json to %s", output_path)
 
-    # Step 8: Return the assembled payload
+    # Step 9: Return the assembled payload
     return selected_content
 
 
