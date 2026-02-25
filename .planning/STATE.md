@@ -44,6 +44,7 @@ Progress: [█████████░] 70%
 | Phase 04-resume-generation-pipeline P01 | 2 | 1 tasks | 3 files |
 | Phase 04-resume-generation-pipeline P02 | 4 | 2 tasks | 4 files |
 | Phase 04-resume-generation-pipeline P03 | 4 | 2 tasks | 3 files |
+| Phase 05-jd-intake-f1-flag-and-cover-letter P01 | 5 | 2 tasks | 3 files |
 | Phase 05-jd-intake-f1-flag-and-cover-letter P03 | 2 | 2 tasks | 3 files |
 
 ## Accumulated Context
@@ -85,6 +86,9 @@ Recent decisions affecting current work:
 - [Phase 04-03]: LaTeX imports deferred inside generate() — src.resume.service importable without tectonic installed
 - [Phase 04-03]: Validation runs once on final output only (not per TRIM iteration) — avoids redundant checks
 - [Phase 04-03]: ResumeService is stateless — config+llm at construction; job_dir flows in per-call from job_record
+- [Phase 05-01]: detect_f1_sponsorship() lives in src/jd/service.py as module-level function — matches Phase 4 pattern; move to f1_detector.py only if keyword list grows past ~30 patterns
+- [Phase 05-01]: Double lookbehind (?<!no )(?<!no visa ) on positive sponsorship patterns prevents false positive on "no visa sponsorship available" substring matches
+- [Phase 05-01]: "must already be authorized" added as negative signal — handles "We sponsor H-1B but must already be authorized" conflicting case correctly returning None
 - [Phase 05-03]: getattr(job_record, 'employment_type', None) used as safe fallback since employment_type not yet on JobRecord (added in 05-01)
 - [Phase 05-03]: Word count retry loop accepts last result after MAX_WORD_COUNT_RETRIES with warning — never fails on word count; caller always gets a CoverLetterResult
 - [Phase 05-03]: Post-processing runs after retry loop on final output only — avoids word count drift from cleaning during retry
@@ -103,5 +107,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 05-03-PLAN.md (CoverLetterService orchestrator)
+Stopped at: Completed 05-01-PLAN.md (F1 sponsorship keyword detector — TDD)
 Resume file: None
