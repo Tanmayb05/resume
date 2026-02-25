@@ -1,0 +1,32 @@
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[
+    top=1in,
+    bottom=1in,
+    left=1.25in,
+    right=1.25in,
+]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[
+    pdftitle={Cover Letter},
+    pdfauthor={((*- name | latex_escape -*))},
+    colorlinks=true,
+    urlcolor=black
+]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+\begin{document}
+
+((% for paragraph in paragraphs %))
+((% if paragraph %))
+((* paragraph | latex_escape *))
+
+((% endif %))
+((% endfor %))
+
+\end{document}

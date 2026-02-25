@@ -1,8 +1,8 @@
 """CoverLetterService orchestrator — generates a 300-400 word cover letter.
 
 Coordinates LLM generation with word-count retry loop, preamble strip,
-em-dash cleanup, and atomic file write. Follows the same stateless async
-orchestrator pattern as ResumeService.
+em-dash cleanup, atomic file write, and PDF compilation via tectonic.
+Follows the same stateless async orchestrator pattern as ResumeService.
 
 Usage:
     service = CoverLetterService(config, llm_client)
@@ -11,12 +11,16 @@ Usage:
 import logging
 import os
 import re
+import subprocess
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
+
 from src.config import AppConfig
+from src.latex.renderer import latex_escape
 from src.llm.client import LLMClient
 from src.llm.errors import LLMError
 from src.llm.utils import load_prompt
@@ -46,12 +50,14 @@ class CoverLetterResult:
     Attributes:
         success:    True when cover letter was generated and saved to disk.
         txt_path:   Path to the saved cover_letter.txt (set on success).
+        pdf_path:   Path to the compiled cover_letter.pdf (set on success, or None if compilation failed).
         word_count: Final word count of the generated cover letter.
         error:      Error description on hard failure.
     """
 
     success: bool
     txt_path: Optional[Path] = None
+    pdf_path: Optional[Path] = None
     word_count: Optional[int] = None
     error: Optional[str] = None
 
@@ -139,6 +145,93 @@ def _save_cover_letter_txt(text: str, job_dir: Path) -> Path:
 
 
 # ---------------------------------------------------------------------------
+# PDF generation helpers
+# ---------------------------------------------------------------------------
+
+_TEMPLATES_DIR = Path(__file__).parent.parent.parent / "templates"
+_COVER_LETTER_AUTHOR = "Tanmay Bhuskute"
+
+
+def _render_cover_letter_tex(text: str, output_path: Path) -> Path:
+    """Render cover letter plain text to a compilable .tex file atomically.
+
+    Splits the text on blank lines to produce paragraphs, then renders
+    via cover_letter_template.tex.j2. The write is atomic (tempfile + replace).
+
+    Args:
+        text:        Cleaned cover letter text (plain text, newline-delimited).
+        output_path: Full path for the output .tex file. Parent must exist.
+
+    Returns:
+        output_path (the path of the written .tex file).
+    """
+    env = Environment(
+        loader=FileSystemLoader(str(_TEMPLATES_DIR)),
+        undefined=StrictUndefined,
+        variable_start_string="((*",
+        variable_end_string="*))",
+        block_start_string="((%",
+        block_end_string="%))",
+        comment_start_string="((#",
+        comment_end_string="#))",
+        trim_blocks=True,
+        lstrip_blocks=True,
+    )
+    env.filters["latex_escape"] = latex_escape
+
+    template = env.get_template("cover_letter_template.tex.j2")
+    paragraphs = [p.strip() for p in re.split(r'\n{2,}', text)]
+    tex_content = template.render(name=_COVER_LETTER_AUTHOR, paragraphs=paragraphs)
+
+    output_path = Path(output_path)
+    tmp_fd, tmp_path = tempfile.mkstemp(dir=output_path.parent, suffix=".tex")
+    try:
+        with os.fdopen(tmp_fd, "w", encoding="utf-8") as f:
+            f.write(tex_content)
+            f.flush()
+            os.fsync(f.fileno())
+    except Exception:
+        os.unlink(tmp_path)
+        raise
+    os.replace(tmp_path, output_path)
+    return output_path
+
+
+def _compile_cover_letter_pdf(tex_path: Path, job_dir: Path) -> Optional[Path]:
+    """Compile a cover letter .tex file to PDF via tectonic.
+
+    Args:
+        tex_path: Path to the .tex file to compile.
+        job_dir:  Output directory for the compiled PDF.
+
+    Returns:
+        Path to the PDF on success, None on any failure.
+    """
+    try:
+        result = subprocess.run(
+            ["tectonic", "--outdir", str(job_dir), str(tex_path)],
+            capture_output=True,
+            text=True,
+            timeout=60,
+            check=True,
+        )
+        pdf_path = job_dir / (tex_path.stem + ".pdf")
+        if pdf_path.exists():
+            return pdf_path
+        logger.warning("tectonic succeeded but PDF not found at %s", pdf_path)
+        return None
+    except subprocess.CalledProcessError as exc:
+        logger.warning("Cover letter PDF compilation failed: %s", exc.stderr[:300] if exc.stderr else "no output")
+        return None
+    except subprocess.TimeoutExpired:
+        logger.warning("Cover letter PDF compilation timed out")
+        return None
+    except FileNotFoundError:
+        logger.warning("tectonic not found in PATH — skipping PDF compilation")
+        return None
+
+
+# ---------------------------------------------------------------------------
 # Orchestrator
 # ---------------------------------------------------------------------------
 
@@ -220,7 +313,20 @@ class CoverLetterService:
         except Exception as exc:
             return CoverLetterResult(success=False, error=f"File write failed: {exc}")
 
-        # Step 5: Update JobRecord with cover_letter_path and re-persist
+        # Step 5: Compile cover_letter.pdf via tectonic
+        pdf_path: Optional[Path] = None
+        try:
+            tex_path = job_dir / "cover_letter.tex"
+            _render_cover_letter_tex(text, tex_path)
+            pdf_path = _compile_cover_letter_pdf(tex_path, job_dir)
+            if pdf_path:
+                logger.info("Cover letter PDF: %s", pdf_path)
+            else:
+                logger.warning("Cover letter PDF compilation produced no output")
+        except Exception as exc:
+            logger.warning("Cover letter PDF step failed (non-fatal): %s", exc)
+
+        # Step 6: Update JobRecord with cover_letter_path and re-persist
         # Write file first, then update record (never update record before file exists)
         job_record.cover_letter_path = str(txt_path)
         try:
@@ -232,6 +338,7 @@ class CoverLetterService:
         return CoverLetterResult(
             success=True,
             txt_path=txt_path,
+            pdf_path=pdf_path,
             word_count=final_word_count,
         )
 

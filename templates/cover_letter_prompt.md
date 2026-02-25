@@ -1,5 +1,5 @@
 Cover Letter Prompt - Tanmay
-Write a professional, concise cover letter (≤450 words) tailored to the provided job description and my CV. The letter must follow the exact structure below, use a humble and positive tone, and only include verifiable details from my resume. Personalize the letter with the role and organization name where appropriate, and make it sound human-written rather than AI-generated.Don't lie and don't use dashes like “-” or em dashes.
+Write a professional, concise cover letter (300-400 words) tailored to the provided job description and my CV. The letter must follow the exact structure below, use a humble and positive tone, and only include verifiable details from my resume. Personalize the letter with the role and organization name where appropriate, and make it sound human-written rather than AI-generated. Target exactly 300-400 words. Count words before finalizing. Don't lie and don't use dashes like “-” or em dashes.
 Format & Structure:
 Salutation
  Begin with:
