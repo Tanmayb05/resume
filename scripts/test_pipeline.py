@@ -84,6 +84,18 @@ async def main() -> "ResumeGenerationResult":
     llm_client = LLMClient(config)
     print(f"LLMClient created (host={config.llm_host})")
 
+    # --- Load JD from input/jd.txt ---
+    jd_path = PROJECT_ROOT / "input" / "jd.txt"
+    if not jd_path.exists():
+        print(f"ERROR: input/jd.txt not found at {jd_path}")
+        print("Please paste your job description into input/jd.txt before running.")
+        sys.exit(1)
+    jd_text = jd_path.read_text(encoding="utf-8").strip()
+    if not jd_text:
+        print("ERROR: input/jd.txt is empty. Please paste a job description into it.")
+        sys.exit(1)
+    print(f"Loaded input/jd.txt ({len(jd_text)} chars)")
+
     # --- Create test job directory ---
     test_dir = PROJECT_ROOT / "data" / "test-phase4"
     test_dir.mkdir(parents=True, exist_ok=True)
@@ -95,13 +107,7 @@ async def main() -> "ResumeGenerationResult":
         role="Software Engineer",
         location="San Francisco, CA",
         job_dir=str(test_dir.resolve()),
-        jd_text=(
-            "We are looking for a Python developer with FastAPI and AWS experience. "
-            "The ideal candidate has strong skills in Python, FastAPI, PostgreSQL, "
-            "Docker, and AWS. Experience with machine learning frameworks such as "
-            "PyTorch or TensorFlow is a plus. You will design and implement scalable "
-            "REST APIs and microservices."
-        ),
+        jd_text=jd_text,
     )
     print(f"JobRecord: {job_record.role} @ {job_record.company}")
     print()

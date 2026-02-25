@@ -85,7 +85,7 @@ Each task was committed atomically:
 1. **Task 1: CoverLetterService with word-count retry loop and em-dash strip** - `6ecc4c0` (feat)
 2. **Task 2: Unit tests for CoverLetterService pure logic functions** - `45629df` (test)
 
-**Plan metadata:** (pending — created in final commit)
+**Plan metadata:** `544225c` (docs: complete plan)
 
 ## Files Created/Modified
 - `src/cover_letter/__init__.py` - Package exports: CoverLetterService, CoverLetterResult

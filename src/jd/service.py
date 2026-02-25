@@ -219,15 +219,31 @@ class JDService:
         job_dir = store.new_job_dir(parsed["company"], parsed["role"])
         job_dir.mkdir(parents=True, exist_ok=True)
 
-        # Step 5 — Construct JobRecord (only fields that exist on the model)
+        # Step 5 — Construct JobRecord with all parsed fields
+        skills = parsed.get("skills") or {}
         record = JobRecord(
             company=parsed["company"],
             role=parsed["role"],
-            location=parsed["location"],
+            location=parsed["location"] if isinstance(parsed["location"], str) else ", ".join(parsed["location"]),
             job_dir=str(job_dir),
             jd_text=jd_text,
             f1_sponsorship_available=f1_flag,
             status=JobStatus.DISCOVERED,
+            employment_type=parsed.get("employment_type"),
+            department=parsed.get("department"),
+            description=parsed.get("description"),
+            responsibilities=parsed.get("responsibilities") or [],
+            requirements=parsed.get("requirements") or [],
+            qualifications=parsed.get("qualifications") or [],
+            skills_technical=skills.get("technical") or [],
+            skills_soft=skills.get("soft") or [],
+            education=parsed.get("education") or [],
+            experience_required=parsed.get("experience_required"),
+            benefits=parsed.get("benefits") or [],
+            salary_range=parsed.get("salary_range"),
+            date_posted=parsed.get("date_posted"),
+            application_deadline=parsed.get("application_deadline"),
+            visa_keywords=parsed.get("visa_keywords") or [],
         )
 
         # Step 6 — Persist

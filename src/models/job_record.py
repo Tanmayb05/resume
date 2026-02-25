@@ -1,6 +1,6 @@
 from datetime import datetime
 from enum import Enum
-from typing import Optional
+from typing import Dict, List, Optional
 from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -53,6 +53,70 @@ class JobRecord(BaseModel):
         default=None,
         description="Raw pasted job-description text, stored for reference",
     )
+
+    # --- Parsed JD fields ---
+    employment_type: Optional[str] = Field(
+        default=None,
+        description="full-time | internship | contract",
+    )
+    department: Optional[str] = Field(
+        default=None,
+        description="Department or team name from the JD",
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="Role summary / overview paragraph from the JD",
+    )
+    responsibilities: List[str] = Field(
+        default_factory=list,
+        description="Bullet-point responsibilities from the JD",
+    )
+    requirements: List[str] = Field(
+        default_factory=list,
+        description="Must-have requirements from the JD",
+    )
+    qualifications: List[str] = Field(
+        default_factory=list,
+        description="Nice-to-have / preferred qualifications from the JD",
+    )
+    skills_technical: List[str] = Field(
+        default_factory=list,
+        description="Technical skills extracted from the JD",
+    )
+    skills_soft: List[str] = Field(
+        default_factory=list,
+        description="Soft skills extracted from the JD",
+    )
+    education: List[str] = Field(
+        default_factory=list,
+        description="Education requirements from the JD",
+    )
+    experience_required: Optional[str] = Field(
+        default=None,
+        description="Experience level required (e.g. '2+ years', 'internship-level')",
+    )
+    benefits: List[str] = Field(
+        default_factory=list,
+        description="Benefits listed in the JD",
+    )
+    salary_range: Optional[str] = Field(
+        default=None,
+        description="Salary range from the JD, or 'Not disclosed'",
+    )
+    date_posted: Optional[str] = Field(
+        default=None,
+        description="Date the job was posted, if mentioned",
+    )
+    application_deadline: Optional[str] = Field(
+        default=None,
+        description="Application deadline, if mentioned",
+    )
+    visa_keywords: List[str] = Field(
+        default_factory=list,
+        description="Raw visa/sponsorship keyword phrases found in the JD",
+    )
+
+    # --- F1 detection ---
     f1_sponsorship_available: Optional[bool] = Field(
         default=None,
         description="Whether the role offers F-1 visa sponsorship (None = not yet detected)",

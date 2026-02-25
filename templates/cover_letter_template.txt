@@ -1,0 +1,25 @@
+Dear Hiring Committee,
+
+I saw the job post on the HPE Careers page and thought I'd be a good fit for it. I am a graduate from the University of Cincinnati, seeking a role as Software Engineering Intern at Hewlett Packard Enterprise. With my background in cloud automation and software engineering at Siemens, I am excited about contributing to HPE’s mission of advancing edge-to-cloud solutions.
+
+Here are reasons that make me a great fit for the role:
+
+1. I bring strong experience in coding, debugging, and system enhancements. At Siemens, I automated AWS workflows with Python (Boto3), cutting manual provisioning and replacing legacy Ruby scripts. I also deployed 44 production upgrades in 4 months with zero downtime, showcasing my ability to deliver reliable, high-quality code.
+
+2. The role emphasizes testing and debugging, which aligns with my background as a Quality Coach and SonarQube Specialist. By implementing automated testing pipelines, I increased code coverage by 200% and ensured production stability.
+
+3. I have practical experience collaborating across global teams and using DevOps tools. For example, I led Blue-Green deployments with Ansible, reducing downtime by 50%, and mentored 5 junior engineers, strengthening documentation and collaboration.
+
+4. My academic work complements this role’s requirements. At UC, I am pursuing advanced coursework in Deep Learning, Database Theory, and Intelligent Data Analysis, building a strong foundation in designing and implementing scalable software systems.
+
+I am available to work with you after my graduation in May 2025. As a Master’s student at University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to HPE in this role.
+
+Please find my CV attached below. I look forward to hearing from you. I admire HPE’s bold vision for accelerating edge-to-cloud innovation and would be excited to be part of a team driving such impactful solutions.
+
+Regards,
+
+Tanmay Bhuskute
+
+bhuskutv@mail.uc.edu | tanmay.v.bhuskute@gmail.com | +1 (732) 858-3027
+
+259 Hosea Ave, Apt D, Cincinnati, OH 45220
