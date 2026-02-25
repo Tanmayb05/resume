@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-02-21)
 Phase: 5 of 7 (JD Intake, F1 Flag, and Cover Letter)
 Plan: 3 of 3 in current phase (plan 03 complete)
 Status: In progress
-Last activity: 2026-02-25 — Completed Plan 03 (CoverLetterService orchestrator)
+Last activity: 2026-02-25 — Completed Plan 02 (JDService orchestrator)
 
 Progress: [█████████░] 70%
 
@@ -46,6 +46,7 @@ Progress: [█████████░] 70%
 | Phase 04-resume-generation-pipeline P03 | 4 | 2 tasks | 3 files |
 | Phase 05-jd-intake-f1-flag-and-cover-letter P01 | 5 | 2 tasks | 3 files |
 | Phase 05-jd-intake-f1-flag-and-cover-letter P03 | 2 | 2 tasks | 3 files |
+| Phase 05-jd-intake-f1-flag-and-cover-letter P02 | 2 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -93,6 +94,9 @@ Recent decisions affecting current work:
 - [Phase 05-03]: Word count retry loop accepts last result after MAX_WORD_COUNT_RETRIES with warning — never fails on word count; caller always gets a CoverLetterResult
 - [Phase 05-03]: Post-processing runs after retry loop on final output only — avoids word count drift from cleaning during retry
 - [Phase 05-03]: store.write() failure on cover_letter_path update is non-fatal (warning log only) — cover_letter.txt on disk is the source of truth
+- [Phase 05-02]: JobRecord has no skills_required/responsibilities/requirements fields — only company/role/location/jd_text/f1_sponsorship_available stored
+- [Phase 05-02]: parse_job_description.md has no strict_mode parameter — attempt 2 appends IMPORTANT instruction to base prompt instead of passing template variable
+- [Phase 05-02]: JobStore constructor takes data_dir: Path not AppConfig — callers pass config.data_dir directly
 
 ### Pending Todos
 
@@ -107,5 +111,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 05-01-PLAN.md (F1 sponsorship keyword detector — TDD)
+Stopped at: Completed 05-02-PLAN.md (JDService orchestrator)
 Resume file: None

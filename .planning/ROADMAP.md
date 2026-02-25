@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: LLM Client and Prompt Registry** - Async Ollama LLM client, prompt-as-file pattern, JSON extraction utility (completed 2026-02-22)
 - [ ] **Phase 3: LaTeX Engine and PDF Analyzer** - Jinja2 LaTeX renderer, tectonic compiler, PyMuPDF page count detection
 - [x] **Phase 4: Resume Generation Pipeline** - Full select → tweak → render → compile → TRIM loop with one-page enforcement (completed 2026-02-23)
-- [ ] **Phase 5: JD Intake, F1 Flag, and Cover Letter** - JobService, F1 keyword detection, CoverLetterService producing plain .txt
+- [x] **Phase 5: JD Intake, F1 Flag, and Cover Letter** - JobService, F1 keyword detection, CoverLetterService producing plain .txt (completed 2026-02-25)
 - [ ] **Phase 6: FastAPI Web Layer** - HTTP routes, BackgroundTasks, HTMX, PDF and cover letter download endpoints
 - [ ] **Phase 7: Job Tracker UI** - Application list view with status badges
 
@@ -135,6 +135,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 2. LLM Client and Prompt Registry | 3/3 | Complete   | 2026-02-22 |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
 | 4. Resume Generation Pipeline | 3/3 | Complete   | 2026-02-23 |
-| 5. JD Intake, F1 Flag, and Cover Letter | 2/3 | In Progress|  |
+| 5. JD Intake, F1 Flag, and Cover Letter | 3/3 | Complete   | 2026-02-25 |
 | 6. FastAPI Web Layer | 0/TBD | Not started | - |
 | 7. Job Tracker UI | 0/TBD | Not started | - |
