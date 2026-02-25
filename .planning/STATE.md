@@ -100,7 +100,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-None.
+1. **Enforce cover letter word count 300-400 words** — Update cover letter prompt and generation pipeline to strictly target 300-400 words (currently says ≤450 words). Files: `templates/cover_letter_prompt.md`
 
 ### Blockers/Concerns
 
