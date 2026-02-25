@@ -96,7 +96,12 @@ Plans:
   3. A cover letter is generated from the JD context plus selected resume content, is between 300 and 400 words (system regenerates if outside range), contains no em-dashes, and uses the correct graduation date ("May 2026" for full-time, "Dec 2026" for internships) (COV-01, COV-02, COV-04, COV-05)
   4. The cover letter is saved as a plain `.txt` file to `data/<company_slug>/` — no docx, no LibreOffice dependency (COV-03)
   5. The company slug used for directory naming is sanitized against path traversal (no `../`, no special characters) before any file is written
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — F1 keyword detector TDD: detect_f1_sponsorship() with H-1B normalization + opt-in false positive guard (JD-03)
+- [ ] 05-02-PLAN.md — JDService orchestrator: LLM parse with retry, required field validation, atomic persist via JobStore (JD-01, JD-02, JD-04)
+- [ ] 05-03-PLAN.md — CoverLetterService: word-count retry loop, em-dash strip, preamble strip, cover_letter.txt atomic write (COV-01, COV-02, COV-03, COV-04, COV-05)
 
 ### Phase 6: FastAPI Web Layer
 **Goal**: Users can operate the entire pipeline through a browser — submitting JDs, triggering generation, and downloading artifacts — without touching the command line
@@ -130,6 +135,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 2. LLM Client and Prompt Registry | 3/3 | Complete   | 2026-02-22 |
 | 3. LaTeX Engine and PDF Analyzer | 0/TBD | Not started | - |
 | 4. Resume Generation Pipeline | 3/3 | Complete   | 2026-02-23 |
-| 5. JD Intake, F1 Flag, and Cover Letter | 0/TBD | Not started | - |
+| 5. JD Intake, F1 Flag, and Cover Letter | 0/3 | Not started | - |
 | 6. FastAPI Web Layer | 0/TBD | Not started | - |
 | 7. Job Tracker UI | 0/TBD | Not started | - |
