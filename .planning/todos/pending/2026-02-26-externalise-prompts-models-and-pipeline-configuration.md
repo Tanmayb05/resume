@@ -42,11 +42,20 @@ Several prompts, config knobs, and behavioural settings are hardcoded inside Pyt
 
 8. **`config.yaml` vs `src/config.py` split** — there are two separate config systems. `config.yaml` is read by something (unclear), while `src/config.py` uses pydantic-settings for .env. These should be unified or clearly separated to avoid drift.
 
+## Decisions
+
+| # | Item | Decision |
+|---|------|----------|
+| 1-4 | Resume, JD parser, company extractor, expansion prompts | Separate `.md` file per prompt in `templates/` — same pattern as `cover_letter_prompt.md` |
+| 5 | `expand_sections = ["WORK EXPERIENCE"]` in `main.py` | Add `expand_sections_default` to `config.yaml` under `resume:` |
+| 6 | Cover letter cleaning rules (preamble regex, bullet char) | Move to `src/config.py` as pydantic fields |
+| 7 | `resume_generation_config.json` (exists but unused) | Wire into `generate_latex_resume` — inject rules into prompt |
+| 8 | Dual config systems (`config.yaml` + `src/config.py`) | Consolidate into `src/config.py` only — delete `config.yaml` |
+| + | Per-task model | One global `llm_default_model` — no per-task model split |
+
 ## Solution
 
-1. Create prompt template files for each hardcoded prompt (resume, JD parser, company extractor, expansion prompt).
-2. Load them in the respective functions the same way `generate_cover_letter` already loads `cover_letter_prompt.md`.
-3. Either wire `resume_generation_config.json` into `generate_latex_resume` or remove it.
-4. Move `expand_sections` default to `config.yaml` under `resume:`.
-5. Audit `config.yaml` vs `src/config.py` — consolidate into one config source of truth.
-6. Optionally move cleaning rules to a config block.
+1. **Prompt files** — create `templates/resume_generation_prompt.md`, `templates/jd_parser_prompt.md`, `templates/company_name_extractor_prompt.md`, `templates/resume_expansion_prompt.md`. Load at runtime the same way `generate_cover_letter` loads `cover_letter_prompt.md`.
+2. **Wire `resume_generation_config.json`** — read it in `generate_latex_resume` and inject the rules JSON block into the resume generation prompt.
+3. **`src/config.py`** — add `expand_sections_default: list[str]`, `cover_letter_bullet_char: str`, `cover_letter_preamble_patterns: list[str]` fields. Remove `_clean_cover_letter` hardcoded constants.
+4. **Delete `config.yaml`** — migrate all remaining values (Ollama URL, model_id, whitespace_threshold, max_optimization_iterations, template/data paths, expand_sections_default) into `src/config.py` pydantic fields with `APP_` env prefix. Update `.env.example`.
