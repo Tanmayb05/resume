@@ -57,6 +57,34 @@ class AppConfig(BaseSettings):
         description="Maximum retry attempts on transient LLM errors before raising LLMError",
     )
 
+    # Resume pipeline settings (migrated from config.yaml resume: block)
+    whitespace_threshold: float = Field(
+        default=40.0,
+        ge=0.0,
+        le=100.0,
+        description="Whitespace percentage above which resume expansion is triggered",
+    )
+    expand_sections_default: list[str] = Field(
+        default=["WORK EXPERIENCE"],
+        description="Section names passed to the LLM when whitespace expansion is needed",
+    )
+
+    # Cover letter post-processing (was hardcoded in _clean_cover_letter)
+    cover_letter_bullet_char: str = Field(
+        default="•",
+        description="Character to use for bullet points in cover letters (replaces asterisks)",
+    )
+    cover_letter_preamble_patterns: list[str] = Field(
+        default=[r"^.*?(?=Dear\s+Hiring)"],
+        description="Regex patterns to strip LLM preamble text before the salutation",
+    )
+
+    # Path settings (migrated from config.yaml paths: block)
+    templates_dir: str = Field(
+        default="templates",
+        description="Directory containing prompt templates and LaTeX templates",
+    )
+
     model_config = SettingsConfigDict(
         env_prefix="APP_",
         env_file=".env",
