@@ -97,10 +97,13 @@ Recent decisions affecting current work:
 - [Phase 05-02]: JobRecord has no skills_required/responsibilities/requirements fields — only company/role/location/jd_text/f1_sponsorship_available stored
 - [Phase 05-02]: parse_job_description.md has no strict_mode parameter — attempt 2 appends IMPORTANT instruction to base prompt instead of passing template variable
 - [Phase 05-02]: JobStore constructor takes data_dir: Path not AppConfig — callers pass config.data_dir directly
+- [quick-1]: config.yaml deleted — all values now in AppConfig with APP_ env prefix; single config system replaces dual config.yaml + .env split
+- [quick-1]: Prompts loaded fresh on each invocation via open() — no caching, consistent with cover_letter_prompt pattern; edit templates without restarting
+- [quick-1]: expand_sections_default, cover_letter_bullet_char, cover_letter_preamble_patterns, templates_dir, whitespace_threshold added to AppConfig as configurable knobs
 
 ### Pending Todos
 
-- [2026-02-26] Externalise prompts, models, and pipeline configuration (tooling) — `2026-02-26-externalise-prompts-models-and-pipeline-configuration.md`
+(none)
 
 ### Blockers/Concerns
 
@@ -111,5 +114,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 05-02-PLAN.md (JDService orchestrator)
+Stopped at: Completed quick-1 (Externalise prompts, models, and pipeline configuration)
 Resume file: None
