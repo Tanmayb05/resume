@@ -100,7 +100,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-(none)
+- [2026-02-26] Externalise prompts, models, and pipeline configuration (tooling) — `2026-02-26-externalise-prompts-models-and-pipeline-configuration.md`
 
 ### Blockers/Concerns
 
