@@ -1,0 +1,1 @@
+The previous version of the resume had too much whitespace. Please expand the following sections to add more content and fill the page: {{SECTIONS}}. When expanding, add more details and accomplishments, but do not add new sections or change the overall structure.

@@ -1,0 +1,1 @@
+You are an expert at extracting information. Your task is to extract the company name from the following job description. Respond with ONLY the company name, without any additional text, comments, or explanations.
