@@ -105,6 +105,12 @@ Recent decisions affecting current work:
 
 (none)
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 1 | Externalise prompts, models, and pipeline configuration | 2026-02-26 | 5a814db | [1-externalise-prompts-models-and-pipeline-](./quick/1-externalise-prompts-models-and-pipeline-/) |
+
 ### Blockers/Concerns
 
 - [Research]: Whitespace threshold (40%) for EXPAND trigger not validated for current template — calibrate empirically during Phase 4 with 5 sample resumes before shipping
