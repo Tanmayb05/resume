@@ -9,9 +9,10 @@ from llm import parse_jd_to_json, generate_latex_resume, generate_cover_letter, 
 from resume_generator import read_latex_template, compile_latex_to_pdf
 from cover_letter_generator import save_as_docx, convert_docx_to_pdf
 from pdf_analyzer import analyze_whitespace
-from config import config
+from config import AppConfig
 from logger import get_logger
 
+config = AppConfig()
 logger = get_logger(__name__)
 
 def check_dependencies():
@@ -34,7 +35,7 @@ def check_dependencies():
 
     # Check if ollama is running
     try:
-        requests.get(config.ollama_url.replace("/api/generate", ""))
+        requests.get(config.llm_host)
     except requests.exceptions.ConnectionError:
         logger.critical("Ollama is not running. Please start Ollama and try again.")
         exit(1)
@@ -42,7 +43,7 @@ def check_dependencies():
 
 def main():
     check_dependencies()
-    
+
     parser = argparse.ArgumentParser(description="Intelligent Job Application Tailoring System")
     parser.add_argument("--jd", required=True, help="Path to the job description file")
     parser.add_argument("--no-optimization", action="store_true", help="Skip whitespace optimization")
@@ -71,12 +72,12 @@ def main():
 
 
         # Read the resume template
-        latex_template_path = os.path.join(config.templates_path, "resume_template.tex")
+        latex_template_path = os.path.join(config.templates_dir, "resume_template.tex")
         logger.debug(f"Reading resume template from: {latex_template_path}")
         resume_template_content = read_latex_template(latex_template_path)
 
         # Create the output directory
-        output_dir = os.path.join(config.data_path, company_name)
+        output_dir = os.path.join(str(config.data_dir), company_name)
         os.makedirs(output_dir, exist_ok=True)
         logger.debug(f"Output directory created at: {output_dir}")
 
@@ -111,8 +112,8 @@ def main():
         else:
             # --- Whitespace Optimization Loop ---
             expand_sections = []
-            for i in range(config.max_optimization_iterations):
-                logger.info(f"--- Optimization Iteration {i+1}/{config.max_optimization_iterations} ---")
+            for i in range(config.max_iterations):
+                logger.info(f"--- Optimization Iteration {i+1}/{config.max_iterations} ---")
 
                 # Generate the tailored LaTeX resume
                 logger.info("Generating tailored resume...")
@@ -135,7 +136,7 @@ def main():
                     logger.info(f"Successfully created PDF (iter {i+1}): {pdf_output_path}")
                 except (ValueError, FileNotFoundError, subprocess.CalledProcessError) as e:
                     logger.error(f"Failed to generate PDF (iter {i+1}). Please check the logs.", exc_info=True)
-                    continue # Try next iteration
+                    continue  # Try next iteration
 
                 # Analyze whitespace
                 whitespace_percentage = analyze_whitespace(pdf_output_path)
@@ -146,7 +147,7 @@ def main():
                     break
                 else:
                     logger.warning("Whitespace is too high. Will attempt to expand sections.")
-                    expand_sections = ["WORK EXPERIENCE"]
+                    expand_sections = config.expand_sections_default
             else:
                 logger.warning("Max optimization iterations reached. The resume may still have too much whitespace.")
 

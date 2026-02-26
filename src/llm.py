@@ -1,9 +1,10 @@
 
 import json
 import requests
-from config import config
+from config import AppConfig
 from logger import get_logger
 
+config = AppConfig()
 logger = get_logger(__name__)
 
 class OllamaError(Exception):
@@ -19,16 +20,18 @@ def prompt_ollama(prompt: str) -> str:
 
     Returns:
         The response from the LLM.
-    
+
     Raises:
         OllamaError: If there is an error communicating with the Ollama API.
     """
-    logger.debug(f"Prompting Ollama with model {config.model_id}")
+    ollama_url = f"{config.llm_host}/api/generate"
+    logger.debug(f"Prompting Ollama with model {config.llm_default_model}")
     try:
         response = requests.post(
-            config.ollama_url,
-            json={"model": config.model_id, "prompt": prompt, "stream": False},
-            headers={"Content-Type": "application/json"}
+            ollama_url,
+            json={"model": config.llm_default_model, "prompt": prompt, "stream": False},
+            headers={"Content-Type": "application/json"},
+            timeout=config.llm_timeout_seconds,
         )
         response.raise_for_status()
         logger.debug("Ollama request successful.")
@@ -56,23 +59,27 @@ def parse_jd_to_json(jd_text: str) -> dict:
         logger.error(f"Job description schema not found at: {schema_path}")
         raise
 
+    template_path = "templates/jd_parser_prompt.md"
+    with open(template_path) as f:
+        system_instructions = f.read()
+
     prompt = f"""
-    You are an expert JSON parsing agent. Your task is to parse the following job description and extract the information into a JSON object that strictly follows this schema:
-    {schema}
+{system_instructions}
+{schema}
 
-    Job Description:
-    ---
-    {jd_text}
-    ---
+Job Description:
+---
+{jd_text}
+---
 
-    Respond with ONLY the JSON object, without any additional text, comments, or explanations.
-    """
-    
+Respond with ONLY the JSON object, without any additional text, comments, or explanations.
+"""
+
     try:
         llm_response = prompt_ollama(prompt)
     except OllamaError as e:
         raise OllamaError(f"Failed to parse job description to JSON: {e}") from e
-    
+
     if not llm_response:
         logger.warning("LLM returned an empty response for the JD to JSON parsing.")
         return {}
@@ -85,7 +92,7 @@ def parse_jd_to_json(jd_text: str) -> dict:
     except json.JSONDecodeError as e:
         logger.error(f"Error decoding JSON from LLM response: {e}")
         logger.debug(f"LLM Response was:\n{llm_response}")
-        return {} # Return empty dict on failure
+        return {}  # Return empty dict on failure
 
 def generate_latex_resume(jd_json: dict, resume_template: str, expand_sections: list = None) -> str:
     """
@@ -99,61 +106,55 @@ def generate_latex_resume(jd_json: dict, resume_template: str, expand_sections: 
     Returns:
         The tailored resume as a LaTeX string.
     """
+    # Load resume generation config rules
+    config_path = "templates/resume_generation_config.json"
+    with open(config_path) as f:
+        resume_config = json.load(f)
+    rules_json = json.dumps(resume_config, indent=2)
+
+    # Build expansion sub-prompt if needed
     expansion_prompt = ""
     if expand_sections:
-        expansion_prompt = f"""
-        The previous version of the resume had too much whitespace. Please expand the following sections to add more content and fill the page:
-        {', '.join(expand_sections)}
+        exp_template_path = "templates/resume_expansion_prompt.md"
+        with open(exp_template_path) as f:
+            exp_template = f.read()
+        # Replace placeholder with actual section list
+        sections_str = ', '.join(expand_sections)
+        expansion_prompt = exp_template.replace("{{SECTIONS}}", sections_str)
 
-        When expanding, add more details and accomplishments, but do not add new sections or change the overall structure.
-        """
+    # Load main generation prompt
+    template_path = "templates/resume_generation_prompt.md"
+    with open(template_path) as f:
+        system_instructions = f.read()
 
     prompt = f"""
-    You are an expert resume writer and career coach. Your task is to tailor the provided resume template to the given job description.
-    You must return a complete, valid LaTeX document that compiles without errors.
+{system_instructions}
 
-    Here is the structured Job Description:
-    <job_description>
-    {json.dumps(jd_json, indent=2)}
-    </job_description>
+Tailoring rules to apply:
+<tailoring_rules>
+{rules_json}
+</tailoring_rules>
 
-    Here is the Resume Template:
-    <resume_template>
-    {resume_template}
-    </resume_template>
+Here is the structured Job Description:
+<job_description>
+{json.dumps(jd_json, indent=2)}
+</job_description>
 
-    {expansion_prompt}
+Here is the Resume Template:
+<resume_template>
+{resume_template}
+</resume_template>
 
-    CRITICAL REQUIREMENTS:
-    1. **PRESERVE EXACT STRUCTURE**: Keep the EXACT same LaTeX structure, environments, commands, and formatting as the template. Do NOT modify any LaTeX commands, packages, or custom environments (like \\begin{{highlights}}, \\begin{{twocolentry}}, etc.).
+{expansion_prompt}
 
-    2. **ONE PAGE ONLY**: The resume MUST fit on exactly ONE page. Do not add content that would overflow to a second page.
+Respond with ONLY the full LaTeX code for the tailored resume, without any additional text, comments, or explanations.
+"""
 
-    3. **MAINTAIN WHITESPACE**: Keep the same amount of whitespace and spacing as the original template. Do NOT reduce spacing or make the resume more dense. The current whitespace in the template is intentional and desired.
-
-    4. **SECTIONS TO KEEP**: Keep ALL existing sections: EDUCATION, TECHNICAL SKILLS, WORK EXPERIENCE, PROJECTS AND RESEARCH, EXTRACURRICULAR ACTIVITIES. Do NOT add or remove sections.
-
-    5. **TAILORING GUIDELINES**:
-       - **Technical Skills**: Reorder skills to prioritize those mentioned in the job description. Keep all skills, just reorder them.
-       - **Work Experience**: Rewrite bullet points to emphasize accomplishments relevant to the job description. Keep the same number of bullet points per job. Use action verbs and quantify achievements.
-       - **Projects**: Reorder projects to show most relevant ones first. You may slightly adjust bullet point text to highlight relevant technologies.
-       - **Education & Extracurricular**: Keep these sections mostly unchanged.
-
-    6. **DO NOT**:
-       - Add new work experiences, projects, or entries that don't exist in the template
-       - Change dates, company names, job titles, or school names
-       - Modify the header (name, contact info)
-       - Add a Summary/Objective section if one doesn't exist
-       - Change the document class, packages, or custom LaTeX commands
-
-    Respond with ONLY the full LaTeX code for the tailored resume, without any additional text, comments, or explanations.
-    """
-    
     try:
         llm_response = prompt_ollama(prompt)
     except OllamaError as e:
         raise OllamaError(f"Failed to generate tailored resume: {e}") from e
-    
+
     if not llm_response:
         logger.warning("LLM returned an empty response for the resume generation.")
         return ""
@@ -174,24 +175,27 @@ def extract_company_name(jd_text: str) -> str:
     Returns:
         The extracted company name.
     """
-    prompt = f"""
-    You are an expert at extracting information. Your task is to extract the company name from the following job description.
-    Respond with ONLY the company name, without any additional text, comments, or explanations.
+    template_path = "templates/company_name_extractor_prompt.md"
+    with open(template_path) as f:
+        system_instructions = f.read()
 
-    Job Description:
-    ---
-    {jd_text}
-    ---
-    """
+    prompt = f"""
+{system_instructions}
+
+Job Description:
+---
+{jd_text}
+---
+"""
     try:
         company_name = prompt_ollama(prompt)
     except OllamaError as e:
         raise OllamaError(f"Failed to extract company name: {e}") from e
-    
+
     if not company_name:
         logger.warning("LLM returned an empty response for the company name extraction.")
         return ""
-        
+
     return company_name.strip()
 
 def generate_cover_letter(jd_json: dict, tailored_resume: str) -> str:
@@ -262,18 +266,13 @@ def _clean_cover_letter(text: str) -> str:
     """
     import re
 
-    # Remove common preambles
-    preamble_patterns = [
-        r'^.*?(?=Dear\s+Hiring)',  # Remove everything before "Dear Hiring"
-    ]
-
-    for pattern in preamble_patterns:
+    for pattern in config.cover_letter_preamble_patterns:
         text = re.sub(pattern, '', text, flags=re.DOTALL | re.IGNORECASE)
 
     # Remove escape characters before %
     text = text.replace('\\%', '%')
 
-    # Replace asterisk bullet points with proper bullets
-    text = re.sub(r'^\s*\*\s+', '• ', text, flags=re.MULTILINE)
+    # Replace asterisk bullet points with configured bullet char
+    text = re.sub(r'^\s*\*\s+', config.cover_letter_bullet_char + ' ', text, flags=re.MULTILINE)
 
     return text.strip()
