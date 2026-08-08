@@ -1,0 +1,53 @@
+{
+  "experience_ids": [
+    "siemens-industry-software-software-development-engineer",
+    "siemens-industry-software-software-developer-intern"
+  ],
+  "project_ids": [
+    "policypilot-medical-benefit-policy-intelligence-portal",
+    "spotify-personal-analytics-platform"
+  ],
+  "skills": {
+    "developer_tools": ["AWS", "Jenkins", "Git", "GitLab CI/CD", "Docker", "Kubernetes", "ArgoCD", "Helm", "Terraform", "Linux", "Bash", "SonarQube", "Azure", "Google Cloud Platform"],
+    "programming": ["Python", "Go", "Java", "SQL", "JavaScript", "TypeScript", "C/C++"],
+    "web_backend": ["REST APIs", "FastAPI", "Flask", "Django", "Node.js", "React", "HTML/CSS"],
+    "databases": ["PostgreSQL", "MySQL"]
+  },
+  "experience_overrides": {
+    "siemens-industry-software-software-development-engineer": {
+      "bullets": [
+        "Automated Teamcenter X infrastructure workflows with **Python (Boto3)**, replacing legacy Ruby scripts and reducing deployment time by **40%** across AWS environments",
+        "Executed **44 production environment upgrades** in 4 months, diagnosing and resolving live infrastructure issues across Linux, EC2, databases, and Teamcenter X services",
+        "Designed Ansible-based Blue-Green deployment framework, reducing production upgrade downtime by **50%** while enabling reliable rollback and recovery",
+        "Migrated 40+ production environments from process-based deployments to **Kubernetes** using ArgoCD, Helm, **GitLab CI/CD**, Amazon EFS, and HashiCorp Vault to modernize deployment architecture",
+        "Served as Quality Coach and **SonarQube** Specialist for the Agile Release Train, increasing automated code coverage from 35% to **78%** by enforcing coding standards and CI/CD quality gates",
+        "Mentored 5 software engineers through structured onboarding, technical documentation, and standardized development practices, accelerating team productivity"
+      ]
+    },
+    "siemens-industry-software-software-developer-intern": {
+      "bullets": [
+        "Automated provisioning of AWS resources with **Terraform**, reducing deployment time by **30%**",
+        "Developed Go + Terratest framework, catching **95%** of misconfigurations pre-production",
+        "Optimized DevOps workflows with **Ansible**, reducing environment setup time from hours to minutes",
+        "Enhanced infrastructure validation with Terragrunt ensuring **100%** successful Terraform runs"
+      ]
+    }
+  },
+  "project_overrides": {
+    "policypilot-medical-benefit-policy-intelligence-portal": {
+      "bullets": [
+        "Built Docker-based multi-stage deployment on Railway with health-check endpoints (**/api/health, /health**) and auto-restart on failure for a full-stack TypeScript healthcare app",
+        "Designed 17-tool MCP server with **Zod schema validation** at every data boundary, eliminating a class of runtime type-mismatch bugs across all external tool calls",
+        "Set up GitHub Actions CI/CD pipeline (test to build to deploy to health-check gate) with Vitest unit/integration tests and axe-core accessibility coverage"
+      ]
+    },
+    "spotify-personal-analytics-platform": {
+      "bullets": [
+        "Engineered a 4-stage **Python ETL pipeline** processing 71K+ streaming events with custom rate limiting and exponential-backoff retry handling against a third-party API",
+        "Implemented checkpointing and multi-source API fallback with automatic failure-based source disabling to keep long-running ingestion jobs resilient to mid-run failures",
+        "Designed a **PostgreSQL** analytics schema with materialized views, composite/partial indexes, and 16 SQL RPC functions, enabling low-latency pre-aggregated queries"
+      ]
+    }
+  },
+  "extracurricular_indices": [0, 1]
+}

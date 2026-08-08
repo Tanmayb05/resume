@@ -43,3 +43,4 @@ logs/
 data/*
 !data/.gitkeep
 last_command.txt
+scraper/output/

@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "templateName": "compact_2col_ats_resume",
+    "version": "1.0.0",
+    "engine": "pdflatex",
+    "output": {
+      "format": "latex",
+      "targetPages": 1,
+      "atsReadable": true
+    }
+  },
+  "style": {
+    "document": {
+      "class": "article",
+      "options": [
+        "9pt",
+        "letterpaper"
+      ]
+    },
+    "page": {
+      "geometry": {
+        "ignoreHeadFoot": true,
+        "topCm": 0.5,
+        "bottomCm": 0.5,
+        "leftCm": 0.7,
+        "rightCm": 0.7,
+        "footskipCm": 0.2
+      }
+    },
+    "typography": {
+      "fontFamily": "charter",
+      "raggedRight": true,
+      "paragraphIndentPt": 0,
+      "topSkipPt": 0,
+      "pageStyle": "empty",
+      "pageNumbering": "gobble"
+    },
+    "layout": {
+      "columnSepCm": 0.15,
+      "rightDateColumnWidthCm": 4.5
+    },
+    "sections": {
+      "uppercaseTitles": true,
+      "bold": true,
+      "size": "large",
+      "ruleUnderTitle": true,
+      "spacing": {
+        "leftPt": -1,
+        "topCm": 0.05,
+        "bottomCm": 0.05
+      }
+    },
+    "lists": {
+      "bullet": "small_bullet",
+      "highlights": {
+        "topsepCm": 0.05,
+        "parsepPt": 0,
+        "partopsepPt": 0,
+        "itemsepPt": 0,
+        "leftmarginPt": 10
+      }
+    },
+    "constraints": {
+      "singlePage": true,
+      "noGraphics": true,
+      "noTablesForLayout": true,
+      "noIcons": true,
+      "noEmDash": true,
+      "noFirstPerson": true
+    }
+  },
+  "header": {
+    "name": "Tanmay Bhuskute",
+    "nameFontPt": 16,
+    "nameLineHeightPt": 26,
+    "separator": "|",
+    "contactLine": [
+      {
+        "kind": "email",
+        "text": "tanmay.v.bhuskute@gmail.com"
+      },
+      {
+        "kind": "linkedin",
+        "text": "linkedin.com/in/tanmay-bhuskute"
+      },
+      {
+        "kind": "github",
+        "text": "github.com/Tanmayb05"
+      },
+      {
+        "kind": "phone",
+        "text": "+1 (732) 858-3027"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "education",
+      "title": "EDUCATION",
+      "entries": [
+        {
+          "degree": "Master of Science in Computer Science",
+          "institution": "University of Cincinnati",
+          "dates": "Aug 2024 - Dec 2026",
+          "courseworkLine": "Relevant Coursework: Advanced Algorithms, Deep Learning, Intelligent Data Analysis, Database Theory."
+        },
+        {
+          "degree": "Bachelor of Engineering in Computer Engineering",
+          "institution": "AISSMS College of Engineering",
+          "dates": "Aug 2018 - Jul 2022",
+          "courseworkLine": "Relevant Coursework: Data Mining, Data Analytics, Machine Learning, Object-Oriented Programming."
+        }
+      ]
+    },
+    {
+      "type": "technical_skills",
+      "title": "TECHNICAL SKILLS",
+      "lines": [
+        {
+          "label": "Programming & Scripting",
+          "items": [
+            "Java",
+            "Python",
+            "JavaScript",
+            "TypeScript",
+            "C/C++",
+            "SQL",
+            "Go"
+          ]
+        },
+        {
+          "label": "Web Backend",
+          "items": [
+            "React",
+            "Node.js",
+            "Django",
+            "Flask",
+            "FastAPI",
+            "HTML/CSS",
+            "REST APIs"
+          ]
+        },
+        {
+          "label": "Databases",
+          "items": [
+            "PostgreSQL",
+            "MySQL"
+          ]
+        },
+        {
+          "label": "Developer Tools",
+          "items": [
+            "Git",
+            "GitLab CI/CD",
+            "Jenkins",
+            "AWS",
+            "Docker",
+            "Kubernetes",
+            "ArgoCD",
+            "Helm",
+            "Terraform",
+            "Linux",
+            "Bash",
+            "SonarQube",
+            "Azure",
+            "Google Cloud Platform"
+          ]
+        },
+        {
+          "label": "Ai Data",
+          "items": [
+            "Gemini",
+            "Vertex AI",
+            "PyTorch",
+            "TensorFlow",
+            "scikit-learn",
+            "LangChain",
+            "pandas",
+            "NumPy"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "work_experience",
+      "title": "WORK EXPERIENCE",
+      "entries": [
+        {
+          "company": "Siemens Industry Software",
+          "role": "Software Development Engineer",
+          "dates": "Jul 2022 - Jun 2024",
+          "techStack": [
+            "AWS",
+            "Python",
+            "Boto3",
+            "REST APIs",
+            "Hashicorp Vault",
+            "Ansible",
+            "GitLab CI/CD",
+            "Shell",
+            "Kubernetes",
+            "ArgoCD",
+            "Helm",
+            "Amazon EFS"
+          ],
+          "bullets": [
+            "Automated Teamcenter X infrastructure workflows with Python (Boto3), replacing legacy Ruby scripts and reducing deployment time by 40% across AWS environments",
+            "Executed 44 production environment upgrades in 4 months, diagnosing and resolving live infrastructure issues across Linux, EC2, databases, and Teamcenter X services",
+            "Designed Ansible-based Blue-Green deployment framework, reducing production upgrade downtime by 50% while enabling reliable rollback and recovery",
+            "Migrated 40+ production environments from process-based deployments to Kubernetes using ArgoCD, Helm, GitLab CI/CD, Amazon EFS, and HashiCorp Vault to modernize deployment architecture",
+            "Served as Quality Coach and SonarQube Specialist for the Agile Release Train, increasing automated code coverage from 35% to 78% by enforcing coding standards and CI/CD quality gates",
+            "Mentored 5 software engineers through structured onboarding, technical documentation, and standardized development practices, accelerating team productivity"
+          ]
+        },
+        {
+          "company": "Government of Maharashtra, Water Resource Department",
+          "role": "Software Developer Intern",
+          "dates": "Sep 2021 - Dec 2021",
+          "techStack": [
+            "React.js",
+            "MySQL",
+            "Full-Stack Development",
+            "UI/UX Design",
+            "Process Automation"
+          ],
+          "bullets": [
+            "Built and deployed a full-stack React and MySQL workflow application that digitized departmental record management, automated manual processes, and improved operational efficiency by 40%"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "projects_and_research",
+      "title": "PROJECTS AND RESEARCH",
+      "entries": [
+        {
+          "title": "PolicyPilot - Medical Benefit Policy Intelligence Portal",
+          "date": "May 2026",
+          "techBracket": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "Express",
+            "Google Gemini",
+            "MCP",
+            "Docker",
+            "Zod",
+            "FHIR",
+            "Railway"
+          ],
+          "bullets": [
+            "Architected evidence-grounded RAG pipeline over Google Gemini 2.5-flash, forcing citation-backed answers to eliminate hallucination in high-stakes healthcare eligibility decisions.",
+            "Designed 17-tool MCP (Model Context Protocol) server exposing structured LLM tool-calling for PA extraction, patient-readiness evaluation, and cross-payer comparison, consumable by external AI agents.",
+            "Engineered confidence-scoring system (evidence count, negation detection, subjectivity flags) driving human-review triage, migrating from Ollama to Gemini after benchmarking hallucination rates."
+          ]
+        },
+        {
+          "title": "Memory-Augmented LLM Approach for Android Bug Reproduction from Video Reports",
+          "date": "Feb 2026 - Present",
+          "techBracket": [
+            "Python",
+            "Google Gemini 2.5 Pro",
+            "Vertex AI",
+            "ADB",
+            "uiautomator2",
+            "scikit-image"
+          ],
+          "bullets": [
+            "Proposed two-stage memory-augmented LLM pipeline for reproducing Android GUI bugs from screen recordings, decoupling video understanding from device automation to avoid repeated per-scene VLM inference.",
+            "Evaluated against ViBR, a published VLM-based frame-accurate scene-replay approach (GPT-4o + GroundingDINO + CLIP), across 53 successful runs on 20+ real-world Android apps.",
+            "Demonstrated 25.7x latency reduction (39.4s vs 1012.1s avg per run) while preserving task-completion fidelity, suggesting memory reuse is a viable alternative to exhaustive scene-by-scene VLM replay."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "extracurricular",
+      "title": "EXTRACURRICULAR ACTIVITIES",
+      "bullets": [
+        "Finalist at RevolutionUC 2025 Hackathon, among **300 participants from 31 schools**",
+        "Earned **SAFe Practitioner 5.1 Certification** (Mar 2023)"
+      ]
+    }
+  ]
+}

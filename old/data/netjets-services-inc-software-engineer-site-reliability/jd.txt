@@ -1,0 +1,61 @@
+Title:  Software Engineer (Site Reliability)
+Company:  NetJets Services, Inc.
+Area of Interest:  Information Technology
+Location:  Columbus, OH, US, 43219
+Req ID:  17608
+Join the NetJets Team
+NetJets, the global private aviation leader for more than 60 years, provides the pinnacle of private travel, defined by a signature commitment to unwavering safety, personalized service, and reliable global access. Discover why NetJets is the ultimate career destination, offering exceptional benefits and growth opportunities.
+
+Purpose of Position
+Are you a curious and passionate engineer who desires to drive innovation in software and applications or data solutions for the undisputed leader in private aviation? Do you want a high level of ownership in solving complex problems? Does the challenge of designing software or data solutions  that leverage groundbreaking automation for airline operations, customer experience and logistics appeal to you?  If so we are excited to have you join our software engineering ranks.
+
+As part of our Site Reliability Engineering team, you will design, build, and optimize systems that power the leader in private aviation—ensuring high availability, performance, and efficiency across airline operations, customer experience, and logistics platforms. If you're motivated by solving large-scale reliability challenges, reducing toil through automation, and continuously improving system health, we're excited to have you on our team.
+
+Tasks and Responsibilities
+Drive the design and implementation of reliable, scalable software solutions, ensuring new features and enhancements meet availability, resilience, and performance standards.
+Partner with cross-functional teams—including architecture, infrastructure operations, cybersecurity, and data—to design and implement systems that balance business functionality with operational reliability and risk mitigation.
+Build and maintain automated CI/CD pipelines to enable consistent, repeatable, and efficient build, test, and deployment processes.
+Embed quality and security into the software lifecycle by implementing automated testing, code quality checks, vulnerability scanning, and pipeline enforcement (e.g., unit test coverage, static analysis, and compliance checks).
+Develop and enhance observability and operational practices (monitoring, alerting, logging) to proactively detect and respond to system issues.
+Work within an agile environment to iteratively deliver high-impact improvements while continuously improving system reliability, performance, and operational efficiency.
+Note:
+It is not possible to list all required job duties on this form. There may be other important duties assigned, depending on the position. For a list of essential job functions, please refer to the essential functions document for this job.
+
+Education
+Bachelor's in Computer Science or Computer Engineering
+Certifications and Licenses
+Years of Experience
+2-4 years of experience
+Core Competencies
+Service-Oriented
+Curiosity
+Collaboration
+Adaptability
+Strives For Positive Results
+Knowledge, Skills, Abilities and Other (KSAOs)
+2–4 years of experience in software engineering or related roles, with a strong understanding of system design, scalability, and production support.
+Proficient in scripting and programming (e.g., Python) to automate operational tasks, reduce toil, and improve system reliability is a must. Experience with API integration and tooling is preferred.
+Working knowledge of cloud platforms (e.g., AWS), including compute, networking, and storage services. Familiarity with infrastructure-as-code and distributed system architectures is a plus.
+Exposure to supporting Jenkins, WebSphere, BitBucket, Git, Nexus, Tomcat, and APM Tools (e.g., Datadog).
+Strong communication and collaboration skills, with the ability to lead or contribute effectively during incident response, root cause analysis (RCA), and cross-team coordination.
+How NetJets Supports You
+NetJets is proud to provide a variety of attractive benefits to our employees, including many at no cost. Employees have access to no cost options including Medical, Dental, and Vision benefits, with access to robust networks of nationwide providers. NetJets offers benefits so you can LIVEWELL—a comprehensive package to support your Mind, Body, and Life.
+
+Our comprehensive suite of benefits include:
+
+Medical, Dental, and Vision
+Healthcare Advocacy
+Employee Assistance Program
+Flexible Spending Accounts
+Health Savings Account with annual employer contribution
+Wellness Programs & Discounts
+Paid Time Off
+Parental Leave of Absence
+Life and Accident Insurance
+Voluntary benefits (financial protection plans)
+401(k) plan, with 67% of every dollar you contribute matched by NetJets
+Short and Long-Term Disability
+Legal Plan
+Identity Theft Protection Plans
+Pet Insurance
+Family & Caregiving Support

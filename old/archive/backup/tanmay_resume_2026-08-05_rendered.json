@@ -1,0 +1,296 @@
+{
+  "summary": "Software Engineer with experience designing, automating, and operating production cloud infrastructure at Siemens. Built deployment platforms, Kubernetes workflows, and CI/CD automation that improved deployment speed and reliability. Currently researching LLMs for Android testing and bug reproduction as a Master's student at the University of Cincinnati.",
+  "meta": {
+    "templateName": "compact_2col_ats_resume",
+    "version": "1.0.0",
+    "engine": "pdflatex",
+    "output": {
+      "format": "latex",
+      "targetPages": 1,
+      "atsReadable": true
+    }
+  },
+  "style": {
+    "document": {
+      "class": "article",
+      "options": ["9pt", "letterpaper"]
+    },
+    "page": {
+      "geometry": {
+        "ignoreHeadFoot": true,
+        "topCm": 0.5,
+        "bottomCm": 0.5,
+        "leftCm": 0.7,
+        "rightCm": 0.7,
+        "footskipCm": 0.2
+      }
+    },
+    "typography": {
+      "fontFamily": "charter",
+      "raggedRight": true,
+      "paragraphIndentPt": 0,
+      "topSkipPt": 0,
+      "pageStyle": "empty",
+      "pageNumbering": "gobble"
+    },
+    "layout": {
+      "columnSepCm": 0.15,
+      "rightDateColumnWidthCm": 4.5
+    },
+    "sections": {
+      "uppercaseTitles": true,
+      "bold": true,
+      "size": "large",
+      "ruleUnderTitle": true,
+      "spacing": {
+        "leftPt": -1,
+        "topCm": 0.05,
+        "bottomCm": 0.05
+      }
+    },
+    "lists": {
+      "bullet": "small_bullet",
+      "highlights": {
+        "topsepCm": 0.05,
+        "parsepPt": 0,
+        "partopsepPt": 0,
+        "itemsepPt": 0,
+        "leftmarginPt": 10
+      }
+    },
+    "constraints": {
+      "singlePage": true,
+      "noGraphics": true,
+      "noTablesForLayout": true,
+      "noIcons": true,
+      "noEmDash": true,
+      "noFirstPerson": true
+    }
+  },
+  "header": {
+    "name": "Tanmay Bhuskute",
+    "nameFontPt": 16,
+    "nameLineHeightPt": 26,
+    "separator": "|",
+    "contactLine": [
+      {
+        "kind": "location",
+        "text": "Cincinnati, OH"
+      },
+      {
+        "kind": "phone",
+        "text": "+1 (732) 858-3027"
+      },
+      {
+        "kind": "linkedin",
+        "text": "linkedin.com/in/tanmay-bhuskute"
+      },
+      {
+        "kind": "github",
+        "text": "github.com/Tanmayb05"
+      },
+      {
+        "kind": "email",
+        "text": "tanmay.v.bhuskute@gmail.com"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "education",
+      "title": "EDUCATION",
+      "entries": [
+        {
+          "degree": "Master of Science in Computer Science",
+          "institution": "University of Cincinnati",
+          "dates": "Aug 2024 - Dec 2026",
+          "courseworkLine": "Relevant Coursework: Advanced Algorithms, Deep Learning, Intelligent Data Analysis, Database Theory."
+        },
+        {
+          "degree": "Bachelor of Engineering in Computer Engineering",
+          "institution": "AISSMS College of Engineering",
+          "dates": "Aug 2018 - Jul 2022",
+          "courseworkLine": "Relevant Coursework: Data Mining, Data Analytics, Machine Learning, Object-Oriented Programming."
+        }
+      ]
+    },
+    {
+      "type": "technical_skills",
+      "title": "TECHNICAL SKILLS",
+      "lines": [
+        {
+          "label": "Programming & Scripting",
+          "items": [
+            "Java",
+            "Python",
+            "C/C++",
+            "SQL (Postgres)",
+            "JavaScript",
+            "HTML/CSS",
+            "Go",
+            "Rust"
+          ]
+        },
+        {
+          "label": "Frameworks",
+          "items": [
+            "React",
+            "Node.js",
+            "JUnit",
+            "FastAPI",
+            "Streamlit",
+            "Django",
+            "Flask",
+            "BERT"
+          ]
+        },
+        {
+          "label": "Developer Tools",
+          "items": [
+            "VS Code",
+            "Git",
+            "Docker",
+            "AWS",
+            "Azure",
+            "Google Cloud Platform",
+            "SonarQube",
+            "Postman",
+            "JFrog",
+            "Polarion",
+            "Jenkins",
+            "ArgoCD",
+            "Kubernetes",
+            "REST APIs",
+            "Linux",
+            "Unix",
+            "Bash",
+            "TensorFlow"
+          ]
+        },
+        {
+          "label": "Libraries",
+          "items": [
+            "PyTorch",
+            "scikit-learn",
+            "pandas",
+            "NumPy",
+            "matplotlib",
+            "HuggingFace",
+            "OpenAI",
+            "LangChain",
+            "Pydantic",
+            "spaCy"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "work_experience",
+      "title": "WORK EXPERIENCE",
+      "entries": [
+        {
+          "company": "Siemens Industry Software",
+          "role": "Software Developer Engineer",
+          "dates": "Jul 2022 - Jun 2024",
+          "techStack": [
+            "AWS",
+            "Python",
+            "Boto3",
+            "Kubernetes",
+            "ArgoCD",
+            "Helm",
+            "HashiCorp Vault"
+          ],
+          "bullets": [
+            "Executed **44 production environment upgrades in 4 months** across Dockerized, **Kubernetes**-based Teamcenter X services, ensuring reliable deployments through careful planning, validation, and rollback procedures.",
+            "Migrated **40+ production environments** from process-based deployments to GitOps-driven **Kubernetes** workflows using **ArgoCD**, **Helm**, Amazon EFS, and HashiCorp Vault, modernizing deployment architecture.",
+            "Designed and implemented an Ansible-based Blue-Green deployment framework with automated rollback, **reducing production upgrade downtime by 50%** and enabling full environment recovery within **15 minutes**.",
+            "Automated **AWS infrastructure workflows** using **Python (Boto3)**, replacing legacy Ruby scripts and **reducing deployment time by 40%** across production environments.",
+            "Reduced monthly **AWS infrastructure costs by 40% (from $15K to $9K)** through EC2 rightsizing and automated cleanup of unused cloud resources using CloudWatch utilization metrics.",
+            "Built a self-service developer platform (dashboard, CLI, and YAML automation) for environment lifecycle management, **adopted by 15 engineers**, **reducing environment provisioning time by 70%** and lifecycle operations by up to **90%**.",
+            "Served as Quality Coach and SonarQube Specialist for the Agile Release Train, **increasing automated test coverage from 35% to 78%** by enforcing coding standards and CI/CD quality gates."
+          ]
+        },
+        {
+          "company": "Siemens Industry Software",
+          "role": "Software Developer Intern",
+          "dates": "Mar 2022 - Jun 2022",
+          "techStack": [
+            "AWS",
+            "Terraform",
+            "Ansible",
+            "Terratest",
+            "Go"
+          ],
+          "bullets": [
+            "Automated AWS infrastructure provisioning with Terraform and optimized Ansible-based DevOps workflows, **reducing deployment time by 30%** and environment setup from hours to minutes.",
+            "Developed a Go + Terratest validation framework that **caught 95% of infrastructure misconfigurations** before production, improving deployment reliability."
+          ]
+        },
+        {
+          "company": "Government of Maharashtra, Water Resource Department",
+          "role": "Software Developer Intern",
+          "dates": "Sep 2021 - Dec 2021",
+          "techStack": [
+            "React.js",
+            "MySQL",
+            "Full-Stack Development",
+            "UI/UX Design",
+            "Process Automation"
+          ],
+          "bullets": [
+            "Developed full-stack **React**/**MySQL** register app, digitizing record management and automating workflows.",
+            "**Improved efficiency by 40%**, deploying a system that improved transparency and accuracy across the department."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "projects_and_research",
+      "title": "PROJECTS AND RESEARCH",
+      "entries": [
+        {
+          "title": "Memory-Augmented LLM Approach for Android Bug Reproduction from Video Reports",
+          "date": "Feb 2026 - Present",
+          "link": "https://github.com/Tanmayb05/gifdroid-reproduction",
+          "techBracket": [
+            "Python",
+            "Google Gemini 2.5 Pro",
+            "Vertex AI",
+            "ADB",
+            "uiautomator2"
+          ],
+          "bullets": [
+            "Proposed two-stage memory-augmented LLM pipeline decoupling video understanding from device automation for Android bug reproduction.",
+            "Demonstrated **25.7x latency reduction** vs baseline ViBR across **20+ Android apps**."
+          ]
+        },
+        {
+          "title": "PolicyPilot - Medical Benefit Policy Intelligence Portal (Agents Assemble Hackathon)",
+          "date": "April 2026",
+          "link": "https://github.com/Tanmayb05/Policy-Intelligence-Lab",
+          "techBracket": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "Google Gemini",
+            "MCP",
+            "Docker"
+          ],
+          "bullets": [
+            "Architected evidence-grounded **RAG** pipeline over **Google Gemini 2.5-flash**, enforcing citation-backed answers to eliminate hallucination in eligibility decisions.",
+            "Designed **17-tool MCP** server for PA extraction, readiness evaluation, and payer comparison, exposed to external AI agents."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "extracurricular",
+      "title": "EXTRACURRICULAR ACTIVITIES",
+      "bullets": [
+        "Finalist at RevolutionUC 2025 Hackathon, among **300 participants from 31 schools**.",
+        "Earned **SAFe Practitioner 5.1 Certification** (Mar 2023)."
+      ]
+    }
+  ]
+}

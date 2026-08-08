@@ -1,0 +1,61 @@
+{
+  "experience_ids": [
+    "siemens-industry-software-software-developer-engineer",
+    "siemens-industry-software-software-developer-intern",
+    "government-of-maharashtra-water-resource-department-software-developer-intern"
+  ],
+  "project_ids": [
+    "policypilot-medical-benefit-policy-intelligence-portal",
+    "spotify-personal-analytics-platform"
+  ],
+  "skills": {
+    "programming": ["Python", "Java", "Go", "SQL (Postgres)", "C/C++", "JavaScript", "HTML/CSS", "Rust"],
+    "developer_tools": ["REST APIs", "AWS", "Docker", "Kubernetes", "Git", "Jenkins", "ArgoCD", "Linux", "Bash", "Postman", "VS Code", "Azure", "Google Cloud Platform", "SonarQube", "JFrog", "Polarion", "Unix", "TensorFlow"],
+    "frameworks": ["FastAPI", "Flask", "Node.js", "Django", "JUnit", "React", "Streamlit", "BERT"],
+    "libraries": ["pandas", "NumPy", "scikit-learn", "PyTorch", "matplotlib", "HuggingFace", "OpenAI", "LangChain", "Pydantic", "spaCy"]
+  },
+  "experience_overrides": {
+    "siemens-industry-software-software-developer-engineer": {
+      "bullets": [
+        "Migrated **40+ production environments** to Kubernetes using ArgoCD, Helm, GitLab CI/CD, and HashiCorp Vault, building scalable, reliable backend systems that powered live customer workloads",
+        "Executed **44 production environment upgrades in 4 months**, diagnosing and resolving live infrastructure issues across Linux, EC2, and databases without service interruptions",
+        "Designed Ansible-based Blue-Green deployment framework, reducing production upgrade downtime by **50%** while enabling reliable rollback and recovery",
+        "Automated infrastructure workflows and REST API integrations with **Python (Boto3)**, replacing legacy scripts and cutting deployment time by **40%** across AWS environments",
+        "Served as Quality Coach and SonarQube Specialist, increasing automated test coverage from 35% to **78%** by enforcing coding standards and CI/CD quality gates",
+        "Mentored 5 software engineers through structured onboarding and technical documentation, accelerating team productivity"
+      ]
+    },
+    "siemens-industry-software-software-developer-intern": {
+      "bullets": [
+        "Automated provisioning of AWS backend resources with Terraform, reducing deployment time by **30%**",
+        "Developed Go + Terratest framework, catching **95%** of infrastructure misconfigurations pre-production",
+        "Optimized DevOps workflows with Ansible, reducing environment setup time from hours to minutes",
+        "Enhanced infrastructure validation with Terragrunt, ensuring **100%** successful Terraform runs"
+      ]
+    },
+    "government-of-maharashtra-water-resource-department-software-developer-intern": {
+      "bullets": [
+        "Developed full-stack inward/outward register application with React and MySQL backend",
+        "Digitized record management workflows, improving processing efficiency by **40%**",
+        "Deployed system that improved transparency and accuracy of production records"
+      ]
+    }
+  },
+  "project_overrides": {
+    "policypilot-medical-benefit-policy-intelligence-portal": {
+      "bullets": [
+        "Built full-stack TypeScript healthcare app (React SPA + **Express 5 REST API** + MCP server) unifying insurance workflows on a single Node.js backend process",
+        "Designed 17 backend API tools with **Zod schema validation** at every data boundary, eliminating a class of runtime type-mismatch bugs across all external tool calls",
+        "Implemented PDF-to-structured-data pipeline with **Vitest unit/integration tests**, deployed via multi-stage Docker on Railway"
+      ]
+    },
+    "spotify-personal-analytics-platform": {
+      "bullets": [
+        "Engineered a 4-stage Python ETL pipeline processing **71K+ streaming events**, enriching metadata via a backend REST API with custom rate limiting and retry handling",
+        "Designed a **PostgreSQL** analytics schema with materialized views, composite/partial indexes, and 16 SQL RPC functions, enabling low-latency pre-aggregated queries",
+        "Built a **FastAPI** backend serving REST endpoints consumed by a React dashboard, backed by automated data-quality validation"
+      ]
+    }
+  },
+  "extracurricular_indices": [0, 1]
+}
