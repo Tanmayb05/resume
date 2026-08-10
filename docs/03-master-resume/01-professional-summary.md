@@ -1,0 +1,3 @@
+## PROFESSIONAL SUMMARY
+
+Software Engineer with experience designing, automating, and operating production cloud infrastructure at Siemens. Built deployment platforms, Kubernetes workflows, and CI/CD automation that improved deployment speed and reliability. Skilled in building backend automation, full-stack applications, and reliable deployment systems using Java, Python, JavaScript, React, Node.js, SQL, AWS, and Kubernetes, with strengths in production debugging, REST APIs, and automated testing. Currently researching LLMs for Android testing and bug reproduction as a Master's student at the University of Cincinnati, graduating December 2026.
