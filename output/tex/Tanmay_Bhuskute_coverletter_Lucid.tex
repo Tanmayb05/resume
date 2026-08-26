@@ -1,0 +1,54 @@
+\documentclass[11pt]{letter}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\date{}
+\begin{document}
+
+\begin{letter}{}
+
+\opening{Dear Hiring Committee,}
+
+I saw the job post on \textbf{Lucid Motors' careers website} and thought I'd be a good fit for it. I am a Master's student in Computer Science at the University of Cincinnati, graduating December 2026, looking for a role as a \textbf{Software Engineer, Data Infrastructure} at \textbf{Lucid Motors}. With hands on experience building backend services, data pipelines, and cloud infrastructure with Python and AWS, I am excited about the opportunity to contribute to \textbf{Lucid} and support the \textbf{ADAS Data Infrastructure} team's work processing large-scale sensor data for autonomous vehicle development.
+
+\textbf{Here are reasons that make me a great fit for the role:}
+
+\begin{itemize}[leftmargin=*, itemsep=0.45em]
+    \item \textbf{Backend services and data pipelines with Python and AWS:} At Siemens Industry Software, I automated Teamcenter X infrastructure workflows with Python (Boto3), replacing legacy Ruby scripts and cutting deployment time by 40\% across AWS environments, while diagnosing live infrastructure issues across Linux, EC2, and databases during 44 production environment upgrades.
+
+    \item \textbf{Distributed systems and large-scale data platforms:} I built an end-to-end data platform for NYC Mobility Forecasting, processing a 2.3M-row transportation dataset across 263 zones through a Spark-based medallion (bronze/silver/gold) pipeline, and serving predictions through a FastAPI backend with PostgreSQL and Redis caching.
+
+    \item \textbf{AWS and Kubernetes deployment experience:} I migrated 40+ production environments from process based deployments to Kubernetes using ArgoCD, Helm, GitLab CI/CD, and HashiCorp Vault, and designed an Ansible based Blue-Green deployment framework that reduced production upgrade downtime by 50\% while enabling reliable rollback and recovery.
+
+    \item \textbf{ETL design and containerized data processing:} I engineered a 4-stage Python ETL pipeline for a personal analytics platform, processing 71K+ streaming events with custom rate limiting and retry handling, and designed a PostgreSQL analytics schema with materialized views and 16 SQL RPC functions for low-latency queries over large datasets.
+
+    \item \textbf{Ownership and operational excellence:} As Quality Coach and SonarQube Specialist for the Agile Release Train, I increased automated code coverage from 35\% to 78\% by enforcing coding standards and CI/CD quality gates, and mentored 5 software engineers through structured onboarding.
+\end{itemize}
+
+I am available to work with you after my graduation in December 2026. As a Master's student at the University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to Lucid's data platform and helping transform vehicle sensor data into usable datasets for autonomous vehicle development.
+
+Please find my CV attached below. I look forward to hearing from you. I would be excited to help build the data infrastructure that powers Lucid's autonomous vehicle engineering.
+
+{\setlength{\parskip}{0pt}
+Regards,\\
+Tanmay Bhuskute,\\
+tanmay.v.bhuskute@gmail.com $\mid$ +1 (732) 858-3027,\\
+Cincinnati, OH.
+}
+
+\end{letter}
+
+\end{document}

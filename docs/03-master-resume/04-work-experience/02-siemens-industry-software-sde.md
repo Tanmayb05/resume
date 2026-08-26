@@ -1,7 +1,7 @@
 ### **Software Development Engineer | Siemens Industry Software**
 **July 2022 - June 2024 (2 years)**
 
-**Tech Stack:** AWS, Python, Boto3, REST APIs, Hashicorp Vault, Ansible, GitLab CI/CD, Shell, Kubernetes, ArgoCD, Helm, Amazon EFS
+**Tech Stack:** AWS, Python, Boto3, REST APIs, Hashicorp Vault, Ansible, GitLab CI/CD, Shell, Kubernetes, ArgoCD, Helm, Amazon EFS, DynamoDB
 
 **High Priority:**
 
@@ -19,6 +19,7 @@
 - Built automated rollback capability into the Blue-Green framework, enabling full environment recovery within 15 minutes via Ansible workflows
 - Built Infrastructure as Code automation using Terraform and Ansible for environment provisioning and orchestration, standardizing setup across 40+ production environments
 - Developed Ansible workflows to automate post-provisioning configuration steps, reducing manual setup work after environment creation
+- Tracked environment configs, provisioning state, and automation job status across 40+ production environments using DynamoDB, enabling reliable state lookups for the Ansible/CLI provisioning workflows
 - Reduced monthly AWS spend by 40% (from $15K to $9K) through EC2 rightsizing and automated cleanup of unused/orphaned cloud resources
 - Used CloudWatch utilization metrics to identify and resolve resource inefficiencies, directly informing cost-optimization decisions
 - Built a self-service developer platform (dashboard + CLI/YAML automation) for environment lifecycle management, adopted by 15 engineers

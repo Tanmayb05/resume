@@ -1,0 +1,56 @@
+                                                 Tanmay Bhuskute
+      +1 (732) 858-3027 | tanmay.v.bhuskute@gmail.com | github.com/Tanmayb05 | linkedin.com/in/tanmay-bhuskute
+                                                    Cincinnati, OH
+
+SUMMARY
+Software Engineer and M.S. Computer Science candidate (Dec 2026) with production engineering background in secure
+infrastructure automation, CI/CD quality gates, and IAM/secrets management using Python and AWS. Current research builds and
+evaluates LLM-driven automation pipelines, with growing focus on securing AI-enabled systems.
+EDUCATION
+Master of Science in Computer Science                                                                     Aug 2024 - Dec 2026
+University of Cincinnati
+Relevant Coursework: Advanced Algorithms, Deep Learning, Intelligent Data Analysis, Database Theory.
+Bachelor of Engineering in Computer Engineering                                                            Aug 2018 - Jul 2022
+AISSMS College of Engineering
+Relevant Coursework: Data Mining, Data Analytics, Machine Learning, Object-Oriented Programming.
+TECHNICAL SKILLS
+Programming: Python, Java, JavaScript, TypeScript, C/C++, SQL, Go, Bash.
+Security & Secure SDLC: SonarQube quality gates, HashiCorp Vault, IAM policy design, secure CI/CD, code coverage enforcement.
+AI & ML: Gemini, Vertex AI, MCP (Model Context Protocol), PyTorch, TensorFlow, scikit-learn, LangChain, RAG pipelines.
+DevOps & Cloud: Git, GitLab CI/CD, Jenkins, AWS, Docker, Kubernetes, ArgoCD, Helm, Terraform, Linux, Azure, Google Cloud
+Platform.
+Web & Backend: React, Node.js, Django, Flask, FastAPI, REST APIs, PostgreSQL, MySQL.
+WORK EXPERIENCE
+Graduate Researcher —- University of Cincinnati                                                          Feb 2026 – Present
+• Designed two-stage memory-augmented LLM pipeline decoupling video understanding from device automation for Android GUI
+  bug reproduction, evaluated with adversarial test cases against ViBR (GPT-4o + GroundingDINO + CLIP baseline) across 53
+  runs on 20+ apps.
+• Demonstrated 25.7x latency reduction (39.4s vs 1012.1s avg per run) while preserving task-completion fidelity, using a
+  provider-agnostic LLM abstraction to isolate method effects from model choice.
+Software Development Engineer —- Siemens Industry Software                                              Jul 2022 – Jun 2024
+• Automated Teamcenter X infrastructure workflows with Python (Boto3), replacing legacy Ruby scripts and reducing
+  deployment time by 40% across AWS environments.
+• Managed HashiCorp Vault secrets and IAM access policies across production and non-production environments, strengthening
+  security posture for 40+ cloud environments.
+• Served as Quality Coach and SonarQube Specialist, enforcing secure coding standards and CI/CD quality gates that increased
+  automated code coverage from 35% to 78%.
+• Designed Ansible-based Blue-Green deployment framework, reducing production upgrade downtime by 50% while enabling
+  reliable rollback and recovery.
+• Migrated 40+ production environments to Kubernetes using ArgoCD, Helm, GitLab CI/CD, and HashiCorp Vault; mentored 5
+  engineers on secure development practices.
+Software Developer Intern —- Siemens Industry Software                                                    Mar 2022 – Jun 2022
+• Automated provisioning of AWS resources with Terraform, reducing deployment time by 30%.
+• Developed Go + Terratest validation framework, catching 95% of misconfigurations pre-production.
+
+PROJECTS AND RESEARCH
+PolicyPilot – Medical Benefit Policy Intelligence Portal [React, TS, Node, Gemini, MCP]                             May 2026
+• Architected evidence-grounded RAG pipeline over Google Gemini 2.5-flash, forcing citation-backed answers to eliminate
+  hallucination and insecure/ungrounded output in high-stakes healthcare eligibility decisions.
+• Designed 17-tool MCP server exposing structured, schema-validated LLM tool-calling for external AI agents, using Zod
+  validation at every boundary to prevent malformed/injected tool inputs.
+NYC Mobility Forecasting [PySpark, Delta Lake, scikit-learn, FastAPI]                                              Jul 2026
+• Built ML system forecasting NYC taxi/rideshare demand across 263 zones (2.3M-row hourly dataset); designed two-stage
+  Poisson hurdle model improving MAPE 18.77% to 16.52% and cutting RMSE 43% over baseline Random Forest.
+EXTRACURRICULAR ACTIVITIES
+• Finalist, RevolutionUC 2025 Hackathon (300 participants, 31 schools) | SAFe Practitioner 5.1 (Mar 2023).
+

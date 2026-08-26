@@ -1,0 +1,56 @@
+\documentclass[11pt]{letter}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\date{}
+\begin{document}
+
+\begin{letter}{}
+
+\opening{Dear Hiring Committee,}
+
+I saw the job post on \textbf{LinkedIn} and thought I'd be a good fit for it.
+
+I am a Master's student in Computer Science at the University of Cincinnati, graduating December 2026, looking for a role as an \textbf{AI Engineering Fellow} at \textbf{ProMazo}. With hands on experience building LLM powered applications, retrieval augmented pipelines, and production cloud systems, I am excited about the opportunity to contribute to ProMazo's client engagements and help enterprise teams ship agents they can rely on.
+
+\textbf{Here are reasons that make me a great fit for the role:}
+
+\begin{itemize}[leftmargin=*, itemsep=0.45em]
+    \item \textbf{LLM powered and agentic system design:} I designed a two stage memory augmented LLM pipeline for Android bug reproduction, evaluated against a published GPT-4o based baseline across 53 runs on 20+ apps, achieving a 25.7x latency reduction while preserving task completion fidelity. I also built a provider agnostic LLM abstraction layer supporting Gemini, GPT-4o, Llama, and Qwen.
+
+    \item \textbf{Retrieval augmented generation and tool calling agents:} In PolicyPilot, I architected an evidence grounded RAG pipeline over Google Gemini 2.5-flash that forces citation backed answers to eliminate hallucination in high stakes healthcare decisions, and designed a 17-tool MCP server exposing structured tool calling for external AI agents.
+
+    \item \textbf{Python fundamentals and LangChain experience:} I built Spendora, an LLM powered finance assistant using LangChain with RAG and custom toolchains, deploying conversational agents with memory and tool use to automate expense categorization.
+
+    \item \textbf{Testing and evaluation rigor:} My graduate research relies on structured evals comparing my pipeline against a published baseline to catch failure modes and quantify accuracy and latency tradeoffs before drawing conclusions, a discipline I would bring directly to client facing agent evaluation.
+
+    \item \textbf{Comfort with ambiguity and client communication:} At Siemens, I diagnosed live production issues across 44 environment upgrades in 4 months and worked directly across teams as Quality Coach, translating technical findings into standards adopted org wide.
+\end{itemize}
+
+I am available to work with you after my graduation in December 2026. As a Master's student at the University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to ProMazo's mission of giving students real ownership on Fortune 500 engagements.
+
+Please find my CV attached below. I look forward to hearing from you. I would be excited to help a ProMazo team turn discovery conversations into agents that enterprise clients actually trust and rely on.
+
+{\setlength{\parskip}{0pt}
+Regards,\\
+Tanmay Bhuskute,\\
+bhuskutv@mail.uc.edu $\mid$ tanmay.v.bhuskute@gmail.com $\mid$ +1 7328583027,\\
+3424 Brookline Ave, Flat 19, Cincinnati, OH 45220.
+}
+
+\end{letter}
+
+\end{document}

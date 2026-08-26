@@ -1,0 +1,280 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot,
+    top=0.4 cm,
+    bottom=0.4 cm,
+    left=0.8 cm,
+    right=0.8 cm,
+    footskip=0.2 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Tanmay Bhuskute's CV},
+    pdfauthor={Tanmay Bhuskute},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{XCharter}
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{2\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.15 cm}{0.08 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.06 cm,
+        partopsep=0pt,
+        itemsep=0.06 cm,
+        leftmargin=12pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.06 cm,
+        partopsep=0pt,
+        itemsep=0.04 cm,
+        leftmargin=12pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0 cm + 0.00001 cm}{0 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{0.6}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{16 pt}{24 pt}\selectfont Tanmay Bhuskute
+
+        \vspace{3 pt}
+
+        \normalsize
+        \mbox{ +1 (732) 858-3027 }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ tanmay.v.bhuskute@gmail.com }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ github.com/Tanmayb05 }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ linkedin.com/in/tanmay-bhuskute }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ New York, NY }%
+    \end{header}
+
+    \vspace{2 pt}
+
+\section{SUMMARY}
+\begin{onecolentry}
+Software Engineer and M.S. Computer Science candidate (Dec 2026) with 2+ years building production cloud infrastructure, full stack applications, backend automation, and scalable systems using Python, React, Node.js, Docker, Kubernetes, AWS, and Google Cloud Platform.
+\end{onecolentry}
+
+\section{EDUCATION}
+\begin{twocolentry}{
+    Aug 2024 to Dec 2026
+}
+    \textbf{Master of Science in Computer Science} \\
+    University of Cincinnati
+\end{twocolentry}
+\begin{onecolentry}
+Relevant Coursework: Advanced Algorithms, Database Theory, Intelligent Data Analysis.
+\end{onecolentry}
+\vspace{0.15 cm}
+
+\begin{twocolentry}{
+    Aug 2018 to Jul 2022
+}
+    \textbf{Bachelor of Engineering in Computer Engineering} \\
+    AISSMS College of Engineering
+\end{twocolentry}
+\begin{onecolentry}
+Relevant Coursework: Object Oriented Programming, Data Mining, Machine Learning.
+\end{onecolentry}
+
+\section{TECHNICAL SKILLS}
+\begin{onecolentry}
+\textbf{Programming:} Python, Java, JavaScript, TypeScript, SQL, Go, C/C++, Bash.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Web \& Backend:} React, Node.js, FastAPI, Flask, Express.js, REST APIs, Microservices, API Design.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Databases:} PostgreSQL, MySQL, MongoDB, Elasticsearch, Redis, Vector Databases.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Developer Tools:} Git, GitLab CI/CD, Jenkins, Docker, Kubernetes, ArgoCD, Helm, Terraform, Linux, Bash.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Cloud \& AI:} AWS, Google Cloud Platform, Azure, Gemini, Vertex AI, PyTorch, scikit-learn, LangChain, pandas.
+\end{onecolentry}
+
+\section{WORK EXPERIENCE}
+\begin{twocolentry}{Feb 2026 to Present}
+\textbf{Graduate Researcher} \textbar{} University of Cincinnati
+\end{twocolentry}
+\begin{highlights}
+  \item Designed memory augmented LLM pipeline separating video understanding from automation across \textbf{53 runs} on \textbf{20+ apps}.
+  \item Reduced average run latency \textbf{25.7x} while preserving task completion fidelity through structured evaluation artifacts.
+\end{highlights}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{Jul 2022 to Jun 2024}
+\textbf{Software Development Engineer} \textbar{} Siemens Industry Software
+\end{twocolentry}
+\begin{highlights}
+  \item Automated \textbf{Teamcenter X} infrastructure workflows with Python and Boto3, cutting deployment time \textbf{40\%} across AWS environments.
+  \item Executed \textbf{44 production upgrades} in 4 months, debugging Linux, EC2, database, and service issues in live environments.
+  \item Designed Ansible Blue Green deployment framework with rollback support, reducing production upgrade downtime by \textbf{50\%}.
+  \item Built self service developer platform for environment lifecycle management, adopted by \textbf{15 engineers} for daily workflows.
+  \item Migrated \textbf{40+ production environments} to Kubernetes using ArgoCD, Helm, GitLab CI/CD, Amazon EFS, and Vault.
+  \item Increased automated code coverage from \textbf{35\% to 78\%}; mentored \textbf{5 engineers} on standards and review practices.
+\end{highlights}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{Mar 2022 to Jun 2022}
+\textbf{Software Developer Intern} \textbar{} Siemens Industry Software
+\end{twocolentry}
+\begin{highlights}
+  \item Automated AWS provisioning with Terraform and Go Terratest, cutting deployment time \textbf{30\%} and catching \textbf{95\%} misconfigurations.
+\end{highlights}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{Sep 2021 to Dec 2021}
+\textbf{Software Developer Intern} \textbar{} Government of Maharashtra, Water Resource Department
+\end{twocolentry}
+\begin{highlights}
+  \item Built React and MySQL workflow app digitizing record management and improving departmental operating efficiency by \textbf{40\%}.
+\end{highlights}
+
+\section{PROJECTS AND RESEARCH}
+\begin{twocolentry}{May 2026}
+\textbf{PolicyPilot Medical Benefit Policy Intelligence Portal} [React, TS, Node, Docker, Gemini]
+\end{twocolentry}
+\begin{highlights}
+  \item Built React and Express healthcare app unifying prior authorization workflows with REST APIs and structured AI tool calls.
+  \item Designed \textbf{17 tool MCP server} with Zod validation for coverage search, patient readiness, and cross payer comparison.
+\end{highlights}
+
+\vspace{0.12 cm}
+
+\begin{twocolentry}{Jul 2026}
+\textbf{NYC Mobility Forecasting} [Python, FastAPI, React, PostgreSQL, Docker]
+\end{twocolentry}
+\begin{highlights}
+  \item Built FastAPI prediction service serving demand forecasts to a React map dashboard with PostgreSQL and Redis caching.
+  \item Modeled demand across \textbf{263 zones}, improving MAPE from \textbf{18.77\% to 16.52\%} and cutting RMSE \textbf{43\%}.
+\end{highlights}
+
+\vspace{0.12 cm}
+
+\begin{twocolentry}{Jul 2026}
+\textbf{Spotify Personal Analytics Platform} [React, TS, Python, FastAPI, PostgreSQL]
+\end{twocolentry}
+\begin{highlights}
+  \item Built React and FastAPI analytics app processing \textbf{71K+} Spotify events through Python ETL workflows.
+  \item Designed PostgreSQL schema with materialized views, indexes, and \textbf{16 SQL RPC functions} for low latency queries.
+\end{highlights}
+
+\section{EXTRACURRICULAR ACTIVITIES}
+\begin{onecolentry}
+\begin{highlights}
+  \item \textbf{Finalist, RevolutionUC 2025 Hackathon} (300 participants, 31 schools) \,|\, \textbf{SAFe Practitioner 5.1} (Mar 2023).
+\end{highlights}
+\end{onecolentry}
+
+\end{document}

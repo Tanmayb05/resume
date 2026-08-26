@@ -1,0 +1,253 @@
+{
+  "contact": {
+    "name": "Tanmay Bhuskute",
+    "email": "tanmay.v.bhuskute@gmail.com",
+    "email_alt": "bhuskutv@uc.mail.edu",
+    "phone": "+1 732-858-3027",
+    "linkedin": "linkedin.com/in/tanmaybhuskute",
+    "github": "github.com/Tanmayb05",
+    "website": "tanmayb05.github.io/portfolio/",
+    "location": "Cincinnati, Ohio, United States",
+    "address": "3424 Brookline Ave, Apt 19, Cincinnati, OH 45220"
+  },
+
+  "professional_summary": "Software Engineer with experience designing, automating, and operating production cloud infrastructure at Siemens. Built deployment platforms, Kubernetes workflows, and CI/CD automation that improved deployment speed and reliability. Skilled in building backend automation, full-stack applications, and reliable deployment systems using Java, Python, JavaScript, React, Node.js, SQL, AWS, and Kubernetes, with strengths in production debugging, REST APIs, and automated testing. Currently researching LLMs for Android testing and bug reproduction as a Master's student at the University of Cincinnati, graduating December 2026.",
+
+  "education": [
+    {
+      "degree": "Master of Science in Computer Science",
+      "institution": "University of Cincinnati",
+      "duration": "August 2024 - December 2026 (Expected)",
+      "coursework": ["Advanced Algorithms", "Deep Learning", "Intelligent Data Analysis", "Database Theory"]
+    },
+    {
+      "degree": "Bachelor of Engineering in Computer Engineering",
+      "institution": "AISSMS College of Engineering, Pune, India",
+      "university": "Savitribai Phule Pune University",
+      "duration": "August 2018 - July 2022",
+      "gpa": "9.14/10 (3.76/4.0)",
+      "coursework": ["Data Mining", "Data Analytics", "Machine Learning", "Object-Oriented Programming"],
+      "club": "Código Madrid Club (Technical Club)"
+    }
+  ],
+
+  "technical_skills": {
+    "programming": ["Java", "Python", "JavaScript", "TypeScript", "C/C++", "SQL", "Go", "Rust", "HTML5", "CSS3", "PowerShell"],
+    "frontend": ["React", "Next.js", "Vue.js", "D3.js", "Leaflet", "Tailwind CSS", "Bootstrap", "Responsive Web Design", "Material-UI", "Sass", "Core UI"],
+    "backend": ["Node.js", "Django", "Flask", "FastAPI", "Express.js", "GraphQL", "REST APIs", "Microservices Architecture", "Serverless Architecture", "WebSockets"],
+    "databases": ["PostgreSQL", "MySQL", "MongoDB", "DynamoDB", "Oracle DB", "Elasticsearch", "Redis", "Firebase", "Vector Databases"],
+    "devops_cloud": ["Git", "GitHub", "GitLab CI/CD", "Jenkins", "AWS (S3, EC2, Lambda, SQS)", "Docker", "Kubernetes", "ArgoCD", "Helm", "Terraform", "Linux", "Bash", "SonarQube", "Azure", "Google Cloud Platform", "Nginx", "Apache"],
+    "ai_data": ["Gemini", "Vertex AI", "PyTorch", "TensorFlow", "scikit-learn", "LangChain", "pandas", "NumPy", "BERT", "Llama 3.1", "Matplotlib", "OpenCV", "YOLOv7", "MATLAB"],
+    "testing_performance": ["Jest", "Pytest", "JUnit", "Unit Testing", "Integration Testing", "Load Testing", "Performance Benchmarking"],
+    "development_methodologies": ["Agile/Scrum", "SDLC", "Test-Driven Development", "Object-Oriented Design", "Design Patterns"],
+    "specialized_skills": ["Distributed Systems", "Performance Optimization", "Model Quantization", "Caching Strategies", "System Architecture", "API Design"],
+    "tools_platforms": ["Polarion", "Jira", "Slack", "Dropbox", "Adobe Acrobat", "Photoshop", "Postman", "VS Code"]
+  },
+
+  "work_experience": [
+    {
+      "title": "Graduate Researcher",
+      "company": "University of Cincinnati",
+      "project_title": "Memory-Augmented LLM Approach for Android Bug Reproduction from Video Reports",
+      "duration": "Feb 2026 - Present",
+      "tech_stack": ["Python", "Google Gemini 2.5 Pro", "Vertex AI", "ADB", "uiautomator2", "scikit-image"],
+      "highlights": [
+        "Proposed two-stage memory-augmented LLM pipeline for reproducing Android GUI bugs from screen recordings, decoupling video understanding from device automation to avoid repeated per-scene VLM inference",
+        "Evaluated against ViBR, a published VLM-based frame-accurate scene-replay approach (GPT-4o + GroundingDINO + CLIP), across 53 successful runs on 20+ real-world Android apps",
+        "Demonstrated 25.7x latency reduction (39.4s vs 1012.1s avg per run) while preserving task-completion fidelity, suggesting memory reuse is a viable alternative to exhaustive scene-by-scene VLM replay"
+      ],
+      "role_breakdown": {
+        "ai_ml_engineer": [
+          "Designed and evaluated a two-stage memory-augmented LLM method: Stage 1 performs single-pass video-to-memory extraction (structured YAML+markdown task summary) via Gemini 2.5 Pro; Stage 2 conditions closed-loop device automation on that memory, eliminating re-analysis of raw video per step",
+          "Ran comparative evaluation against ViBR (published baseline: GPT-4o + GroundingDINO region grounding + CLIP segmentation) across 20+ Android apps using a provider-agnostic LLM abstraction (Gemini, GPT-4o, Llama, Qwen, MiniCPM), isolating method effects from model choice"
+        ],
+        "software_developer": [
+          "Implemented the two-stage pipeline as a staged, config-driven experimental harness (--stage 1/2/all) with dry-run validation for reproducible evaluation runs",
+          "Built device automation harness (uiautomator2/ADB) with stall detection and history-windowed decision loop to execute inferred actions during evaluation",
+          "Designed flat, versioned run-artifact schema to keep every experimental trial reproducible and auditable"
+        ]
+      }
+    },
+    {
+      "title": "Software Development Engineer",
+      "company": "Siemens Industry Software",
+      "duration": "July 2022 - June 2024 (2 years)",
+      "tech_stack": ["AWS", "Python", "Boto3", "REST APIs", "Hashicorp Vault", "Ansible", "GitLab CI/CD", "Shell", "Kubernetes", "ArgoCD", "Helm", "Amazon EFS", "DynamoDB"],
+      "highlights_high_priority": [
+        "Automated Teamcenter X infrastructure workflows with Python (Boto3), replacing legacy Ruby scripts and reducing deployment time by 40% across AWS environments",
+        "Executed 44 production environment upgrades in 4 months, diagnosing and resolving live infrastructure issues across Linux, EC2, databases, and Teamcenter X services",
+        "Designed Ansible-based Blue-Green deployment framework, reducing production upgrade downtime by 50% while enabling reliable rollback and recovery",
+        "Migrated 40+ production environments from process-based deployments to Kubernetes using ArgoCD, Helm, GitLab CI/CD, Amazon EFS, and HashiCorp Vault to modernize deployment architecture",
+        "Served as Quality Coach and SonarQube Specialist for the Agile Release Train, increasing automated code coverage from 35% to 78% by enforcing coding standards and CI/CD quality gates",
+        "Mentored 5 software engineers through structured onboarding, technical documentation, and standardized development practices, accelerating team productivity"
+      ],
+      "highlights_low_priority": [
+        "Diagnosed live production infrastructure issues across Linux, EC2, databases, and containerized services using CloudWatch metrics and Datadog log correlation",
+        "Designed and maintained GitOps-based CI/CD pipelines with GitLab CI/CD and ArgoCD, enabling automated, auditable, rollback-capable deployments across the environment fleet",
+        "Built automated rollback capability into the Blue-Green framework, enabling full environment recovery within 15 minutes via Ansible workflows",
+        "Built Infrastructure as Code automation using Terraform and Ansible for environment provisioning and orchestration, standardizing setup across 40+ production environments",
+        "Developed Ansible workflows to automate post-provisioning configuration steps, reducing manual setup work after environment creation",
+        "Tracked environment configs, provisioning state, and automation job status across 40+ production environments using DynamoDB, enabling reliable state lookups for the Ansible/CLI provisioning workflows",
+        "Reduced monthly AWS spend by 40% (from $15K to $9K) through EC2 rightsizing and automated cleanup of unused/orphaned cloud resources",
+        "Used CloudWatch utilization metrics to identify and resolve resource inefficiencies, directly informing cost-optimization decisions",
+        "Built a self-service developer platform (dashboard + CLI/YAML automation) for environment lifecycle management, adopted by 15 engineers",
+        "Reduced environment start/stop/delete time by up to 90% (5-7 min to under 1 min) through self-service dashboard automation",
+        "Cut environment provisioning turnaround by 70% (10 min to 3 min) with a CLI + YAML-driven provisioning workflow",
+        "Managed HashiCorp Vault secrets and IAM access policies across production and non-production environments to strengthen security posture",
+        "Enforced coding standards and CI/CD quality gates across multiple engineering teams as part of Agile Release Train quality initiatives"
+      ]
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "Siemens Industry Software",
+      "duration": "March 2022 - June 2022 (4 months)",
+      "tech_stack": ["AWS", "Terraform", "Ansible", "Terratest", "Go"],
+      "highlights": [
+        "Automated provisioning of AWS resources with Terraform, reducing deployment time by 30%",
+        "Developed Go + Terratest framework, catching 95% of misconfigurations pre-production",
+        "Optimized DevOps workflows with Ansible, reducing environment setup time from hours to minutes",
+        "Enhanced infrastructure validation with Terragrunt ensuring 100% successful Terraform runs"
+      ],
+      "notes": "Last two bullets flagged 'try to avoid' in source doc — weaker/redundant vs top two."
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "Government of Maharashtra, Water Resource Department",
+      "duration": "September 2021 - December 2021 (4 months)",
+      "tech_stack": ["React.js", "MySQL", "Full-Stack Development", "UI/UX Design", "Process Automation"],
+      "highlights": [
+        "Built and deployed a full-stack React and MySQL workflow application that digitized departmental record management, automated manual processes, and improved operational efficiency by 40%"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "PolicyPilot",
+      "subtitle": "Medical Benefit Policy Intelligence Portal",
+      "duration": "May 2026",
+      "tech_stack": ["React", "TypeScript", "Node.js", "Express", "Google Gemini", "MCP", "Docker", "Zod", "FHIR", "Railway"],
+      "context": "Medical Benefit Policy Intelligence Portal solving the fragmented insurance payer policy problem — clinicians manually dig through 50-500 page PDFs to answer drug coverage/prior-authorization (PA) eligibility questions. Ingests, normalizes, and unifies multi-payer policies into a queryable structured system, matches patient documents against coverage criteria, and generates evidence-backed next steps. Built for the Prompt Opinion hackathon (May 2026).",
+      "core_features": "Unified drug coverage search across payers, cross-payer side-by-side comparison, real-time policy-change tracking, AI-powered natural-language chat for coverage/PA/eligibility questions, and an Evidence Explorer for verifying coverage details against source policy documents.",
+      "highlights": [
+        "Architected evidence-grounded RAG pipeline over Google Gemini 2.5-flash, forcing citation-backed answers to eliminate hallucination in high-stakes healthcare eligibility decisions",
+        "Designed 17-tool MCP (Model Context Protocol) server exposing structured LLM tool-calling for PA extraction, patient-readiness evaluation, and cross-payer comparison, consumable by external AI agents",
+        "Engineered confidence-scoring system (evidence count, negation detection, subjectivity flags) driving human-review triage, migrating from Ollama to Gemini after benchmarking hallucination rates",
+        "Built citation/version tracing into every LLM answer so retrieval mismatches (e.g. an outdated policy version) surface immediately instead of silently misleading a provider"
+      ],
+      "role_breakdown": {
+        "ai_ml_engineer": [
+          "Architected evidence-grounded RAG pipeline over Google Gemini 2.5-flash, forcing citation-backed answers to eliminate hallucination in high-stakes healthcare eligibility decisions",
+          "Designed 17-tool MCP server exposing structured LLM tool-calling for PA extraction, patient-readiness evaluation, and cross-payer comparison, letting external AI agents replace manual multi-payer PDF lookups with direct queries",
+          "Engineered confidence-scoring system (evidence count, negation detection, subjectivity flags) driving human-review triage, migrating from Ollama to Gemini after benchmarking hallucination rates"
+        ],
+        "software_engineer": [
+          "Built full-stack TypeScript healthcare app (React SPA + Express 5 REST API + MCP server) unifying insurance PA workflows on single Node.js process",
+          "Designed 17 MCP tool APIs (get_drug_coverage, check_patient_readiness, diff_policy_versions) with Zod schema validation at every data boundary, eliminating a class of runtime type-mismatch bugs across all external tool calls",
+          "Implemented PDF-to-structured-data pipeline (parse → clean → chunk → validate) with Vitest unit/integration tests and axe-core accessibility (WCAG AA) coverage"
+        ]
+      },
+      "key_learnings": [
+        "Retrieval and document structure mattered more than the model — policy PDFs vary widely in layout, and the same rule can appear under different sections, headings, or tables",
+        "Policy versioning is a correctness risk, not just a UX detail — an unversioned system can silently surface criteria from an outdated policy; citing source + version in every answer makes that class of error catchable",
+        "Standards like HL7's Da Vinci FHIR guides (pushed by CMS) only cover transmitting coverage details — the harder problem was keeping underlying multi-payer data correct and versioned, not raw speed"
+      ]
+    },
+    {
+      "name": "NYC Mobility Forecasting",
+      "subtitle": "ML-Driven Taxi/Rideshare Demand Prediction System",
+      "duration": "July 2026",
+      "tech_stack": ["Python", "PySpark", "Apache Spark", "Delta Lake", "Scikit-learn", "Machine Learning", "FastAPI", "SQL", "PostgreSQL", "Redis", "Docker", "Oracle Cloud", "React", "REST API", "CI/CD"],
+      "context": "End-to-end machine learning system forecasting NYC taxi/FHV demand at zone/hour level using NYC TLC trip data. Ingests transportation, weather, and geospatial data through a Spark-based medallion (bronze/silver/gold) pipeline, trains and deploys a production ML model, and serves real-time predictions through a REST API and web dashboard.",
+      "highlights": [
+        "Built machine learning system forecasting NYC taxi/rideshare demand across 263 zones using Python, PySpark, Delta Lake, and scikit-learn, processing trip and weather data into a 2.3M-row hourly demand dataset",
+        "Designed two-stage (classification + regression) Poisson hurdle model predicting trip demand and surge risk, improving forecast accuracy (weighted MAPE 18.77%→16.52%) and cutting prediction error (RMSE) by 43%, (MAE) by 53% over baseline Random Forest",
+        "Built RESTful API (Python, FastAPI) serving real-time demand predictions to a React/map-based dashboard, integrated with PostgreSQL and Redis caching, containerized with Docker, and architected for free-tier cloud deployment (Oracle Cloud)"
+      ]
+    },
+    {
+      "name": "Spotify Personal Analytics Platform",
+      "subtitle": "Full-Stack Data Analytics App",
+      "duration": "July 2026",
+      "tech_stack": ["React 19.1.1", "TypeScript 5.9.3", "Vite 7.1.7", "Material UI 7.3.4", "MUI X Charts 8.14.0", "Zustand 5.0.8", "React Router 7.9.4", "Axios 1.12.2", "Python", "FastAPI", "Uvicorn", "Pydantic", "pandas", "scikit-learn", "PostgreSQL (Supabase)", "spotipy (Spotify Web API)", "lyricsgenius (Genius API)", "musixmatch-api", "Netlify", "Render"],
+      "context": "Personal analytics platform processing a Spotify GDPR streaming-history export through a Python ETL pipeline, storing results in a Supabase/PostgreSQL analytics schema, and serving insights via a FastAPI backend + React/MUI dashboard. Pipeline flow: raw JSON export → dedup/extraction → metadata + genre enrichment via Spotify Web API → two-stage lyrics ingestion → validation → load into PostgreSQL → materialized views → FastAPI → React dashboard.",
+      "highlights": [
+        "Engineered a 4-stage Python ETL pipeline processing 71K+ Spotify streaming events, enriching metadata via Spotify Web API with custom rate limiting and exponential-backoff retry handling",
+        "Built a genre-enrichment pipeline by joining artist-level metadata, overcoming a Spotify API limitation to enrich 13K+ tracks for downstream analytics",
+        "Developed a two-stage lyrics ingestion pipeline (batch + retry) processing 13.8K tracks with checkpointing, multi-source API fallback, and automatic failure-based source disabling",
+        "Designed a PostgreSQL analytics schema with materialized views, composite/partial indexes, and 16 SQL RPC functions, enabling low-latency pre-aggregated queries over streaming history"
+      ]
+    },
+    {
+      "name": "Spendora",
+      "subtitle": "Conversational AI for Expense Insights",
+      "duration": "June 2025",
+      "tech_stack": ["HuggingFace", "LangChain", "Mistral", "Gemma"],
+      "context": "LLM-powered finance assistant surfacing spending patterns and automating expense categorization via retrieval-augmented conversational agents.",
+      "highlights": [
+        "Developed LLM-powered finance assistant with LangChain",
+        "Implemented RAG with custom toolchains for financial data, cutting manual expense categorization effort and surfacing spending patterns users previously had to compute by hand",
+        "Deployed conversational agents with memory and tool use for spending analysis"
+      ]
+    },
+    {
+      "name": "News Headline Classification",
+      "subtitle": "Deep Learning NLP Model",
+      "duration": "March 2025",
+      "tech_stack": ["Python", "PyTorch", "spaCy"],
+      "context": "LSTM-based deep learning classifier trained on a large news-headline dataset, benchmarked against baseline models.",
+      "highlights": [
+        "Built LSTM-based deep learning model on 400K+ headlines",
+        "Achieved 93.28% accuracy outperforming baseline models",
+        "Optimized preprocessing and training pipeline improving efficiency by 25%"
+      ]
+    },
+    {
+      "name": "Media Recommender System",
+      "subtitle": "Published Research",
+      "duration": "July 2021 - March 2022",
+      "published_paper_id": "IJRASET42927",
+      "tech_stack": ["React", "Flask", "Python", "Spotify API", "Machine Learning", "NLP"],
+      "context": "3-in-1 media recommendation system suggesting movies, songs, and books based on user preferences and behavior patterns, combining content-based and collaborative filtering algorithms. Findings published in International Journal for Research in Applied Science and Engineering Technology.",
+      "highlights": [
+        "Designed comprehensive 3-in-1 media recommender system suggesting movies, songs, and books based on user preferences and behavior patterns",
+        "Implemented multiple recommendation algorithms: Cosine Similarity (content-based filtering), Pearson Correlation (collaborative filtering), K-Nearest Neighbors (user-based recommendations), K-Means Clustering (user segmentation), TF-IDF (content analysis and feature extraction)",
+        "Integrated Spotify API for real-time music recommendations with playlist generation",
+        "Published research paper in International Journal for Research in Applied Science and Engineering Technology",
+        "Achieved 85% user satisfaction rate in user testing with 500+ participants"
+      ]
+    },
+    {
+      "name": "SoundScape",
+      "subtitle": "Android Music Streaming App",
+      "duration": "December 2021",
+      "tech_stack": ["Android SDK", "Java", "REST APIs", "MediaPlayer", "Gradle", "Git"],
+      "context": "End-to-end Android music streaming app with microservice-style separation for playback, notifications, and file operations, backed by Musixmatch API integration with local caching.",
+      "highlights": [
+        "Developed end-to-end Android music streaming app",
+        "Integrated Musixmatch API with Room caching, reducing API calls by 70%",
+        "Implemented microservices for playback, notifications, and file operations"
+      ]
+    }
+  ],
+
+  "certifications": [
+    { "name": "SAFe Practitioner 5.1 Certification", "date": "Mar 2023" }
+  ],
+
+  "extracurricular_activities": [
+    "Finalist at RevolutionUC 2025 Hackathon, among 300 participants from 31 schools"
+  ],
+
+  "professional_interests": [
+    "LLM-powered testing and automation for mobile/Android systems",
+    "Backend automation and reliable deployment systems",
+    "Full-stack application development",
+    "Cloud platforms and Kubernetes-based infrastructure",
+    "Production debugging and automated testing at scale",
+    "Building scalable distributed systems and microservices architectures",
+    "Performance optimization and system scalability",
+    "Open-source contributions and community engagement",
+    "Environmental sustainability and technology for social good"
+  ]
+}

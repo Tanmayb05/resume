@@ -1,0 +1,283 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=0.4 cm,
+    bottom=0.4 cm,
+    left=0.8 cm,
+    right=0.8 cm,
+    footskip=0.2 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Tanmay Bhuskute's CV},
+    pdfauthor={Tanmay Bhuskute},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{XCharter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+% ── Section title ──
+\titleformat{\section}{\needspace{2\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.15 cm}{0.08 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% ── Bullet lists ──
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.06 cm,
+        partopsep=0pt,
+        itemsep=0.06 cm,
+        leftmargin=12pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.06 cm,
+        partopsep=0pt,
+        itemsep=0.04 cm,
+        leftmargin=12pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0 cm + 0.00001 cm}{0 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{0.6}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{16 pt}{24 pt}\selectfont Tanmay Bhuskute
+
+        \vspace{3 pt}
+
+        \normalsize
+        \mbox{ +1 (732) 858-3027 }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ tanmay.v.bhuskute@gmail.com }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ github.com/Tanmayb05 }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ linkedin.com/in/tanmay-bhuskute }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ Dallas, TX }%
+    \end{header}
+
+    \vspace{2 pt}
+
+%═══════════════════════════════════════
+\section{SUMMARY}
+%═══════════════════════════════════════
+\begin{onecolentry}
+Detail-driven engineer with production experience validating, structuring, and automating large-scale data across cloud and financial-adjacent systems. Strong Excel/SQL fluency, rigorous attention to accuracy, and a track record of building data pipelines and quality processes using Python, SQL, and automation tools.
+\end{onecolentry}
+
+%═══════════════════════════════════════
+\section{EDUCATION}
+%═══════════════════════════════════════
+\begin{twocolentry}{
+    Aug 2024 - Dec 2026
+}
+    \textbf{Master of Science in Computer Science} \\
+    University of Cincinnati
+\end{twocolentry}
+\begin{onecolentry}
+Relevant Coursework: Database Theory, Intelligent Data Analysis, Advanced Algorithms.
+\end{onecolentry}
+\vspace{0.15 cm}
+
+\begin{twocolentry}{
+    Aug 2018 - Jul 2022
+}
+    \textbf{Bachelor of Engineering in Computer Engineering} \\
+    AISSMS College of Engineering
+\end{twocolentry}
+\begin{onecolentry}
+Relevant Coursework: Data Mining, Data Analytics, Object-Oriented Programming.
+\end{onecolentry}
+%═══════════════════════════════════════
+\section{TECHNICAL SKILLS}
+%═══════════════════════════════════════
+\begin{onecolentry}
+\textbf{Data \& Analysis:} Excel (advanced formulas, pivot tables), SQL, pandas, NumPy, data validation, data structuring.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Programming:} Python, Java, JavaScript, TypeScript, SQL, Go.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Databases:} PostgreSQL, MySQL.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Reporting \& BI Tools:} Power BI (familiarity), Databricks, REST APIs, Git.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Cloud \& Automation:} AWS, Docker, Kubernetes, GitLab CI/CD, Terraform, Linux, Bash.
+\end{onecolentry}
+
+%═══════════════════════════════════════
+\section{WORK EXPERIENCE}
+%═══════════════════════════════════════
+\begin{twocolentry}{Feb 2026 -- Present}
+\textbf{Graduate Researcher} ---- University of Cincinnati
+\end{twocolentry}
+\begin{highlights}
+  \item Designed data pipeline extracting and structuring behavioral data from video-based reports, validating outputs against a published baseline across 53 runs on 20+ apps for accuracy.
+  \item Demonstrated \textbf{25.7x latency reduction} (39.4s vs 1012.1s avg per run) while preserving data accuracy and task-completion fidelity.
+\end{highlights}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{Jul 2022 -- Jun 2024}
+\textbf{Software Development Engineer} ---- Siemens Industry Software
+\end{twocolentry}
+\begin{highlights}
+  \item Automated \textbf{Teamcenter X} infrastructure workflows with Python (Boto3), replacing legacy Ruby scripts and reducing deployment time by \textbf{40\%} across AWS environments.
+  \item Executed \textbf{44 production environment upgrades} in 4 months, validating and structuring infrastructure data across Linux, EC2, databases, and Teamcenter X services.
+  \item Designed \textbf{Ansible-based Blue-Green deployment} framework, reducing production upgrade downtime by \textbf{50\%}.
+  \item Migrated \textbf{40+ production environments} to Kubernetes using ArgoCD, Helm, GitLab CI/CD, Amazon EFS, and HashiCorp Vault.
+  \item Tracked and reported on \textbf{40+ environments} in Excel using pivot tables, VLOOKUP/INDEX-MATCH, and SUMIFS/COUNTIFS formulas for status inventory, upgrade reporting, and provisioning data validation.
+\end{highlights}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{Mar 2022 -- Jun 2022}
+\textbf{Software Developer Intern} ---- Siemens Industry Software
+\end{twocolentry}
+\begin{highlights}
+  \item Automated provisioning of AWS resources with \textbf{Terraform}, reducing deployment time by \textbf{30\%}.
+  \item Developed \textbf{Go + Terratest} framework, catching \textbf{95\%} of misconfigurations pre-production.
+\end{highlights}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{Sep 2021 -- Dec 2021}
+\textbf{Software Developer Intern} ---- Government of Maharashtra, Water Resource Department
+\end{twocolentry}
+\begin{highlights}
+  \item Built and deployed a full-stack \textbf{React and MySQL} workflow application that digitized departmental record management, structuring and validating operational records, improving efficiency by \textbf{40\%}.
+\end{highlights}
+
+%═══════════════════════════════════════
+\section{PROJECTS AND RESEARCH}
+%═══════════════════════════════════════
+\begin{twocolentry}{Jul 2026}
+\textbf{NYC Mobility Forecasting} [PySpark, Delta Lake, scikit-learn, SQL]
+\end{twocolentry}
+\begin{highlights}
+  \item Built data pipeline structuring and validating \textbf{2.3M-row} hourly transportation dataset across \textbf{263 zones}; designed two-stage model improving MAPE \textbf{18.77\% to 16.52\%} and cutting RMSE \textbf{43\%} over baseline.
+\end{highlights}
+
+\vspace{0.12 cm}
+
+\begin{twocolentry}{Jul 2026}
+\textbf{Spotify Analytics Platform} [Python, SQL, pandas, PostgreSQL]
+\end{twocolentry}
+\begin{highlights}
+  \item Engineered 4-stage ETL pipeline processing \textbf{71K+} streaming records with validation, retry handling, and a PostgreSQL analytics schema with materialized views for low-latency reporting.
+\end{highlights}
+
+%═══════════════════════════════════════
+\section{EXTRACURRICULAR ACTIVITIES}
+%═══════════════════════════════════════
+\begin{onecolentry}
+\begin{highlights}
+  \item \textbf{Finalist, RevolutionUC 2025 Hackathon} (300 participants, 31 schools) \,|\, \textbf{SAFe Practitioner 5.1} (Mar 2023).
+\end{highlights}
+\end{onecolentry}
+
+\end{document}

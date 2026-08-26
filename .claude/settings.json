@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write(output/**)",
+      "Edit(output/**)",
+      "Bash(tectonic *)",
+      "Bash(mkdir -p output/*)",
+      "Bash(mkdir -p /Users/tanmaybhuskute/Documents/resume/output/*)",
+      "Bash(cp output/tex/* output/*)",
+      "Bash(mv -f output/tex/*.pdf output/*)",
+      "Bash(ls output/*)",
+      "Bash(cd output/tex && tectonic *)",
+      "Bash(cd output/* && *)",
+      "Bash(cd /Users/tanmaybhuskute/Documents/resume/output/tex && tectonic *)",
+      "Bash(cd /Users/tanmaybhuskute/Documents/resume/output/* && *)",
+      "Bash(cd /Users/tanmaybhuskute/Documents/resume && *)",
+      "Bash(cd /Users/tanmaybhuskute/Documents/resume/output/tex)",
+      "Bash(cd /Users/tanmaybhuskute/Documents/resume/output/*)",
+      "Bash(cd /Users/tanmaybhuskute/Documents/resume/output/tex\ntectonic *)",
+      "Bash(mv *.pdf ../*/)",
+      "Bash(mv -f *.pdf ../*/)",
+      "Bash(pdfinfo output/*.pdf)",
+      "Bash(pdfinfo output/*.pdf | grep Pages)",
+      "Bash(pdfinfo ../*/*.pdf)",
+      "Bash(pdfinfo ../*/*.pdf | grep Pages)",
+      "Bash(pdftotext output/*.pdf -)",
+      "Bash(pdftotext output/*.pdf - | *)",
+      "Bash(pdftotext ../*/*.pdf -)",
+      "Bash(mdls -name kMDItemNumberOfPages output/*.pdf)",
+      "Bash(mdls -name kMDItemNumberOfPages *.pdf)",
+      "Bash(mdls -name kMDItemNumberOfPages ../*/*.pdf)",
+      "Bash(pdfinfo *.pdf)",
+      "Bash(pdftotext *.pdf -)",
+      "Bash(python3 -c *)"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+\documentclass[11pt]{letter}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\date{}
+\begin{document}
+
+\begin{letter}{}
+
+\opening{Dear Hiring Committee,}
+
+I saw the job post on \textbf{the Nuro careers website} and thought I'd be a good fit for it.
+
+I am a Master's student in Computer Science at the University of Cincinnati, graduating December 2026, looking for a role as a \textbf{Software Engineer, Applied AI Infrastructure} at \textbf{Nuro}. My graduate research builds closed-loop evaluation for an autonomous LLM-agent pipeline, and my production experience at Siemens covers infrastructure automation, Kubernetes migrations, and auditable deployment systems, work that maps directly onto the evaluation, agent platform, and infrastructure problems your team owns.
+
+\textbf{Here are reasons that make me a great fit for the role:}
+
+\begin{itemize}[leftmargin=*, itemsep=0.45em]
+    \item \textbf{Closed-loop evaluation of agent systems:} My current graduate research designs a two-stage memory-augmented LLM agent pipeline for Android bug reproduction and evaluates it against a published baseline (ViBR) across 53 runs on 20+ apps, measuring a 25.7x latency reduction while holding task-completion fidelity constant. That discipline of benchmarking agent output against a measurable baseline before trusting it is the same discipline your team is building at Nuro's scale.
+
+    \item \textbf{Agent platform and tool-calling infrastructure:} I designed a 17-tool MCP server for PolicyPilot that exposes structured LLM tool-calling to external agents, with Zod schema validation at every tool boundary and citation tracing on every answer so retrieval errors surface instead of silently misleading a user, the same auditability concern your team applies to agents touching production systems.
+
+    \item \textbf{Production infrastructure at scale:} At Siemens Industry Software, I automated Teamcenter X workflows with Python and Boto3, cutting deployment time 40\% across AWS, and migrated 40+ production environments to Kubernetes using ArgoCD, Helm, and HashiCorp Vault. I executed 44 production upgrades in four months, diagnosing live infrastructure issues without service interruption, experience directly relevant to building agent runtimes that operate safely against real systems.
+
+    \item \textbf{Engineering rigor and ownership:} As Quality Coach and SonarQube Specialist on my Agile Release Train, I raised automated code coverage from 35\% to 78\% and mentored five engineers, reflecting the same standard of proof and end-to-end ownership this role calls for.
+\end{itemize}
+
+I am available for full-time work after December 2026. As a Master's student at the University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to \textbf{Nuro} and helping build evaluation and agent infrastructure trustworthy enough to run unattended.
+
+Please find my CV attached below. I look forward to hearing from you. Nuro's mission to make autonomy safe and measurable at scale, on the road and inside the engineering organization itself, is exactly the kind of rigorous, high-stakes work I want to contribute to.
+
+{\setlength{\parskip}{0pt}
+Regards,\\
+Tanmay Bhuskute,\\
+tanmay.v.bhuskute@gmail.com $\mid$ +1 (732) 858-3027,\\
+Cincinnati, OH.
+}
+
+\end{letter}
+
+\end{document}

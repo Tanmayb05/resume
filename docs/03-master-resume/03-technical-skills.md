@@ -10,7 +10,7 @@ React, Next.js, Vue.js, D3.js, Leaflet, Tailwind CSS, Bootstrap, Responsive Web 
 Node.js, Django, Flask, FastAPI, Express.js, GraphQL, REST APIs, Microservices Architecture, Serverless Architecture, WebSockets
 
 **Databases:**
-PostgreSQL, MySQL, MongoDB, Oracle DB, Elasticsearch, Redis, Firebase, Vector Databases
+PostgreSQL, MySQL, MongoDB, DynamoDB, Oracle DB, Elasticsearch, Redis, Firebase, Vector Databases
 
 **DevOps & Cloud:**
 Git, GitHub, GitLab CI/CD, Jenkins, AWS (S3, EC2, Lambda, SQS), Docker, Kubernetes, ArgoCD, Helm, Terraform, Linux, Bash, SonarQube, Azure, Google Cloud Platform, Nginx, Apache
