@@ -1,0 +1,265 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=0.4 cm,
+    bottom=0.4 cm,
+    left=0.8 cm,
+    right=0.8 cm,
+    footskip=0.2 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Tanmay Bhuskute's CV},
+    pdfauthor={Tanmay Bhuskute},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{XCharter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+% ── Section title ──
+\titleformat{\section}{\needspace{2\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.15 cm}{0.08 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% ── Bullet lists ──
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.06 cm,
+        partopsep=0pt,
+        itemsep=0.06 cm,
+        leftmargin=12pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.06 cm,
+        partopsep=0pt,
+        itemsep=0.04 cm,
+        leftmargin=12pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0 cm + 0.00001 cm}{0 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{0.6}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{16 pt}{24 pt}\selectfont Tanmay Bhuskute
+
+        \vspace{3 pt}
+
+        \normalsize
+        \mbox{ +1 (732) 858-3027 }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ tanmay.v.bhuskute@gmail.com }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ github.com/Tanmayb05 }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ linkedin.com/in/tanmay-bhuskute }%
+        \kern 1.0 pt%
+        \AND%
+        \kern 1.0 pt%
+        \mbox{ New York, NY }%
+    \end{header}
+
+    \vspace{2 pt}
+
+%═══════════════════════════════════════
+\section{SUMMARY}
+%═══════════════════════════════════════
+\begin{onecolentry}
+Software Engineer with production experience building AWS infrastructure, Kubernetes platforms, and networking automation. Skilled in Python, Terraform, VPC/networking design, and CI/CD, with a focus on reliability, simplicity, and scalability across cloud-native systems.
+\end{onecolentry}
+
+%═══════════════════════════════════════
+\section{EDUCATION}
+%═══════════════════════════════════════
+\begin{twocolentry}{
+    Aug 2024 - Dec 2026
+}
+    \textbf{Master of Science in Computer Science} \\
+    University of Cincinnati
+\end{twocolentry}
+\begin{onecolentry}
+Relevant Coursework: Advanced Algorithms, Deep Learning, Intelligent Data Analysis, Database Theory.
+\end{onecolentry}
+\vspace{0.15 cm}
+
+\begin{twocolentry}{
+    Aug 2018 - Jul 2022
+}
+    \textbf{Bachelor of Engineering in Computer Engineering} \\
+    AISSMS College of Engineering
+\end{twocolentry}
+\begin{onecolentry}
+Relevant Coursework: Data Mining, Data Analytics, Machine Learning, Object-Oriented Programming.
+\end{onecolentry}
+%═══════════════════════════════════════
+\section{TECHNICAL SKILLS}
+%═══════════════════════════════════════
+\begin{onecolentry}
+\textbf{Programming:} Python, Java, Go, JavaScript, TypeScript, SQL, Bash.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{AWS Networking:} VPC, Route Tables, Security Groups, ALB/ELB, Route53, NAT Gateways, API Gateway.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Infrastructure \& Cloud:} AWS (EC2, S3, Lambda, SQS), Kubernetes, ArgoCD, Helm, Terraform, Docker, Azure, Google Cloud Platform.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{DevOps Tools:} Git, GitLab CI/CD, Jenkins, Ansible, HashiCorp Vault, SonarQube, Linux.
+\end{onecolentry}
+\vspace{0.06 cm}
+\begin{onecolentry}
+\textbf{Observability \& Backend:} Datadog, CloudWatch, REST APIs, Node.js, FastAPI, PostgreSQL, MySQL.
+\end{onecolentry}
+
+%═══════════════════════════════════════
+\section{WORK EXPERIENCE}
+%═══════════════════════════════════════
+\begin{twocolentry}{Jul 2022 -- Jun 2024}
+\textbf{Software Development Engineer} \,|\, Siemens Industry Software
+\end{twocolentry}
+\begin{highlights}
+  \item Automated \textbf{Teamcenter X} infrastructure workflows with Python (Boto3) on AWS, replacing legacy Ruby scripts and reducing deployment time by \textbf{40\%} across environments.
+  \item Migrated \textbf{40+ production environments} from process-based deployments to \textbf{Kubernetes} using ArgoCD, Helm, and GitLab CI/CD, improving service communication and management.
+  \item Built Infrastructure as Code automation with \textbf{Terraform} and Ansible for AWS environment provisioning, standardizing setup across 40+ production environments.
+  \item Executed \textbf{44 production environment upgrades} in 4 months, diagnosing live AWS/EC2 infrastructure issues using CloudWatch metrics and Datadog log correlation for monitoring.
+  \item Managed \textbf{HashiCorp Vault} secrets and IAM access policies across production and non-production AWS environments to strengthen security posture.
+\end{highlights}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{Mar 2022 -- Jun 2022}
+\textbf{Software Developer Intern} \,|\, Siemens Industry Software
+\end{twocolentry}
+\begin{highlights}
+  \item Automated provisioning of \textbf{AWS} resources with \textbf{Terraform}, reducing deployment time by \textbf{30\%} through reusable, product-minded infrastructure modules.
+  \item Developed \textbf{Go + Terratest} framework, catching \textbf{95\%} of misconfigurations pre-production, improving reliability of cloud deployments.
+\end{highlights}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{Feb 2026 -- Present}
+\textbf{Graduate Researcher} \,|\, University of Cincinnati
+\end{twocolentry}
+\begin{highlights}
+  \item Designed two-stage memory-augmented LLM pipeline for Android GUI bug reproduction, evaluated against \textbf{ViBR} baseline across 53 runs on 20+ apps.
+  \item Demonstrated \textbf{25.7x latency reduction} (39.4s vs 1012.1s avg per run) while preserving task-completion fidelity.
+\end{highlights}
+
+%═══════════════════════════════════════
+\section{PROJECTS AND RESEARCH}
+%═══════════════════════════════════════
+\begin{twocolentry}{Jul 2026}
+\textbf{NYC Mobility Forecasting} [PySpark, Delta Lake, scikit-learn, FastAPI, PostgreSQL]
+\end{twocolentry}
+\begin{highlights}
+  \item Built ML system forecasting NYC taxi/rideshare demand across \textbf{263 zones} (\textbf{2.3M-row} hourly dataset); built RESTful API serving predictions, containerized with \textbf{Docker} and architected for cloud deployment.
+\end{highlights}
+
+%═══════════════════════════════════════
+\section{EXTRACURRICULAR ACTIVITIES}
+%═══════════════════════════════════════
+\begin{onecolentry}
+\begin{highlights}
+  \item \textbf{Finalist, RevolutionUC 2025 Hackathon} (300 participants, 31 schools) \,|\, \textbf{SAFe Practitioner 5.1} (Mar 2023).
+\end{highlights}
+\end{onecolentry}
+
+\end{document}

@@ -1,0 +1,56 @@
+\documentclass[11pt]{letter}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\date{}
+\begin{document}
+
+\begin{letter}{}
+
+\opening{Dear Hiring Committee,}
+
+I saw the job post on the \textbf{Cox Automotive careers website} and thought I'd be a good fit for it.
+
+I am a Master's student in Computer Science at the University of Cincinnati, graduating December 2026, looking for a role as a \textbf{Software Engineer II} at \textbf{Cox Automotive}. With production experience building backend services, designing and versioning REST APIs, modernizing legacy systems, and operating containerized workloads in AWS, I am excited to contribute to \textbf{Cox Automotive} and the platforms behind brands like Autotrader, Kelley Blue Book, and Manheim.
+
+\textbf{Here are reasons that make me a great fit for the role:}
+
+\begin{itemize}[leftmargin=*, itemsep=0.45em]
+    \item \textbf{Designing, building, and maintaining production software in a modern object-oriented language:} At Siemens Industry Software, I designed and maintained production backend automation for Teamcenter X in Python with object-oriented service modules and REST API integrations, replacing legacy Ruby scripts and cutting deployment time by 40\% across AWS environments.
+
+    \item \textbf{Microservices, service boundaries, and distributed failure modes:} I migrated 40+ production environments from process based deployments to containerized Kubernetes microservices using ArgoCD, Helm, and GitLab CI/CD, and modeled provisioning state in DynamoDB and relational stores with indexed lookups that supported idempotent retries and reliable partial failure recovery.
+
+    \item \textbf{REST API design, relational databases, and managed schema migrations:} On PolicyPilot I built a full stack TypeScript app with an Express REST API exposing 17 versioned tool APIs, each guarded by schema validation at every data boundary. On NYC Mobility Forecasting I built a FastAPI service over PostgreSQL with a Redis cache, applying schema design, indexing, and query tuning.
+
+    \item \textbf{Automated testing through CI/CD, static analysis, and production observability:} As Quality Coach and SonarQube Specialist for the Agile Release Train, I raised automated test coverage from 35\% to 78\% by enforcing CI/CD quality gates, and I executed 44 production upgrades in 4 months, triaging live incidents with CloudWatch metrics, tracing, and Datadog log correlation.
+
+    \item \textbf{Senior ownership and raising engineering standards:} I designed an Ansible based Blue-Green deployment framework with automated rollback that cut production upgrade downtime by 50\%, and mentored 5 engineers through structured onboarding.
+\end{itemize}
+
+I am available for full time work after December 2026. As a Master's student at the University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to \textbf{Cox Automotive} and building the secure, resilient software that powers how the world buys, owns, and sells cars.
+
+Please find my CV attached below. I look forward to hearing from you. I would be glad to help the teams behind Autotrader, Kelley Blue Book, and Manheim deliver reliable software that dealers and drivers depend on every day.
+
+{\setlength{\parskip}{0pt}
+Regards,\\
+Tanmay Bhuskute,\\
+bhuskutv@mail.uc.edu $\mid$ tanmay.v.bhuskute@gmail.com $\mid$ +1 7328583027,\\
+3424 Brookline Ave, Flat 19, Cincinnati, OH 45220.
+}
+
+\end{letter}
+
+\end{document}

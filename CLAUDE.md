@@ -11,6 +11,7 @@ Not a software project — a resume/cover-letter generation pipeline. Given a jo
 - `master_resume.json` — canonical structured data (contact, education, skills, work_experience, projects, certifications, extracurriculars, interests). Pull all resume/cover-letter content from here.
 - `docs/01-rules/*.md` — rules split by topic (general, resume, cover letter, output, agentic prompts).
 - `docs/02-templates/01-resume-template.tex` and `02-cover-letter-template.tex` — the exact LaTeX templates. Only edit text content inside them, never the structure/macros/formatting.
+- **Master wins over template sample text.** The `.tex` templates (and the copies embedded in this file and `readme.md`) contain pre-written sample content that can be stale. Treat it as layout/format reference only. Never carry a bullet, summary, skill line, or metric over from a template; every bullet must trace to `master_resume.json` (reworded for the JD is fine, a different fact or number is not). When master and template disagree, use master, and prefer the strongest quantified point the master offers for each role.
 - `readme.md` is a legacy dump (old rules + templates + a sample JD/cover-letter pasted in) kept for reference — don't treat its embedded output-path convention as authoritative; the real convention is in Output below (confirmed by the actual `output/` directory layout).
 
 ## Commands
@@ -380,7 +381,7 @@ Relevant Coursework: Data Mining, Data Analytics, Machine Learning, Object-Orien
 \textbf{Software Developer Intern} \,|\, Government of Maharashtra, Water Resource Department
 \end{twocolentry}
 \begin{highlights}
-  \item Built and deployed a full-stack \textbf{React and MySQL} workflow application that digitized departmental record management, automated manual processes, and improved operational efficiency by \textbf{40\%}.
+  \item Built full-stack \textbf{React and MySQL} application digitizing departmental records and deployed on-premises MySQL with authentication and permissions, cutting document retrieval time by \textbf{90\%} (5 min to 30 sec).
 \end{highlights}
 
 %═══════════════════════════════════════
@@ -732,7 +733,7 @@ Polarion, Jira, Slack, Dropbox, Adobe Acrobat, Photoshop, Postman, VS Code
 
 **Tech Stack:** React.js, MySQL, Full-Stack Development, UI/UX Design, Process Automation
 
-- Built and deployed a full-stack React and MySQL workflow application that digitized departmental record management, automated manual processes, and improved operational efficiency by 40%
+- Built full-stack React and MySQL application digitizing departmental records and deployed on-premises MySQL with authentication and permissions, cutting document retrieval time by 90% (5 min to 30 sec)
 
 ---
 

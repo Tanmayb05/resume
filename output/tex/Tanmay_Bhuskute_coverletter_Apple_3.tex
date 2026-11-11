@@ -1,0 +1,56 @@
+\documentclass[11pt]{letter}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\date{}
+\begin{document}
+
+\begin{letter}{}
+
+\opening{Dear Hiring Committee,}
+
+I saw the job post on the Apple careers website and thought I'd be a good fit for it.
+
+I am a Master's student in Computer Science at the University of Cincinnati, graduating December 2026, looking for a role as a \textbf{Site Reliability Engineer, Data} on \textbf{Apple Ads} at \textbf{Apple}. With two years of production experience operating large-scale distributed systems on AWS, building Kubernetes platforms, and running Spark-based data pipelines, I am excited about the opportunity to contribute to the infrastructure that powers advertising across the App Store, Apple News, and Apple Maps.
+
+\textbf{Here are reasons that make me a great fit for the role:}
+
+\begin{itemize}[leftmargin=*, itemsep=0.45em]
+    \item \textbf{Operating cloud-based distributed data systems on AWS:} At Siemens Industry Software, I operated 40 or more large-scale production environments on AWS and executed 44 upgrades in four months, diagnosing and resolving live infrastructure issues across EC2, Linux, databases, and containerized services without service interruption.
+
+    \item \textbf{Open source large-scale data processing:} On a mobility forecasting project I built a Spark-based medallion pipeline that processed a 2.3 million row hourly dataset across 263 zones using PySpark and Delta Lake, then served predictions through a FastAPI service backed by PostgreSQL and Redis.
+
+    \item \textbf{Container orchestration with Kubernetes:} I migrated more than 40 production environments from process-based deployments to Kubernetes using ArgoCD, Helm, CRDs, GitLab CI/CD, and HashiCorp Vault, and designed an Ansible based Blue-Green deployment framework with automated rollback that reduced upgrade downtime by 50 percent.
+
+    \item \textbf{Eliminating toil through automation and cost efficiency:} I built Python and Boto3 automation frameworks that replaced legacy Ruby scripts and cut deployment time by 40 percent, and reduced monthly AWS spend by 40 percent through rightsizing and automated cleanup driven by CloudWatch and Datadog observability.
+
+    \item \textbf{Applying ML and GenAI to operational efficiency:} My graduate research designed a two-stage memory-augmented LLM pipeline using Gemini and Vertex AI that cut operational latency by 25.7 times, from 1012 seconds to 39 seconds per run, while preserving task completion fidelity across 53 runs on more than 20 apps.
+\end{itemize}
+
+I am available for full time work after December 2026, in line with my graduation date. As a Master's student at the University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to Apple Ads and helping build reliable, cost efficient data infrastructure at scale.
+
+Please find my CV attached below. I look forward to hearing from you. I would be glad to help Apple Ads deliver advertising that is built for trust, privacy, and impact.
+
+{\setlength{\parskip}{0pt}
+Regards,\\
+Tanmay Bhuskute,\\
+bhuskutv@mail.uc.edu $\mid$ tanmay.v.bhuskute@gmail.com $\mid$ +1 7328583027,\\
+3424 Brookline Ave, Flat 19, Cincinnati, OH 45220.
+}
+
+\end{letter}
+
+\end{document}

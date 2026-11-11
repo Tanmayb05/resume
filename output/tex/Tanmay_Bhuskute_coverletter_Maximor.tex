@@ -1,0 +1,54 @@
+\documentclass[11pt]{letter}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\date{}
+\begin{document}
+
+\begin{letter}{}
+
+\opening{Dear Hiring Committee,}
+
+I saw the job post on \textbf{the Maximor careers website} and thought I'd be a good fit for it.
+
+I am a Master's student in Computer Science at the University of Cincinnati, graduating December 2026, looking for a role as a \textbf{Software Engineer (New Grad)} at \textbf{Maximor}. I have spent the last year building AI agents that people must trust with high-stakes decisions, plus two years of production engineering at Siemens, and Maximor's goal of Audit-Ready AI Agents for the CFO office is exactly the problem I want to work on.
+
+\textbf{Here are reasons that make me a great fit for the role:}
+
+\begin{itemize}[leftmargin=*, itemsep=0.45em]
+    \item \textbf{Building AI agents finance teams and auditors can trust:} For PolicyPilot, I architected an evidence-grounded RAG pipeline over Gemini 2.5-flash that forces every answer to cite its source and version, so a retrieval mismatch surfaces to the reviewer instead of quietly misleading them on an eligibility decision, paired with a confidence-scoring system that escalates uncertain cases to human review rather than guessing.
+
+    \item \textbf{Context engineering over messy records without bloat or drift:} My graduate research is a two-stage memory-augmented LLM agent that extracts structured context in a single pass, then conditions automation on that memory instead of re-reading raw input every step. Against the ViBR baseline across 53 runs on 20+ apps it shows a 25.7x latency reduction with task fidelity preserved.
+
+    \item \textbf{Turning scattered systems into one source of truth, with safe writes:} I built a 4-stage Python ETL pipeline that ingests, normalizes, and reconciles 71K+ events from several external APIs into one PostgreSQL source of truth. At Siemens I designed an Ansible Blue-Green framework with idempotent, audit-ready rollback that recovers any environment in 15 minutes, and ran 44 production upgrades in 4 months.
+
+    \item \textbf{Shipping full-stack and operating coding agents:} I built PolicyPilot end to end in TypeScript, a React SPA plus an Express API plus a 17-tool MCP server on one Node.js process, with Zod validation at every data boundary. I use Claude Code and Cursor daily to ship faster, and I have real craft in the agents themselves: prompts, context, tool use, and evals.
+\end{itemize}
+
+I am available for full-time work after my graduation in December 2026. As a Master's student at the University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to \textbf{Maximor} and helping build agents that finance teams and auditors can actually rely on.
+
+Please find my CV attached below. I look forward to hearing from you. Sitting with controllers and CFOs to understand the work before building the system that replaces it is exactly how I like to engineer, and I would be glad to do that from day one.
+
+{\setlength{\parskip}{0pt}
+Regards,\\
+Tanmay Bhuskute,\\
+bhuskutv@mail.uc.edu $\mid$ tanmay.v.bhuskute@gmail.com $\mid$ +1 7328583027,\\
+3424 Brookline Ave, Flat 19, Cincinnati, OH 45220.
+}
+
+\end{letter}
+
+\end{document}

@@ -1,0 +1,54 @@
+\documentclass[11pt]{letter}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\date{}
+\begin{document}
+
+\begin{letter}{}
+
+\opening{Dear Hiring Committee,}
+
+I saw the job post on \textbf{email outreach from your recruiting team} and thought I'd be a good fit for it.
+
+I am a Master's student in Computer Science at the University of Cincinnati, graduating December 2026, looking for a role as a \textbf{Senior Gen AI/Python Engineer} at \textbf{Synchrony Systems}. My work sits exactly where this role does: production Python, LLM powered agents, structured extraction, and FastAPI services that have to be correct rather than merely impressive in a demo.
+
+\textbf{Here are reasons that make me a great fit for the role:}
+
+\begin{itemize}[leftmargin=*, itemsep=0.45em]
+    \item \textbf{Production grade Python with real engineering discipline:} At Siemens Industry Software I wrote Python and Boto3 automation that replaced legacy Ruby services and cut deployment time by 40\% across AWS environments, shipped through code review, Docker, and GitLab CI/CD. As Quality Coach and SonarQube Specialist I raised automated test coverage from 35\% to 78\% by enforcing coding standards and CI quality gates.
+
+    \item \textbf{Building LLM agents and multi step orchestration:} My graduate research is a two stage agentic pipeline on Gemini 2.5 Pro and Vertex AI that extracts a structured task memory once, then conditions a closed loop automation agent on it instead of re running inference at every step. It delivered a 25.7x latency reduction, 39.4 seconds versus 1012.1 seconds per run, against the published GPT-4o based ViBR baseline while preserving task completion fidelity across 53 runs on more than 20 applications.
+
+    \item \textbf{Structured output, RAG, and confidence based disambiguation:} In PolicyPilot I architected an evidence grounded RAG pipeline over Gemini 2.5-flash that forces citation backed answers, and designed a 17 tool MCP server for LLM tool calling with schema validation at every data boundary. I added a confidence scoring layer using evidence count, negation detection, and subjectivity flags to route uncertain cases to human review, chosen after benchmarking hallucination rates across models.
+
+    \item \textbf{FastAPI, async orchestration, and large analytical datasets:} I built a FastAPI prediction microservice backed by PostgreSQL and Redis caching, containerized with Docker, serving a model trained on a 2.3 million row Spark and Delta Lake dataset across 263 zones. I also built a provider agnostic model abstraction and a config driven evaluation harness so prompt and model changes could be validated through reproducible regression runs.
+\end{itemize}
+
+I am available for full time work after December 2026, matching my graduation date. As a Master's student at the University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to \textbf{Synchrony Systems} and helping ship reliable, well evaluated Gen AI capabilities into production.
+
+Please find my CV attached below. I look forward to hearing from you. \textbf{Building agentic systems that stay accurate under real production data is the problem I most want to work on, and this role is squarely that work}.
+
+{\setlength{\parskip}{0pt}
+Regards,\\
+Tanmay Bhuskute,\\
+bhuskutv@mail.uc.edu $\mid$ tanmay.v.bhuskute@gmail.com $\mid$ +1 (732) 858-3027,\\
+3424 Brookline Ave, Flat 19, Cincinnati, OH 45220.
+}
+
+\end{letter}
+
+\end{document}

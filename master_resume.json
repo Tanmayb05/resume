@@ -100,15 +100,14 @@
     {
       "title": "Software Developer Intern",
       "company": "Siemens Industry Software",
-      "duration": "March 2022 - June 2022 (4 months)",
-      "tech_stack": ["AWS", "Terraform", "Ansible", "Terratest", "Go"],
+      "duration": "Mar 2022 - Jun 2022",
+      "tech_stack": ["AWS (EC2, VPC, IAM, RDS, EFS, S3, Load Balancers)", "Terraform", "Go", "Terratest", "Ansible"],
       "highlights": [
-        "Automated provisioning of AWS resources with Terraform, reducing deployment time by 30%",
-        "Developed Go + Terratest framework, catching 95% of misconfigurations pre-production",
-        "Optimized DevOps workflows with Ansible, reducing environment setup time from hours to minutes",
-        "Enhanced infrastructure validation with Terragrunt ensuring 100% successful Terraform runs"
-      ],
-      "notes": "Last two bullets flagged 'try to avoid' in source doc — weaker/redundant vs top two."
+        "Infrastructure Architecture: Designed reusable Terraform modules to provision AWS infrastructure for a Java application with frontend and database components, including compute, networking, storage, IAM, and load balancing.",
+        "Provisioning Automation: Automated previously manual AWS infrastructure provisioning using Terraform, reducing deployment time by 30% and standardizing environment setup.",
+        "Infrastructure Testing: Developed automated integration tests using Go and Terratest to validate AWS resource provisioning, inter-service connectivity, network security configurations, and Terraform apply/destroy lifecycle.",
+        "Reliability & Validation: Integrated Terratest-based checks into an existing pre-deployment workflow, identifying approximately 95% of misconfiguration scenarios observed in historical deployment failures."
+      ]
     },
     {
       "title": "Software Developer Intern",
@@ -116,7 +115,8 @@
       "duration": "September 2021 - December 2021 (4 months)",
       "tech_stack": ["React.js", "MySQL", "Full-Stack Development", "UI/UX Design", "Process Automation"],
       "highlights": [
-        "Built and deployed a full-stack React and MySQL workflow application that digitized departmental record management, automated manual processes, and improved operational efficiency by 40%"
+        "Built a full-stack React.js and MySQL application to digitize inward/outward departmental records, replacing manual document registration and retrieval workflows.",
+        "Configured and deployed an on-premises MySQL database with network connectivity, authentication, and user permissions, enabling multi-user access and reducing document retrieval time by 90% (5 min to 30 sec)."
       ]
     }
   ],
@@ -180,14 +180,15 @@
     },
     {
       "name": "Spendora",
-      "subtitle": "Conversational AI for Expense Insights",
+      "subtitle": "AI-Powered Personal Finance & Expense Intelligence Platform",
       "duration": "June 2025",
-      "tech_stack": ["HuggingFace", "LangChain", "Mistral", "Gemma"],
-      "context": "LLM-powered finance assistant surfacing spending patterns and automating expense categorization via retrieval-augmented conversational agents.",
+      "tech_stack": ["Next.js", "TypeScript", "React", "PostgreSQL", "Supabase", "Gemini", "Tailwind CSS", "Vitest", "Playwright"],
       "highlights": [
-        "Developed LLM-powered finance assistant with LangChain",
-        "Implemented RAG with custom toolchains for financial data, cutting manual expense categorization effort and surfacing spending patterns users previously had to compute by hand",
-        "Deployed conversational agents with memory and tool use for spending analysis"
+        "Architected a PostgreSQL financial ledger supporting cash and normalized accounting, refunds, EMIs, and 3 trip-accounting modes, validating cent-level reconciliation accuracy across 18 months of historical financial data.",
+        "Implemented multi-currency accounting across 120+ currencies, preserving original transaction values and historical exchange rates while enabling base-currency rebasing across budgets, transactions, and installment schedules.",
+        "Engineered Gemini-powered, schema-validated transaction workflows for natural-language, voice, and receipt inputs, reducing median expense-entry time by 72% (29s to 8s).",
+        "Benchmarked an LLM-powered financial assistant on 100 analytical queries, achieving 94% numerical correctness, 90% tool-selection accuracy, and 2.1s median response latency.",
+        "Implemented Supabase authentication, PostgreSQL row-level security, private receipt storage, and AI usage quotas, with 80 test scenarios spanning 29 unit, 40 database, and 11 end-to-end tests."
       ]
     },
     {

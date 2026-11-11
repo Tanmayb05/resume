@@ -1,0 +1,54 @@
+\documentclass[11pt]{letter}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    linkcolor=black
+}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.05}
+\date{}
+\begin{document}
+
+\begin{letter}{}
+
+\opening{Dear Hiring Committee,}
+
+I saw the job post on the DigitalOcean careers website and thought I'd be a good fit for it.
+
+I am a Master's student in Computer Science at the University of Cincinnati, graduating December 2026, looking for a role as a \textbf{Software Engineer I} at \textbf{DigitalOcean}. With hands on experience writing Go and Python for production cloud infrastructure and current research optimizing LLM inference pipelines for latency and cost, I am excited about helping build the \textbf{Agentic Inference Cloud} and the vertically integrated platform behind it.
+
+\textbf{Here are reasons that make me a great fit for the role:}
+
+\begin{itemize}[leftmargin=*, itemsep=0.45em]
+    \item \textbf{Production Go and Python for infrastructure:} At Siemens Industry Software, I wrote Python (Boto3) automation and REST APIs for cloud infrastructure workflows, replacing legacy Ruby scripts and cutting deployment time by 40\% across AWS. In an earlier internship I built a Go and Terratest validation framework that caught 95\% of misconfigurations before production.
+
+    \item \textbf{Performance engineering for inference:} My graduate research builds a two-stage memory-augmented LLM inference pipeline that decouples video understanding from device automation to cut redundant model calls, showing a 25.7x latency reduction (39.4s versus 1012.1s average per run) and lower per-run compute cost while preserving task fidelity. This is directly about the unit economics of running models efficiently.
+
+    \item \textbf{Model integration and benchmarking:} I ran provider-agnostic benchmarking across Gemini, GPT-4o, Llama, Qwen, and MiniCPM against a published baseline over 53 runs on 20+ apps, using a config-driven harness for reproducible evaluation. On PolicyPilot I benchmarked hallucination rates to select a model and exposed a 17-tool LLM API server for external agents.
+
+    \item \textbf{Operational excellence at scale:} I executed 44 production environment upgrades in 4 months against a live fleet with no service interruptions, and migrated 40+ production environments to Kubernetes using ArgoCD, Helm, GitLab CI/CD, and HashiCorp Vault, designing an Ansible Blue-Green framework that cut upgrade downtime by 50\% with reliable rollback.
+\end{itemize}
+
+I am available for full-time work after my graduation in December 2026. As a Master's student at the University of Cincinnati and someone who values professionalism and growth, I am enthusiastic about contributing to DigitalOcean and helping make GPU inference simpler and more cost efficient for builders.
+
+Please find my CV attached below. I look forward to hearing from you. Engineering every layer of the stack so state-of-the-art models run at peak efficiency is exactly the kind of work I want to do early in my career.
+
+{\setlength{\parskip}{0pt}
+Regards,\\
+Tanmay Bhuskute,\\
+bhuskutv@mail.uc.edu $\mid$ tanmay.v.bhuskute@gmail.com $\mid$ +1 7328583027,\\
+3424 Brookline Ave, Flat 19, Cincinnati, OH 45220.
+}
+
+\end{letter}
+
+\end{document}
